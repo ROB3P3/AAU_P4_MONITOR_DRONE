@@ -15,7 +15,7 @@ for i = 1:row_count
     % Initialize an empty cell array to store the elements from the current row
     row_elements = {};
     
-    column = 1;
+    column = 2;
     % Loop through the columns (only columns 2 and 3)
     for j = 2:3
         % Access each element of the array
@@ -23,7 +23,7 @@ for i = 1:row_count
 
         % Append the row elements cell array to the new array
         y_array{rows, column} = current_element;
-        column = column+1;
+        column = column-1;
     end
     % Shift to new row
     rows = rows+1;
@@ -38,7 +38,7 @@ for i = 1:row_count
     % Initialize an empty cell array to store the elements from the current row
     row_elements = {};
     
-    column = 1;
+    column = 2;
     % Loop through the columns (only columns 2 and 3)
     for j = [1, 3]
         % Access each element of the array
@@ -46,7 +46,7 @@ for i = 1:row_count
 
         % Append the row elements cell array to the new array
         x_array{rows, column} = current_element;
-        column = column+1;
+        column = column-1;
     end
     
     % Shift to new row
