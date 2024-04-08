@@ -5,6 +5,8 @@ from mpl_toolkits.mplot3d import Axes3D
 from shapely.geometry import Polygon, LineString
 from scipy.interpolate import splrep , splev
 import numpy as np
+from scipy.io import savemat
+
 
 def path_generator():
     # Initialize Pygame
@@ -155,7 +157,7 @@ def length_of_trajectory(positions):
     #print(f"Lengths of line segments: {lengths}")
 
     # Height of the flight path
-    height = 20 #cm
+    height = 200 #cm
 
     # Number of positions
     num_positions = len(positions)
@@ -281,6 +283,8 @@ def Cubic_polynomial_trajectory_no_vp(positions):
     plt.title('Plot of x over time')
     plt.grid(True)
 
+    all_x_values = []
+    all_tx_values = []
     # Loop over all polynomials
     for poly_x, poly_y, poly_z, tf, t0, t1 in all_polynomials:
         # Generate a sequence of t-values
@@ -288,11 +292,23 @@ def Cubic_polynomial_trajectory_no_vp(positions):
         # Compute the x_values
         x_values = poly_x(t_values)
         # Generate a sequence of t-values
-        t_values = np.linspace(t0, t1, num=500) 
+        t_values = np.linspace(t0, t1, num=500)
 
         # Plot x_values over t_values
         plt.plot(t_values, x_values)
 
+        # combine all x_values into one array
+        all_x_values.extend(x_values)
+        all_tx_values.extend(t_values)
+
+    # Combine all x_values and t_values into one vertical array
+    all_x_points = []
+    for i in range(len(all_x_values)):
+        all_x_points.append([all_tx_values[i], all_x_values[i]/100])
+
+    # Save the x_values to a .mat file
+    file_name = 'drone_path_x.mat'
+    savemat(file_name, {'drone_path_x': all_x_points})
 
     # Create the figure for y_values
     plt.figure()
@@ -301,6 +317,8 @@ def Cubic_polynomial_trajectory_no_vp(positions):
     plt.title('Plot of y over time')
     plt.grid(True)
 
+    all_y_values = []
+    all_ty_values = []
     # Loop over all polynomials
     for poly_x, poly_y, poly_z, tf, t0, t1 in all_polynomials:
         # Generate a sequence of t-values
@@ -313,6 +331,17 @@ def Cubic_polynomial_trajectory_no_vp(positions):
         # Plot y_values over t_values
         plt.plot(t_values, y_values)
 
+        all_y_values.extend(y_values)
+        all_ty_values.extend(t_values)
+    # Combine all x_values and t_values into one vertical array
+    all_y_points = []
+    for i in range(len(all_y_values)):
+        all_y_points.append([all_ty_values[i], all_y_values[i]/100])
+
+    # Save the x_values to a .mat file
+    file_name = 'drone_path_y.mat'
+    savemat(file_name, {'drone_path_y': all_y_points})
+
     # Create the figure for z_values
     plt.figure()
     plt.xlabel('Time')
@@ -320,6 +349,8 @@ def Cubic_polynomial_trajectory_no_vp(positions):
     plt.title('Plot of z over time')
     plt.grid(True)
 
+    all_z_values = []
+    all_tz_values = []
     # Loop over all polynomials
     for poly_x, poly_y, poly_z, tf, t0, t1 in all_polynomials:
         # Generate a sequence of t-values
@@ -331,6 +362,17 @@ def Cubic_polynomial_trajectory_no_vp(positions):
 
         # Plot z_values over t_values
         plt.plot(t_values, z_values)
+
+        all_z_values.extend(z_values)
+        all_tz_values.extend(t_values)
+    # Combine all x_values and t_values into one vertical array
+    all_z_points = []
+    for i in range(len(all_z_values)):
+        all_z_points.append([all_tz_values[i], all_z_values[i]/100])
+
+    # Save the x_values to a .mat file
+    file_name = 'drone_path_z.mat'
+    savemat(file_name, {'drone_path_z': all_z_points})
 
     # Show the plot
     plt.show()
@@ -372,9 +414,9 @@ def polomial_to_points(poly_x, poly_y, poly_z, tf, t0, t1):
 
 if __name__ == "__main__":
     positions = path_generator()
-    print('Positions:', positions)
+    #print('Positions:', positions)
     positions =  length_of_trajectory(positions)
     positions = velocity(positions)
     poly_x, poly_y, poly_z, tf, t0, t1 = Cubic_polynomial_trajectory_no_vp(np.array(positions))[0]
     zip_values = polomial_to_points(poly_x, poly_y, poly_z, tf, t0, t1)
-    print(zip_values)
+    #print(zip_values)
