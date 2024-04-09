@@ -126,17 +126,18 @@ def path_generator():
     plt.gca().invert_yaxis()  # Invert the y-axis
 
     # Create a new list that follows the pattern: 1st, 2nd, 4th, 3rd, 5th, 6th, ...
-    pattern_points = []
+    pattern_points = [[0, 0],]
     for i in range(0, len(intersection_points), 4):
         pattern_points.extend(intersection_points[i:i+2])
         pattern_points.extend(reversed(intersection_points[i+2:i+4]))
 
     # Add the first and last point at the beginning and end to repeat them
-    #pattern_points.insert(0, pattern_points[0])  # Repeat the first point at the beginning
+    pattern_points.insert(0, pattern_points[0])  # Repeat the first point at the beginning
 
     # Add the first point at the end to close the loop
-    pattern_points.append(pattern_points[0])
-    #pattern_points.append(pattern_points[1])
+    pattern_points.append(pattern_points[1])
+    pattern_points.append(pattern_points[1])
+    
 
     # Plot the points following the pattern
     plt.figure()
@@ -144,33 +145,31 @@ def path_generator():
     plt.scatter(*zip(*intersection_points), color='red')  # Plot the original points in red
     plt.gca().invert_yaxis()  # Invert the y-axis
     plt.show()
-    
-
-    return pattern_points
-
-def length_of_trajectory(positions):
-    # Calculate lengths of line segments
-    lengths = [np.sqrt((x2-x1)**2 + (y2-y1)**2) for (x1, y1), (x2, y2) in zip(positions[:-1], positions[1:])]
-
-    # Add a 0 at the end of lengths because there's no next point for the last point
-    lengths.append(0)
-    #print(f"Lengths of line segments: {lengths}")
 
     # Height of the flight path
     height = 200 #cm
 
-    # Number of positions
-    num_positions = len(positions)
-
     # Create an array for z
-    z = np.full(num_positions, height)
+    z = np.full(len(pattern_points), height)
 
     # Ensure z is 0 at the first and last position
     z[0] = 0
     z[-1] = 0
 
     # Update positions with lengths
-    positions = [(x, y, z, length) for (x, y), z, length in zip(positions, z, lengths)]
+    pattern_points = [(x, y, z) for (x, y), z in zip(pattern_points, z)]
+
+    return pattern_points
+
+def length_of_trajectory(positions):
+    # Calculate lengths of line segments in 3D
+    lengths = [np.sqrt((x2-x1)**2 + (y2-y1)**2 + (z2-z1)**2) for (x1, y1, z1), (x2, y2, z2) in zip(positions[:-1], positions[1:])]
+
+    # Add a 0 at the end of lengths because there's no next point for the last point
+    lengths.append(0)
+
+    # Update positions with lengths
+    positions = [(x, y, z, length) for (x, y, z), length in zip(positions, lengths)]
 
     return positions
 
@@ -206,7 +205,7 @@ def velocity(positions):
 
     all_xvel.append(0)
     all_yvel.append(0)
-    #print(t)
+    print('Total time:', t)
     #update positions with velocities and time
     positions = [(x, y, z, xvel, yvel, l,  t) for (x, y, z, l), xvel, yvel, t in zip(positions, all_xvel, all_yvel, t)]
 
@@ -351,6 +350,7 @@ def Cubic_polynomial_trajectory_no_vp(positions):
 
     all_z_values = []
     all_tz_values = []
+    
     # Loop over all polynomials
     for poly_x, poly_y, poly_z, tf, t0, t1 in all_polynomials:
         # Generate a sequence of t-values
@@ -365,6 +365,7 @@ def Cubic_polynomial_trajectory_no_vp(positions):
 
         all_z_values.extend(z_values)
         all_tz_values.extend(t_values)
+    
     # Combine all x_values and t_values into one vertical array
     all_z_points = []
     for i in range(len(all_z_values)):
@@ -414,8 +415,8 @@ def polomial_to_points(poly_x, poly_y, poly_z, tf, t0, t1):
 
 if __name__ == "__main__":
     positions = path_generator()
-    #print('Positions:', positions)
     positions =  length_of_trajectory(positions)
+    print('Positions:', positions)
     positions = velocity(positions)
     poly_x, poly_y, poly_z, tf, t0, t1 = Cubic_polynomial_trajectory_no_vp(np.array(positions))[0]
     zip_values = polomial_to_points(poly_x, poly_y, poly_z, tf, t0, t1)
