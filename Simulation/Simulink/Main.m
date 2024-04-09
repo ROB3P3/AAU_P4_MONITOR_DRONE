@@ -7,8 +7,9 @@ catch
 end
 
 % Run path planner python script
-path_planner = pyrunfile("Path Planner.py");
-
+drone_path_x = pyrunfile("Path Planner.py", "all_x_values");
+drone_path_y = pyrunfile("Path Planner.py", "all_y_values");
+drone_path_z = pyrunfile("Path Planner.py", "all_z_values");
 
 % get parameters
 Crazyflie_Param;

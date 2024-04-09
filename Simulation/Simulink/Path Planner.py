@@ -5,7 +5,7 @@ from mpl_toolkits.mplot3d import Axes3D
 from shapely.geometry import Polygon, LineString
 from scipy.interpolate import splrep , splev
 import numpy as np
-from scipy.io import savemat
+#from scipy.io import savemat
 import os
 os.environ['KMP_DUPLICATE_LIB_OK']='True'
 
@@ -38,7 +38,7 @@ def path_generator():
                 # Get the mouse position and add it to the points list
                 x, y = pygame.mouse.get_pos()
                 points.append((x, y))
-                print(f"Added point at position: {x, y}")
+                #print(f"Added point at position: {x, y}")
 
         # Fill the screen with black
         screen.fill((0, 0, 0))
@@ -206,7 +206,7 @@ def velocity(positions):
 
     all_xvel.append(0)
     all_yvel.append(0)
-    print('Total time:', t)
+    #print('Total time:', t)
     #update positions with velocities and time
     positions = [(x, y, z, xvel, yvel, l,  t) for (x, y, z, l), xvel, yvel, t in zip(positions, all_xvel, all_yvel, t)]
 
@@ -308,7 +308,7 @@ def Cubic_polynomial_trajectory_no_vp(positions):
 
     # Save the x_values to a .mat file
     file_name = 'drone_path_x.mat'
-    savemat(file_name, {'drone_path_x': all_x_points})
+    #savemat(file_name, {'drone_path_x': all_x_points})
 
     # Create the figure for y_values
     plt.figure()
@@ -340,7 +340,7 @@ def Cubic_polynomial_trajectory_no_vp(positions):
 
     # Save the x_values to a .mat file
     file_name = 'drone_path_y.mat'
-    savemat(file_name, {'drone_path_y': all_y_points})
+    #savemat(file_name, {'drone_path_y': all_y_points})
 
     # Create the figure for z_values
     plt.figure()
@@ -374,7 +374,7 @@ def Cubic_polynomial_trajectory_no_vp(positions):
 
     # Save the x_values to a .mat file
     file_name = 'drone_path_z.mat'
-    savemat(file_name, {'drone_path_z': all_z_points})
+    #savemat(file_name, {'drone_path_z': all_z_points})
 
     # Show the plot
     #plt.show()
@@ -417,7 +417,7 @@ def polomial_to_points(poly_x, poly_y, poly_z, tf, t0, t1):
 if __name__ == "__main__":
     positions = path_generator()
     positions =  length_of_trajectory(positions)
-    print('Positions:', positions)
+    #print('Positions:', positions)
     positions = velocity(positions)
     poly_x, poly_y, poly_z, tf, t0, t1 = Cubic_polynomial_trajectory_no_vp(np.array(positions))[0]
     zip_values = polomial_to_points(poly_x, poly_y, poly_z, tf, t0, t1)
