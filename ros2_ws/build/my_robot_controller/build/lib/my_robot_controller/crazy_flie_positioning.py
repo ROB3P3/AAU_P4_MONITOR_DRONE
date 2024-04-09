@@ -27,10 +27,14 @@ class CrazyNode(Node):
         # printer en besked i ROS2 terminalen
         self.get_logger().info("Crazy node has been started successfully!")
 
-        self.create_timer(1, self.timer_callback)
+        self.timer_callback()
 
     def take_off_simple(self, scf):
         with MotionCommander(scf, default_height=DEFAULT_HEIGHT) as mc:
+            time.sleep(3)
+            mc.forward(0.5)
+            time.sleep(3)
+            mc.back(0.5)
             time.sleep(3)
             mc.stop()
 
@@ -60,9 +64,10 @@ class CrazyNode(Node):
 
             self.take_off_simple(scf)
 
-            while True:
-                time.sleep(1)
-                self.get_logger().info("Program has ended!")
+            self.get_logger().info("Program has ended!")
+
+            self.get_logger().info("Shutting down node")
+            rclpy.shutdown()
                     
 
 def main(args=None):
@@ -72,7 +77,6 @@ def main(args=None):
     node = CrazyNode()
     #køre noden indtil den bliver stoppet af ctrl+c eller andet, hvorefter rclpy.shutdown() kaldes
     rclpy.spin(node)
-    rclpy.shutdown()
 
 if __name__ == '__main__':
     main()

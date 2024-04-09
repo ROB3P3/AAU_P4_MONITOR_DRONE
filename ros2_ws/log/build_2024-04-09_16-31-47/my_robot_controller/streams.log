@@ -1,0 +1,29 @@
+[0.706s] Invoking command in '/home/frederik/AAU_P4_MONITOR_DRONE/ros2_ws/src/my_robot_controller': PYTHONPATH=/home/frederik/AAU_P4_MONITOR_DRONE/ros2_ws/build/my_robot_controller/prefix_override:/home/frederik/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/my_robot_controller build --build-base /home/frederik/AAU_P4_MONITOR_DRONE/ros2_ws/build/my_robot_controller/build install --record /home/frederik/AAU_P4_MONITOR_DRONE/ros2_ws/build/my_robot_controller/install.log --single-version-externally-managed install_data
+[0.976s] running egg_info
+[0.976s] writing ../../build/my_robot_controller/my_robot_controller.egg-info/PKG-INFO
+[0.976s] writing dependency_links to ../../build/my_robot_controller/my_robot_controller.egg-info/dependency_links.txt
+[0.978s] writing entry points to ../../build/my_robot_controller/my_robot_controller.egg-info/entry_points.txt
+[0.978s] writing requirements to ../../build/my_robot_controller/my_robot_controller.egg-info/requires.txt
+[0.978s] writing top-level names to ../../build/my_robot_controller/my_robot_controller.egg-info/top_level.txt
+[0.979s] reading manifest file '../../build/my_robot_controller/my_robot_controller.egg-info/SOURCES.txt'
+[0.980s] writing manifest file '../../build/my_robot_controller/my_robot_controller.egg-info/SOURCES.txt'
+[0.980s] running build
+[0.980s] running build_py
+[0.980s] copying my_robot_controller/crazy_flie_positioning.py -> /home/frederik/AAU_P4_MONITOR_DRONE/ros2_ws/build/my_robot_controller/build/lib/my_robot_controller
+[0.981s] running install
+[0.981s] running install_lib
+[0.982s] copying /home/frederik/AAU_P4_MONITOR_DRONE/ros2_ws/build/my_robot_controller/build/lib/my_robot_controller/crazy_flie_positioning.py -> /home/frederik/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller
+[0.983s] byte-compiling /home/frederik/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller/crazy_flie_positioning.py to crazy_flie_positioning.cpython-310.pyc
+[0.983s] running install_data
+[0.984s] running install_egg_info
+[0.985s] removing '/home/frederik/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller-0.0.0-py3.10.egg-info' (and everything under it)
+[0.985s] Copying ../../build/my_robot_controller/my_robot_controller.egg-info to /home/frederik/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller-0.0.0-py3.10.egg-info
+[0.986s] running install_scripts
+[1.006s] Installing crazy_node script to /home/frederik/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller/lib/my_robot_controller
+[1.006s] Installing crazy_node_take_off script to /home/frederik/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller/lib/my_robot_controller
+[1.006s] Installing my_listener script to /home/frederik/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller/lib/my_robot_controller
+[1.007s] Installing my_talker script to /home/frederik/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller/lib/my_robot_controller
+[1.007s] Installing test_node script to /home/frederik/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller/lib/my_robot_controller
+[1.007s] Installing test_node2 script to /home/frederik/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller/lib/my_robot_controller
+[1.007s] writing list of installed files to '/home/frederik/AAU_P4_MONITOR_DRONE/ros2_ws/build/my_robot_controller/install.log'
+[1.039s] Invoked command in '/home/frederik/AAU_P4_MONITOR_DRONE/ros2_ws/src/my_robot_controller' returned '0': PYTHONPATH=/home/frederik/AAU_P4_MONITOR_DRONE/ros2_ws/build/my_robot_controller/prefix_override:/home/frederik/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/my_robot_controller build --build-base /home/frederik/AAU_P4_MONITOR_DRONE/ros2_ws/build/my_robot_controller/build install --record /home/frederik/AAU_P4_MONITOR_DRONE/ros2_ws/build/my_robot_controller/install.log --single-version-externally-managed install_data
