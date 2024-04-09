@@ -6,7 +6,8 @@ from shapely.geometry import Polygon, LineString
 from scipy.interpolate import splrep , splev
 import numpy as np
 from scipy.io import savemat
-
+import os
+os.environ['KMP_DUPLICATE_LIB_OK']='True'
 
 def path_generator():
     # Initialize Pygame
@@ -144,7 +145,7 @@ def path_generator():
     plt.plot(*zip(*pattern_points), 'b-')  # 'b-' means blue color and solid line
     plt.scatter(*zip(*intersection_points), color='red')  # Plot the original points in red
     plt.gca().invert_yaxis()  # Invert the y-axis
-    plt.show()
+    #plt.show()
 
     # Height of the flight path
     height = 100 #cm
@@ -376,7 +377,7 @@ def Cubic_polynomial_trajectory_no_vp(positions):
     savemat(file_name, {'drone_path_z': all_z_points})
 
     # Show the plot
-    plt.show()
+    #plt.show()
     # Create a new figure for 3D plot
     fig = plt.figure()
     ax = fig.add_subplot(111, projection='3d')
@@ -398,7 +399,7 @@ def Cubic_polynomial_trajectory_no_vp(positions):
         ax.plot3D(x_values, y_values, z_values)
 
     # Show the plot
-    plt.show()
+    #plt.show()
     #print(all_polynomials)
     return all_polynomials
 
