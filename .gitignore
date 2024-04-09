@@ -1,0 +1,5 @@
+
+*.slxc
+Simulation/Simulink/slprj/sim/varcache/Crazyflie_Simulation_Position/checksumOfCache.mat
+Simulation/Simulink/slprj/sim/varcache/Crazyflie_Simulation_Position/tmwinternal/simulink_cache.xml
+Simulation/Simulink/slprj/sim/varcache/Crazyflie_Simulation_Position/varInfo.mat
