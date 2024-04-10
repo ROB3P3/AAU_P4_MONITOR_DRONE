@@ -307,11 +307,12 @@ def Cubic_polynomial_trajectory_no_vp(positions):
         all_x_points.append([all_tx_values[i], all_x_values[i] / 100])
 
     # Save the x_values to a .mat file
-    # change OS to DATAdir directory
-    os.chdir('..')
-    os.chdir('DATAdir')
-    file_name = 'drone_path_x.mat'
-    savemat(file_name, {'drone_path_x': all_x_points})
+    # Get relative path to root directory
+    relativeDirectoryPath = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    fileName = 'drone_path_x'
+    filePath = relativeDirectoryPath + r'\\DATAdir\\drone_path_x.mat'
+    print("Saving", fileName, "to: ", filePath)
+    savemat(filePath, {fileName: all_x_points})
 
     # Create the figure for y_values
     plt.figure()
@@ -342,8 +343,10 @@ def Cubic_polynomial_trajectory_no_vp(positions):
         all_y_points.append([all_ty_values[i], all_y_values[i] / 100])
 
     # Save the x_values to a .mat file
-    file_name = 'drone_path_y.mat'
-    savemat(file_name, {'drone_path_y': all_y_points})
+    fileName = 'drone_path_y'
+    filePath = relativeDirectoryPath + r'\\DATAdir\\drone_path_y.mat'
+    print("Saving", fileName, "to: ", filePath)
+    savemat(filePath, {fileName: all_y_points})
 
     # Create the figure for z_values
     plt.figure()
@@ -376,8 +379,10 @@ def Cubic_polynomial_trajectory_no_vp(positions):
         all_z_points.append([all_tz_values[i], all_z_values[i] / 100])
 
     # Save the x_values to a .mat file
-    file_name = 'drone_path_z.mat'
-    savemat(file_name, {'drone_path_z': all_z_points})
+    fileName = 'drone_path_z'
+    filePath = relativeDirectoryPath + r'\\DATAdir\\drone_path_z.mat'
+    print("Saving", fileName, "to: ", filePath)
+    savemat(filePath, {fileName: all_z_points})
 
     # Show the plot
     #plt.show()
