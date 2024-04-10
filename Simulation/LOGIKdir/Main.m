@@ -7,6 +7,7 @@ catch
 end
 
 % Run path planner python script
+pyrunfile("Path Planner.py")
 
 % get parameters
 Crazyflie_Param;

@@ -2,14 +2,14 @@
 Man skal lave om i sin .bashrc så man sourcer den rigtige install.bash fra ros workspace
 
 ## Requirements:
-Python 3.11.9,
-Pygame,
+### Python 3.11,
+Pygame (pip install via anaconda prompt, the rest can be installed via anaconda navigator),
 shapely,
 scipy,
 matplotlib,
 numpy
 
-## Simulink & Matlab:
+### Simulink & Matlab:
 Matlab 2024a,
 Aerospace Blockset,
 Aerospace Toolbox,
