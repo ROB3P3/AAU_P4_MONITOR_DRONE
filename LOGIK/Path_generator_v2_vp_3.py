@@ -163,8 +163,8 @@ def plot_polynomial(all_polynomials):
     #    #plot the x, y and z values
     #    for l in range(0,len(t_values)):
     #        # Convert the sympy polynomial to a lambda function for easy evaluation
-    #        func = lambdify(t, poly_z, "numpy")
-    #        z_values = func(t_values)
+    #        poly_z = lambdify(t, poly_z, "numpy")
+    #        z_values = poly_z(t_values)
     #        print('z_values', z_values)
 #
     #        ax.plot(t_values, z_values)
