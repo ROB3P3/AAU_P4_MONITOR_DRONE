@@ -3,6 +3,7 @@ from scipy.spatial import ConvexHull
 import matplotlib.pyplot as plt
 from shapely.geometry import Polygon, LineString
 import numpy as np
+import math
 
 def path_generator():
     # Initialize Pygame
@@ -33,7 +34,7 @@ def path_generator():
                 # Get the mouse position and add it to the points list
                 x, y = pygame.mouse.get_pos()
                 points.append((x, y))
-                print(f"Added point at position: {x, y}")
+                #print(f"Added point at position: {x, y}")
 
         # Fill the screen with black
         screen.fill((0, 0, 0))
@@ -122,37 +123,58 @@ def path_generator():
     plt.gca().invert_yaxis()  # Invert the y-axis
 
     # Create a new list that follows the pattern: 1st, 2nd, 4th, 3rd, 5th, 6th, ...
-    pattern_points = [[0, 0],]
+    pattern_points = []
     for i in range(0, len(intersection_points), 4):
         pattern_points.extend(intersection_points[i:i+2])
         pattern_points.extend(reversed(intersection_points[i+2:i+4]))
 
-    # Add the first and last point at the beginning and end to repeat them
-    pattern_points.insert(0, pattern_points[0])  # Repeat the first point at the beginning
+    # Create a list to store the points following the pattern
+    vp_pattern_points = [[0, 0], [0, 0], pattern_points[0]]
+
+    for i in range(1, len(pattern_points) - 1, 2):
+        x1 = pattern_points[i][0]
+        x2 = pattern_points[i+1][0]
+
+        y1 = pattern_points[i][1]
+        y2 = pattern_points[i+1][1]
+
+        # Calculate the midpoint of the two points
+        x = (x1 + x2) / 2
+        y = (y1 + y2) / 2
+
+        points = [x, y]
+
+        # Append point to the list and update the previous direction
+        vp_pattern_points.append(points)
+
+    # Add the last point from the pattern_points list
+    vp_pattern_points.append(pattern_points[-1])
 
     # Add the first point at the end to close the loop
-    pattern_points.append(pattern_points[1])
-    pattern_points.append(pattern_points[1])
+    vp_pattern_points.append(vp_pattern_points[1])
+    vp_pattern_points.append(vp_pattern_points[1])
     
 
     # Plot the points following the pattern
     plt.figure()
-    plt.plot(*zip(*pattern_points), 'b-')  # 'b-' means blue color and solid line
-    plt.scatter(*zip(*intersection_points), color='red')  # Plot the original points in red
+    plt.plot(*zip(*vp_pattern_points), 'b-')  # 'b-' means blue color and solid line
+    plt.plot(*zip(*pattern_points), 'r-')  # Plot the original points in red
     plt.gca().invert_yaxis()  # Invert the y-axis
     plt.show()
 
     # Height of the flight path
-    height = 200 #cm
+    height = float(100) #cm
 
     # Create an array for z
-    z = np.full(len(pattern_points), height)
+    z = np.full(len(vp_pattern_points), height)
 
     # Ensure z is 0 at the first and last position
     z[0] = 0
     z[-1] = 0
 
     # Update positions with lengths
-    pattern_points = [(x, y, z) for (x, y), z in zip(pattern_points, z)]
+    vp_pattern_points = [(x, y, z) for (x, y), z in zip(vp_pattern_points, z)]
 
-    return pattern_points
+
+
+    return vp_pattern_points

@@ -6,7 +6,7 @@ from mpl_toolkits.mplot3d import Axes3D
 from shapely.geometry import Polygon, LineString
 import numpy as np
 from sympy import symbols, lambdify
-from GUI.path_gen import path_generator
+from GUI.path_gen_no_vp import path_generator
 
 def length_of_trajectory(positions):
     # Calculate lengths of line segments in 3D
