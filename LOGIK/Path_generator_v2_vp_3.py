@@ -89,7 +89,8 @@ def Cubic_polynomial_trajectory_vp(positions):
 
         poly_x = via_point_calc(x_start, x_slut, xvel_start, xvel_slut, t_int, t_start)
         poly_y = via_point_calc(y_start, y_slut, yvel_start, yvel_slut, t_int, t_start)
-        poly_z = via_point_calc(z_start, z_slut, zvel_start, zvel_slut, t_int, t_start)
+        
+        
         print('poly_z', poly_z)
         
         all_polynomials.append((poly_x, poly_y, poly_z, t_int, t_start, t_slut))
