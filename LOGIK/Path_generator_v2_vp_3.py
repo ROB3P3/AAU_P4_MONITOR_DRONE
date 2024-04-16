@@ -89,7 +89,14 @@ def Cubic_polynomial_trajectory_vp(positions):
 
         poly_x = via_point_calc(x_start, x_slut, xvel_start, xvel_slut, t_int, t_start)
         poly_y = via_point_calc(y_start, y_slut, yvel_start, yvel_slut, t_int, t_start)
-        
+        #poly_z = via_point_calc(z_start, z_slut, zvel_start, zvel_slut, t_int, t_start)
+
+        a0z = z_start
+        a1z = 0
+        a2z = ((3 / (t_int * t_int)) * (z_slut - z_start))
+        a3z = ((-2 / (t_int * t_int * t_int)) * (z_slut - z_start))
+        poly_coeffs_z = np.array([a3z, a2z, a1z, a0z])
+        poly_z = np.poly1d(poly_coeffs_z, variable='t')
         
         print('poly_z', poly_z)
         
@@ -148,30 +155,30 @@ def plot_polynomial(all_polynomials):
         # Plot y_values over t_values
         plt.plot(t_values, y_values)
 
-    ## Create the figure for z_values
-    #fig, ax = plt.subplots()
-    #plt.xlabel('Time')
-    #plt.ylabel('z')
-    #plt.title('Plot of z over time')
-    #plt.grid(True)
-#
-    ## Loop over all polynomials
-    #for poly_x, poly_y, poly_z, tf, t0, t1 in all_polynomials:
-    #    
-    #    # Generate a sequence of t-values
-    #    t_values = np.linspace(t0, t1, num=500)
-    #    
-    #    #plot the x, y and z values
-    #    for l in range(0,len(t_values)):
-    #        # Convert the sympy polynomial to a lambda function for easy evaluation
-    #        poly_z = lambdify(t, poly_z, "numpy")
-    #        z_values = poly_z(t_values)
-    #        print('z_values', z_values)
-#
-    #        ax.plot(t_values, z_values)
-#
-    #    # Plot y_values over t_values
-    #    plt.plot(t_values, z_values)
+    # Create the figure for z_values
+    fig, ax = plt.subplots()
+    plt.xlabel('Time')
+    plt.ylabel('z')
+    plt.title('Plot of z over time')
+    plt.grid(True)
+
+    # Loop over all polynomials
+    for poly_x, poly_y, poly_z, tf, t0, t1 in all_polynomials:
+        
+        # Generate a sequence of t-values
+        t_values = np.linspace(t0, t1, num=500)
+        
+        #plot the x, y and z values
+        for l in range(0,len(t_values)):
+            # Convert the sympy polynomial to a lambda function for easy evaluation
+            poly_z = lambdify(t, poly_z, "numpy")
+            z_values = poly_z(t_values)
+            print('z_values', z_values)
+
+            ax.plot(t_values, z_values)
+
+        # Plot y_values over t_values
+        plt.plot(t_values, z_values)
     plt.show()
 
     plt.xlabel('x')
