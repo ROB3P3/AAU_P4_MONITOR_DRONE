@@ -1,0 +1,17 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from my_robot_interfaces/srv/StopPublishPath.srv
+// generated code does not contain a copyright notice
+
+
+module my_robot_interfaces {
+  module srv {
+    @verbatim (language="comment", text=
+      "Service to stop PathPlanner from broadcasting after the path has been received by the listener")
+    struct StopPublishPath_Request {
+      uint8 structure_needs_at_least_one_member;
+    };
+    struct StopPublishPath_Response {
+      boolean success;
+    };
+  };
+};

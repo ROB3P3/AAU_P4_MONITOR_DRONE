@@ -1,0 +1,26 @@
+[1.275s] Invoking command in '/home/ros2/Desktop/ros2_ws/src/my_robot_controller': PYTHONPATH=/home/ros2/Desktop/ros2_ws/build/my_robot_controller/prefix_override:/home/ros2/Desktop/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/my_robot_controller build --build-base /home/ros2/Desktop/ros2_ws/build/my_robot_controller/build install --record /home/ros2/Desktop/ros2_ws/build/my_robot_controller/install.log --single-version-externally-managed
+[1.734s] running egg_info
+[1.739s] writing ../../build/my_robot_controller/my_robot_controller.egg-info/PKG-INFO
+[1.739s] writing dependency_links to ../../build/my_robot_controller/my_robot_controller.egg-info/dependency_links.txt
+[1.739s] writing entry points to ../../build/my_robot_controller/my_robot_controller.egg-info/entry_points.txt
+[1.739s] writing requirements to ../../build/my_robot_controller/my_robot_controller.egg-info/requires.txt
+[1.739s] writing top-level names to ../../build/my_robot_controller/my_robot_controller.egg-info/top_level.txt
+[1.743s] reading manifest file '../../build/my_robot_controller/my_robot_controller.egg-info/SOURCES.txt'
+[1.743s] writing manifest file '../../build/my_robot_controller/my_robot_controller.egg-info/SOURCES.txt'
+[1.744s] running build
+[1.744s] running build_py
+[1.744s] running install
+[1.744s] running install_lib
+[1.747s] running install_data
+[1.750s] running install_egg_info
+[1.750s] removing '/home/ros2/Desktop/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller-0.0.0-py3.10.egg-info' (and everything under it)
+[1.750s] Copying ../../build/my_robot_controller/my_robot_controller.egg-info to /home/ros2/Desktop/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller-0.0.0-py3.10.egg-info
+[1.751s] running install_scripts
+[1.784s] Installing crazy_node script to /home/ros2/Desktop/ros2_ws/install/my_robot_controller/lib/my_robot_controller
+[1.785s] Installing crazy_node_take_off script to /home/ros2/Desktop/ros2_ws/install/my_robot_controller/lib/my_robot_controller
+[1.785s] Installing my_listener script to /home/ros2/Desktop/ros2_ws/install/my_robot_controller/lib/my_robot_controller
+[1.785s] Installing my_talker script to /home/ros2/Desktop/ros2_ws/install/my_robot_controller/lib/my_robot_controller
+[1.786s] Installing test_node script to /home/ros2/Desktop/ros2_ws/install/my_robot_controller/lib/my_robot_controller
+[1.786s] Installing test_node2 script to /home/ros2/Desktop/ros2_ws/install/my_robot_controller/lib/my_robot_controller
+[1.786s] writing list of installed files to '/home/ros2/Desktop/ros2_ws/build/my_robot_controller/install.log'
+[1.824s] Invoked command in '/home/ros2/Desktop/ros2_ws/src/my_robot_controller' returned '0': PYTHONPATH=/home/ros2/Desktop/ros2_ws/build/my_robot_controller/prefix_override:/home/ros2/Desktop/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/my_robot_controller build --build-base /home/ros2/Desktop/ros2_ws/build/my_robot_controller/build install --record /home/ros2/Desktop/ros2_ws/build/my_robot_controller/install.log --single-version-externally-managed

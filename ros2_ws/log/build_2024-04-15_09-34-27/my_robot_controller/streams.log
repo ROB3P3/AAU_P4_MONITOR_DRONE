@@ -1,0 +1,32 @@
+[1.511s] Invoking command in '/home/ros2/Desktop/ros2_ws/src/my_robot_controller': PYTHONPATH=/home/ros2/Desktop/ros2_ws/build/my_robot_controller/prefix_override:/home/ros2/Desktop/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/my_robot_controller build --build-base /home/ros2/Desktop/ros2_ws/build/my_robot_controller/build install --record /home/ros2/Desktop/ros2_ws/build/my_robot_controller/install.log --single-version-externally-managed
+[2.049s] running egg_info
+[2.050s] writing ../../build/my_robot_controller/my_robot_controller.egg-info/PKG-INFO
+[2.051s] writing dependency_links to ../../build/my_robot_controller/my_robot_controller.egg-info/dependency_links.txt
+[2.051s] writing entry points to ../../build/my_robot_controller/my_robot_controller.egg-info/entry_points.txt
+[2.051s] writing requirements to ../../build/my_robot_controller/my_robot_controller.egg-info/requires.txt
+[2.051s] writing top-level names to ../../build/my_robot_controller/my_robot_controller.egg-info/top_level.txt
+[2.054s] reading manifest file '../../build/my_robot_controller/my_robot_controller.egg-info/SOURCES.txt'
+[2.057s] writing manifest file '../../build/my_robot_controller/my_robot_controller.egg-info/SOURCES.txt'
+[2.057s] running build
+[2.057s] running build_py
+[2.058s] copying my_robot_controller/compare_listener.py -> /home/ros2/Desktop/ros2_ws/build/my_robot_controller/build/lib/my_robot_controller
+[2.058s] running install
+[2.059s] running install_lib
+[2.060s] copying /home/ros2/Desktop/ros2_ws/build/my_robot_controller/build/lib/my_robot_controller/compare_listener.py -> /home/ros2/Desktop/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller
+[2.061s] byte-compiling /home/ros2/Desktop/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller/compare_listener.py to compare_listener.cpython-310.pyc
+[2.062s] running install_data
+[2.063s] running install_egg_info
+[2.066s] removing '/home/ros2/Desktop/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller-0.0.0-py3.10.egg-info' (and everything under it)
+[2.087s] Copying ../../build/my_robot_controller/my_robot_controller.egg-info to /home/ros2/Desktop/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller-0.0.0-py3.10.egg-info
+[2.088s] running install_scripts
+[2.125s] Installing compare_listener script to /home/ros2/Desktop/ros2_ws/install/my_robot_controller/lib/my_robot_controller
+[2.127s] Installing crazy_node script to /home/ros2/Desktop/ros2_ws/install/my_robot_controller/lib/my_robot_controller
+[2.127s] Installing crazy_node_take_off script to /home/ros2/Desktop/ros2_ws/install/my_robot_controller/lib/my_robot_controller
+[2.127s] Installing my_listener script to /home/ros2/Desktop/ros2_ws/install/my_robot_controller/lib/my_robot_controller
+[2.128s] Installing my_talker script to /home/ros2/Desktop/ros2_ws/install/my_robot_controller/lib/my_robot_controller
+[2.128s] Installing pathplanner_talker script to /home/ros2/Desktop/ros2_ws/install/my_robot_controller/lib/my_robot_controller
+[2.128s] Installing test_node script to /home/ros2/Desktop/ros2_ws/install/my_robot_controller/lib/my_robot_controller
+[2.128s] Installing test_node2 script to /home/ros2/Desktop/ros2_ws/install/my_robot_controller/lib/my_robot_controller
+[2.128s] Installing vicon_talker script to /home/ros2/Desktop/ros2_ws/install/my_robot_controller/lib/my_robot_controller
+[2.129s] writing list of installed files to '/home/ros2/Desktop/ros2_ws/build/my_robot_controller/install.log'
+[2.192s] Invoked command in '/home/ros2/Desktop/ros2_ws/src/my_robot_controller' returned '0': PYTHONPATH=/home/ros2/Desktop/ros2_ws/build/my_robot_controller/prefix_override:/home/ros2/Desktop/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/my_robot_controller build --build-base /home/ros2/Desktop/ros2_ws/build/my_robot_controller/build install --record /home/ros2/Desktop/ros2_ws/build/my_robot_controller/install.log --single-version-externally-managed

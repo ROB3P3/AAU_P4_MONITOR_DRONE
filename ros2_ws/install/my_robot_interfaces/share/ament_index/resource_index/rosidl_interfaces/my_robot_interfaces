@@ -1,0 +1,6 @@
+msg/PathPlannerPoints.idl
+msg/PathPlannerPoints.msg
+srv/StopPublishPath.idl
+srv/StopPublishPath.srv
+srv/StopPublishPath_Request.msg
+srv/StopPublishPath_Response.msg

@@ -25,7 +25,10 @@ setup(
             "my_talker = my_robot_controller.my_talker:main",
             "my_listener = my_robot_controller.my_listener:main",
             "crazy_node = my_robot_controller.crazy_flie_radio_test:main",
-            "crazy_node_take_off = my_robot_controller.crazy_flie_positioning:main"
+            "crazy_node_take_off = my_robot_controller.crazy_flie_positioning:main",
+            "vicon_talker = my_robot_controller.vicon_talker:main",
+            "pathplanner_talker = my_robot_controller.pathplanner_talker:main",
+            "compare_listener = my_robot_controller.compare_listener:main"
         ],
     },
 )

@@ -1,8 +1,11 @@
 [console_scripts]
+compare_listener = my_robot_controller.compare_listener:main
 crazy_node = my_robot_controller.crazy_flie_radio_test:main
 crazy_node_take_off = my_robot_controller.crazy_flie_positioning:main
 my_listener = my_robot_controller.my_listener:main
 my_talker = my_robot_controller.my_talker:main
+pathplanner_talker = my_robot_controller.pathplanner_talker:main
 test_node = my_robot_controller.my_first_node:main
 test_node2 = my_robot_controller.my_seccond_node:main
+vicon_talker = my_robot_controller.vicon_talker:main
 
