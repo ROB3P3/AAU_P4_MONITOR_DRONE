@@ -1,0 +1,14 @@
+/home/drone/Documents/GitHub/RosMigration_ws/build/my_cpp_py_pkg/CMakeFiles/uninstall.dir
+/home/drone/Documents/GitHub/RosMigration_ws/build/my_cpp_py_pkg/CMakeFiles/my_cpp_py_pkg_uninstall.dir
+/home/drone/Documents/GitHub/RosMigration_ws/build/my_cpp_py_pkg/CMakeFiles/cpp_executable.dir
+/home/drone/Documents/GitHub/RosMigration_ws/build/my_cpp_py_pkg/CMakeFiles/cpp_talker_node.dir
+/home/drone/Documents/GitHub/RosMigration_ws/build/my_cpp_py_pkg/CMakeFiles/vicon_node.dir
+/home/drone/Documents/GitHub/RosMigration_ws/build/my_cpp_py_pkg/CMakeFiles/ament_cmake_python_copy_my_cpp_py_pkg.dir
+/home/drone/Documents/GitHub/RosMigration_ws/build/my_cpp_py_pkg/CMakeFiles/ament_cmake_python_build_my_cpp_py_pkg_egg.dir
+/home/drone/Documents/GitHub/RosMigration_ws/build/my_cpp_py_pkg/CMakeFiles/test.dir
+/home/drone/Documents/GitHub/RosMigration_ws/build/my_cpp_py_pkg/CMakeFiles/edit_cache.dir
+/home/drone/Documents/GitHub/RosMigration_ws/build/my_cpp_py_pkg/CMakeFiles/rebuild_cache.dir
+/home/drone/Documents/GitHub/RosMigration_ws/build/my_cpp_py_pkg/CMakeFiles/list_install_components.dir
+/home/drone/Documents/GitHub/RosMigration_ws/build/my_cpp_py_pkg/CMakeFiles/install.dir
+/home/drone/Documents/GitHub/RosMigration_ws/build/my_cpp_py_pkg/CMakeFiles/install/local.dir
+/home/drone/Documents/GitHub/RosMigration_ws/build/my_cpp_py_pkg/CMakeFiles/install/strip.dir

@@ -1,0 +1,105 @@
+[0.017s] Invoking command in '/home/drone/Documents/GitHub/RosMigration_ws/build/my_cpp_py_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller:/opt/ros/humble /usr/bin/cmake /home/drone/Documents/GitHub/RosMigration_ws/src/my_cpp_py_pkg -DCMAKE_INSTALL_PREFIX=/home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg
+[0.144s] -- The C compiler identification is GNU 11.4.0
+[0.245s] -- The CXX compiler identification is GNU 11.4.0
+[0.266s] -- Detecting C compiler ABI info
+[0.400s] -- Detecting C compiler ABI info - done
+[0.414s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.416s] -- Detecting C compile features
+[0.416s] -- Detecting C compile features - done
+[0.421s] -- Detecting CXX compiler ABI info
+[0.570s] -- Detecting CXX compiler ABI info - done
+[0.581s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.582s] -- Detecting CXX compile features
+[0.583s] -- Detecting CXX compile features - done
+[0.586s] -- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.817s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.975s] -- Found rclcpp: 16.0.8 (/opt/ros/humble/share/rclcpp/cmake)
+[1.033s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.040s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.051s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.068s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.095s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.199s] -- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.202s] -- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.373s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[1.419s] -- Found FastRTPS: /opt/ros/humble/include  
+[1.491s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.504s] -- Looking for pthread.h
+[1.632s] -- Looking for pthread.h - found
+[1.632s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.758s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.761s] -- Found Threads: TRUE  
+[2.001s] -- Found rclpy: 3.3.12 (/opt/ros/humble/share/rclpy/cmake)
+[2.236s] -- Configuring done
+[2.264s] -- Generating done
+[2.268s] -- Build files have been written to: /home/drone/Documents/GitHub/RosMigration_ws/build/my_cpp_py_pkg
+[2.284s] Invoked command in '/home/drone/Documents/GitHub/RosMigration_ws/build/my_cpp_py_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller:/opt/ros/humble /usr/bin/cmake /home/drone/Documents/GitHub/RosMigration_ws/src/my_cpp_py_pkg -DCMAKE_INSTALL_PREFIX=/home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg
+[2.287s] Invoking command in '/home/drone/Documents/GitHub/RosMigration_ws/build/my_cpp_py_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller:/opt/ros/humble /usr/bin/cmake --build /home/drone/Documents/GitHub/RosMigration_ws/build/my_cpp_py_pkg -- -j4 -l4
+[2.396s] [ 16%] [32mBuilding CXX object CMakeFiles/cpp_executable.dir/src/cpp_node.cpp.o[0m
+[2.409s] [ 33%] [32mBuilding CXX object CMakeFiles/vicon_node.dir/src/cpp_vicon.cpp.o[0m
+[2.412s] [ 50%] [32mBuilding CXX object CMakeFiles/cpp_talker_node.dir/src/cpp_talker.cpp.o[0m
+[2.458s] [ 50%] Built target ament_cmake_python_copy_my_cpp_py_pkg
+[3.364s] running egg_info
+[3.366s] creating my_cpp_py_pkg.egg-info
+[3.366s] writing my_cpp_py_pkg.egg-info/PKG-INFO
+[3.366s] writing dependency_links to my_cpp_py_pkg.egg-info/dependency_links.txt
+[3.371s] writing top-level names to my_cpp_py_pkg.egg-info/top_level.txt
+[3.387s] writing manifest file 'my_cpp_py_pkg.egg-info/SOURCES.txt'
+[3.390s] reading manifest file 'my_cpp_py_pkg.egg-info/SOURCES.txt'
+[3.391s] writing manifest file 'my_cpp_py_pkg.egg-info/SOURCES.txt'
+[3.547s] [ 50%] Built target ament_cmake_python_build_my_cpp_py_pkg_egg
+[15.382s] [ 66%] [32m[1mLinking CXX executable vicon_node[0m
+[15.773s] [ 66%] Built target vicon_node
+[16.134s] [ 83%] [32m[1mLinking CXX executable cpp_executable[0m
+[16.424s] [ 83%] Built target cpp_executable
+[16.816s] [100%] [32m[1mLinking CXX executable cpp_talker_node[0m
+[17.105s] [100%] Built target cpp_talker_node
+[17.123s] Invoked command in '/home/drone/Documents/GitHub/RosMigration_ws/build/my_cpp_py_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller:/opt/ros/humble /usr/bin/cmake --build /home/drone/Documents/GitHub/RosMigration_ws/build/my_cpp_py_pkg -- -j4 -l4
+[17.176s] Invoking command in '/home/drone/Documents/GitHub/RosMigration_ws/build/my_cpp_py_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller:/opt/ros/humble /usr/bin/cmake --install /home/drone/Documents/GitHub/RosMigration_ws/build/my_cpp_py_pkg
+[17.190s] -- Install configuration: ""
+[17.191s] -- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/lib/my_cpp_py_pkg/cpp_executable
+[17.192s] -- Set runtime path of "/home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/lib/my_cpp_py_pkg/cpp_executable" to ""
+[17.192s] -- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/lib/my_cpp_py_pkg/cpp_talker_node
+[17.195s] -- Set runtime path of "/home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/lib/my_cpp_py_pkg/cpp_talker_node" to ""
+[17.195s] -- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/lib/my_cpp_py_pkg/vicon_node
+[17.196s] -- Set runtime path of "/home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/lib/my_cpp_py_pkg/vicon_node" to ""
+[17.196s] -- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/share/my_cpp_py_pkg/environment/pythonpath.sh
+[17.197s] -- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/share/my_cpp_py_pkg/environment/pythonpath.dsv
+[17.197s] -- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages/my_cpp_py_pkg-0.0.0-py3.10.egg-info
+[17.197s] -- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages/my_cpp_py_pkg-0.0.0-py3.10.egg-info/SOURCES.txt
+[17.198s] -- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages/my_cpp_py_pkg-0.0.0-py3.10.egg-info/top_level.txt
+[17.198s] -- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages/my_cpp_py_pkg-0.0.0-py3.10.egg-info/PKG-INFO
+[17.198s] -- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages/my_cpp_py_pkg-0.0.0-py3.10.egg-info/dependency_links.txt
+[17.198s] -- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages/my_cpp_py_pkg
+[17.199s] -- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages/my_cpp_py_pkg/__init__.py
+[17.199s] -- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages/my_cpp_py_pkg/pathplanner_test_module.py
+[17.199s] -- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages/my_cpp_py_pkg/vicon_test_module.py
+[17.199s] -- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages/my_cpp_py_pkg/regulator_module.py
+[17.199s] -- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages/my_cpp_py_pkg/moduel_to_import.py
+[17.247s] Listing '/home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages/my_cpp_py_pkg'...
+[17.248s] Compiling '/home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages/my_cpp_py_pkg/__init__.py'...
+[17.248s] Compiling '/home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages/my_cpp_py_pkg/moduel_to_import.py'...
+[17.248s] Compiling '/home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages/my_cpp_py_pkg/pathplanner_test_module.py'...
+[17.248s] Compiling '/home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages/my_cpp_py_pkg/regulator_module.py'...
+[17.248s] Compiling '/home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages/my_cpp_py_pkg/vicon_test_module.py'...
+[17.255s] -- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/lib/my_cpp_py_pkg/py_node.py
+[17.255s] -- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/lib/my_cpp_py_pkg/py_listener.py
+[17.255s] -- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/lib/my_cpp_py_pkg/vicon_talker.py
+[17.256s] -- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/lib/my_cpp_py_pkg/pathplanner_talker.py
+[17.256s] -- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/lib/my_cpp_py_pkg/regulator_listener.py
+[17.257s] -- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/share/ament_index/resource_index/package_run_dependencies/my_cpp_py_pkg
+[17.257s] -- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/share/ament_index/resource_index/parent_prefix_path/my_cpp_py_pkg
+[17.258s] -- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/share/my_cpp_py_pkg/environment/ament_prefix_path.sh
+[17.258s] -- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/share/my_cpp_py_pkg/environment/ament_prefix_path.dsv
+[17.258s] -- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/share/my_cpp_py_pkg/environment/path.sh
+[17.258s] -- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/share/my_cpp_py_pkg/environment/path.dsv
+[17.258s] -- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/share/my_cpp_py_pkg/local_setup.bash
+[17.259s] -- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/share/my_cpp_py_pkg/local_setup.sh
+[17.259s] -- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/share/my_cpp_py_pkg/local_setup.zsh
+[17.260s] -- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/share/my_cpp_py_pkg/local_setup.dsv
+[17.260s] -- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/share/my_cpp_py_pkg/package.dsv
+[17.261s] -- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/share/ament_index/resource_index/packages/my_cpp_py_pkg
+[17.261s] -- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/share/my_cpp_py_pkg/cmake/my_cpp_py_pkgConfig.cmake
+[17.261s] -- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/share/my_cpp_py_pkg/cmake/my_cpp_py_pkgConfig-version.cmake
+[17.261s] -- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/share/my_cpp_py_pkg/package.xml
+[17.265s] Invoked command in '/home/drone/Documents/GitHub/RosMigration_ws/build/my_cpp_py_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller:/opt/ros/humble /usr/bin/cmake --install /home/drone/Documents/GitHub/RosMigration_ws/build/my_cpp_py_pkg

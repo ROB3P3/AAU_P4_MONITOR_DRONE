@@ -1,0 +1,563 @@
+[0.000000] (-) TimerEvent: {}
+[0.000355] (my_cpp_py_pkg) JobQueued: {'identifier': 'my_cpp_py_pkg', 'dependencies': OrderedDict()}
+[0.000468] (my_robot_interfaces) JobQueued: {'identifier': 'my_robot_interfaces', 'dependencies': OrderedDict()}
+[0.000535] (my_cpp_py_pkg) JobStarted: {'identifier': 'my_cpp_py_pkg'}
+[0.007596] (my_robot_interfaces) JobStarted: {'identifier': 'my_robot_interfaces'}
+[0.014731] (my_cpp_py_pkg) JobProgress: {'identifier': 'my_cpp_py_pkg', 'progress': 'cmake'}
+[0.014902] (my_cpp_py_pkg) Command: {'cmd': ['/usr/bin/cmake', '/home/drone/Documents/GitHub/RosMigration_ws/src/my_cpp_py_pkg', '-DCMAKE_INSTALL_PREFIX=/home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg'], 'cwd': '/home/drone/Documents/GitHub/RosMigration_ws/build/my_cpp_py_pkg', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US:en'), ('USER', 'drone'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/drone'), ('OLDPWD', '/home/drone/Documents/GitHub/RosMigration_ws/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '974'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=895888d99097bd539489dfc3661ceb00'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/drone/Documents/GitHub/RosMigration_ws/install:/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'drone'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'drone'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/P4-ROB4:@/tmp/.ICE-unix/974,unix/P4-ROB4:/tmp/.ICE-unix/974'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/83cfcf4a_bb06_4daa_9e77_c228dc236606'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.PDOZL2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.733'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces:/home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg:/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('INSIDE_NAUTILUS_PYTHON', ''), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/drone/Documents/GitHub/RosMigration_ws/build/my_cpp_py_pkg'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=895888d99097bd539489dfc3661ceb00'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages:/home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages:/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces:/home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg:/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller:/opt/ros/humble')]), 'shell': False}
+[0.019492] (my_robot_interfaces) JobProgress: {'identifier': 'my_robot_interfaces', 'progress': 'cmake'}
+[0.019929] (my_robot_interfaces) Command: {'cmd': ['/usr/bin/cmake', '/home/drone/Documents/GitHub/RosMigration_ws/src/my_robot_interfaces', '-DCMAKE_INSTALL_PREFIX=/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces'], 'cwd': '/home/drone/Documents/GitHub/RosMigration_ws/build/my_robot_interfaces', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US:en'), ('USER', 'drone'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/drone'), ('OLDPWD', '/home/drone/Documents/GitHub/RosMigration_ws/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '974'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=895888d99097bd539489dfc3661ceb00'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/drone/Documents/GitHub/RosMigration_ws/install:/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'drone'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'drone'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/P4-ROB4:@/tmp/.ICE-unix/974,unix/P4-ROB4:/tmp/.ICE-unix/974'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/83cfcf4a_bb06_4daa_9e77_c228dc236606'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.PDOZL2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.733'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces:/home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg:/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('INSIDE_NAUTILUS_PYTHON', ''), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/drone/Documents/GitHub/RosMigration_ws/build/my_robot_interfaces'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=895888d99097bd539489dfc3661ceb00'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages:/home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages:/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces:/home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg:/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller:/opt/ros/humble')]), 'shell': False}
+[0.098940] (-) TimerEvent: {}
+[0.144106] (my_cpp_py_pkg) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.144994] (my_robot_interfaces) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.199245] (-) TimerEvent: {}
+[0.240687] (my_robot_interfaces) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.245842] (my_cpp_py_pkg) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.266852] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.267135] (my_robot_interfaces) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.299388] (-) TimerEvent: {}
+[0.399959] (-) TimerEvent: {}
+[0.400378] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.403640] (my_robot_interfaces) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.414852] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.416008] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.416538] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.419601] (my_robot_interfaces) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.419878] (my_robot_interfaces) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.420353] (my_robot_interfaces) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.421509] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.425634] (my_robot_interfaces) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.500090] (-) TimerEvent: {}
+[0.569980] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.580664] (my_robot_interfaces) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.581742] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.582788] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.583047] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.586946] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.591363] (my_robot_interfaces) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.591752] (my_robot_interfaces) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.592447] (my_robot_interfaces) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.595969] (my_robot_interfaces) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.600208] (-) TimerEvent: {}
+[0.700575] (-) TimerEvent: {}
+[0.800940] (-) TimerEvent: {}
+[0.816489] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[0.818546] (my_robot_interfaces) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[0.901098] (-) TimerEvent: {}
+[0.966568] (my_robot_interfaces) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[0.973337] (my_robot_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.975026] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Found rclcpp: 16.0.8 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.983998] (my_robot_interfaces) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[1.001212] (-) TimerEvent: {}
+[1.033795] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[1.040321] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[1.046790] (my_robot_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.051230] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[1.068811] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.095348] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.101653] (-) TimerEvent: {}
+[1.199272] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[1.201746] (-) TimerEvent: {}
+[1.202848] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[1.301959] (-) TimerEvent: {}
+[1.373468] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[1.402059] (-) TimerEvent: {}
+[1.419941] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[1.450596] (my_robot_interfaces) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)\n'}
+[1.491887] (my_cpp_py_pkg) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[1.502169] (-) TimerEvent: {}
+[1.504841] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[1.602306] (-) TimerEvent: {}
+[1.632001] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[1.632316] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[1.702760] (-) TimerEvent: {}
+[1.743003] (my_robot_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.758043] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[1.761274] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[1.802871] (-) TimerEvent: {}
+[1.903356] (-) TimerEvent: {}
+[2.001273] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Found rclpy: 3.3.12 (/opt/ros/humble/share/rclpy/cmake)\n'}
+[2.003462] (-) TimerEvent: {}
+[2.080497] (my_robot_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[2.103603] (-) TimerEvent: {}
+[2.113684] (my_robot_interfaces) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") \n'}
+[2.117037] (my_robot_interfaces) StdoutLine: {'line': b'-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)\n'}
+[2.158572] (my_robot_interfaces) StdoutLine: {'line': b'-- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") \n'}
+[2.159176] (my_robot_interfaces) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[2.159581] (my_robot_interfaces) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10\n'}
+[2.159903] (my_robot_interfaces) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so\n'}
+[2.195469] (my_robot_interfaces) StdoutLine: {'line': b'-- Found PythonExtra: .so  \n'}
+[2.203712] (-) TimerEvent: {}
+[2.236466] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Configuring done\n'}
+[2.246849] (my_robot_interfaces) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.10 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[2.264228] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Generating done\n'}
+[2.268004] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Build files have been written to: /home/drone/Documents/GitHub/RosMigration_ws/build/my_cpp_py_pkg\n'}
+[2.272166] (my_robot_interfaces) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[2.273904] (my_robot_interfaces) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[2.278721] (my_robot_interfaces) StdoutLine: {'line': b'-- Configuring done\n'}
+[2.284601] (my_cpp_py_pkg) CommandEnded: {'returncode': 0}
+[2.285451] (my_cpp_py_pkg) JobProgress: {'identifier': 'my_cpp_py_pkg', 'progress': 'build'}
+[2.286715] (my_cpp_py_pkg) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/drone/Documents/GitHub/RosMigration_ws/build/my_cpp_py_pkg', '--', '-j4', '-l4'], 'cwd': '/home/drone/Documents/GitHub/RosMigration_ws/build/my_cpp_py_pkg', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US:en'), ('USER', 'drone'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/drone'), ('OLDPWD', '/home/drone/Documents/GitHub/RosMigration_ws/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '974'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=895888d99097bd539489dfc3661ceb00'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/drone/Documents/GitHub/RosMigration_ws/install:/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'drone'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'drone'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/P4-ROB4:@/tmp/.ICE-unix/974,unix/P4-ROB4:/tmp/.ICE-unix/974'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/83cfcf4a_bb06_4daa_9e77_c228dc236606'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.PDOZL2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.733'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces:/home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg:/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('INSIDE_NAUTILUS_PYTHON', ''), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/drone/Documents/GitHub/RosMigration_ws/build/my_cpp_py_pkg'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=895888d99097bd539489dfc3661ceb00'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages:/home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages:/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces:/home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg:/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller:/opt/ros/humble')]), 'shell': False}
+[2.303836] (-) TimerEvent: {}
+[2.341734] (my_robot_interfaces) StdoutLine: {'line': b'-- Generating done\n'}
+[2.345733] (my_robot_interfaces) StdoutLine: {'line': b'-- Build files have been written to: /home/drone/Documents/GitHub/RosMigration_ws/build/my_robot_interfaces\n'}
+[2.365687] (my_robot_interfaces) CommandEnded: {'returncode': 0}
+[2.372933] (my_robot_interfaces) JobProgress: {'identifier': 'my_robot_interfaces', 'progress': 'build'}
+[2.373055] (my_robot_interfaces) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/drone/Documents/GitHub/RosMigration_ws/build/my_robot_interfaces', '--', '-j4', '-l4'], 'cwd': '/home/drone/Documents/GitHub/RosMigration_ws/build/my_robot_interfaces', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US:en'), ('USER', 'drone'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/drone'), ('OLDPWD', '/home/drone/Documents/GitHub/RosMigration_ws/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '974'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=895888d99097bd539489dfc3661ceb00'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/drone/Documents/GitHub/RosMigration_ws/install:/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'drone'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'drone'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/P4-ROB4:@/tmp/.ICE-unix/974,unix/P4-ROB4:/tmp/.ICE-unix/974'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/83cfcf4a_bb06_4daa_9e77_c228dc236606'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.PDOZL2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.733'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces:/home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg:/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('INSIDE_NAUTILUS_PYTHON', ''), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/drone/Documents/GitHub/RosMigration_ws/build/my_robot_interfaces'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=895888d99097bd539489dfc3661ceb00'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages:/home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages:/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces:/home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg:/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller:/opt/ros/humble')]), 'shell': False}
+[2.396010] (my_cpp_py_pkg) StdoutLine: {'line': b'[ 16%] \x1b[32mBuilding CXX object CMakeFiles/cpp_executable.dir/src/cpp_node.cpp.o\x1b[0m\n'}
+[2.409526] (my_cpp_py_pkg) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/vicon_node.dir/src/cpp_vicon.cpp.o\x1b[0m\n'}
+[2.409821] (-) TimerEvent: {}
+[2.412756] (my_cpp_py_pkg) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/cpp_talker_node.dir/src/cpp_talker.cpp.o\x1b[0m\n'}
+[2.458804] (my_cpp_py_pkg) StdoutLine: {'line': b'[ 50%] Built target ament_cmake_python_copy_my_cpp_py_pkg\n'}
+[2.503084] (my_robot_interfaces) StdoutLine: {'line': b'[  2%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[2.509962] (-) TimerEvent: {}
+[2.533984] (my_robot_interfaces) StdoutLine: {'line': b'[  5%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[2.610082] (-) TimerEvent: {}
+[2.710563] (-) TimerEvent: {}
+[2.721701] (my_robot_interfaces) StdoutLine: {'line': b'[  5%] Built target ament_cmake_python_copy_my_robot_interfaces\n'}
+[2.810694] (-) TimerEvent: {}
+[2.911282] (-) TimerEvent: {}
+[3.011811] (-) TimerEvent: {}
+[3.112979] (-) TimerEvent: {}
+[3.213607] (-) TimerEvent: {}
+[3.314123] (-) TimerEvent: {}
+[3.364750] (my_cpp_py_pkg) StdoutLine: {'line': b'running egg_info\n'}
+[3.366086] (my_cpp_py_pkg) StdoutLine: {'line': b'creating my_cpp_py_pkg.egg-info\n'}
+[3.366393] (my_cpp_py_pkg) StdoutLine: {'line': b'writing my_cpp_py_pkg.egg-info/PKG-INFO\n'}
+[3.366698] (my_cpp_py_pkg) StdoutLine: {'line': b'writing dependency_links to my_cpp_py_pkg.egg-info/dependency_links.txt\n'}
+[3.371421] (my_cpp_py_pkg) StdoutLine: {'line': b'writing top-level names to my_cpp_py_pkg.egg-info/top_level.txt\n'}
+[3.386966] (my_cpp_py_pkg) StdoutLine: {'line': b"writing manifest file 'my_cpp_py_pkg.egg-info/SOURCES.txt'\n"}
+[3.390262] (my_cpp_py_pkg) StdoutLine: {'line': b"reading manifest file 'my_cpp_py_pkg.egg-info/SOURCES.txt'\n"}
+[3.391662] (my_cpp_py_pkg) StdoutLine: {'line': b"writing manifest file 'my_cpp_py_pkg.egg-info/SOURCES.txt'\n"}
+[3.414246] (-) TimerEvent: {}
+[3.514781] (-) TimerEvent: {}
+[3.547212] (my_cpp_py_pkg) StdoutLine: {'line': b'[ 50%] Built target ament_cmake_python_build_my_cpp_py_pkg_egg\n'}
+[3.614910] (-) TimerEvent: {}
+[3.705871] (my_robot_interfaces) StdoutLine: {'line': b'running egg_info\n'}
+[3.708403] (my_robot_interfaces) StdoutLine: {'line': b'creating my_robot_interfaces.egg-info\n'}
+[3.709478] (my_robot_interfaces) StdoutLine: {'line': b'writing my_robot_interfaces.egg-info/PKG-INFO\n'}
+[3.710530] (my_robot_interfaces) StdoutLine: {'line': b'writing dependency_links to my_robot_interfaces.egg-info/dependency_links.txt\n'}
+[3.712227] (my_robot_interfaces) StdoutLine: {'line': b'writing top-level names to my_robot_interfaces.egg-info/top_level.txt\n'}
+[3.713226] (my_robot_interfaces) StdoutLine: {'line': b"writing manifest file 'my_robot_interfaces.egg-info/SOURCES.txt'\n"}
+[3.715016] (-) TimerEvent: {}
+[3.723089] (my_robot_interfaces) StdoutLine: {'line': b"reading manifest file 'my_robot_interfaces.egg-info/SOURCES.txt'\n"}
+[3.724905] (my_robot_interfaces) StdoutLine: {'line': b"writing manifest file 'my_robot_interfaces.egg-info/SOURCES.txt'\n"}
+[3.815143] (-) TimerEvent: {}
+[3.864838] (my_robot_interfaces) StdoutLine: {'line': b'[  5%] Built target ament_cmake_python_build_my_robot_interfaces_egg\n'}
+[3.915258] (-) TimerEvent: {}
+[3.957425] (my_robot_interfaces) StdoutLine: {'line': b'[  7%] \x1b[32mBuilding C object CMakeFiles/my_robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/my_robot_interfaces/srv/detail/stop_publish_path__functions.c.o\x1b[0m\n'}
+[3.977591] (my_robot_interfaces) StdoutLine: {'line': b'[  7%] Built target my_robot_interfaces__cpp\n'}
+[3.996657] (my_robot_interfaces) StdoutLine: {'line': b'[ 10%] \x1b[32mBuilding C object CMakeFiles/my_robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/my_robot_interfaces/msg/detail/path_planner_points__functions.c.o\x1b[0m\n'}
+[4.008685] (my_robot_interfaces) StdoutLine: {'line': b'[ 12%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[4.015382] (-) TimerEvent: {}
+[4.033126] (my_robot_interfaces) StdoutLine: {'line': b'[ 15%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[4.115507] (-) TimerEvent: {}
+[4.216299] (-) TimerEvent: {}
+[4.317464] (-) TimerEvent: {}
+[4.374859] (my_robot_interfaces) StdoutLine: {'line': b'[ 17%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[4.417597] (-) TimerEvent: {}
+[4.433689] (my_robot_interfaces) StdoutLine: {'line': b'[ 20%] \x1b[32m\x1b[1mLinking C shared library libmy_robot_interfaces__rosidl_generator_c.so\x1b[0m\n'}
+[4.530078] (-) TimerEvent: {}
+[4.630501] (-) TimerEvent: {}
+[4.725919] (my_robot_interfaces) StdoutLine: {'line': b'[ 20%] Built target my_robot_interfaces__rosidl_generator_c\n'}
+[4.731002] (-) TimerEvent: {}
+[4.784632] (my_robot_interfaces) StdoutLine: {'line': b'[ 23%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[4.831187] (-) TimerEvent: {}
+[4.931567] (-) TimerEvent: {}
+[5.031934] (-) TimerEvent: {}
+[5.132288] (-) TimerEvent: {}
+[5.232639] (-) TimerEvent: {}
+[5.333005] (-) TimerEvent: {}
+[5.433390] (-) TimerEvent: {}
+[5.533819] (-) TimerEvent: {}
+[5.621555] (my_robot_interfaces) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/msg/path_planner_points__type_support.cpp.o\x1b[0m\n'}
+[5.633935] (-) TimerEvent: {}
+[5.734400] (-) TimerEvent: {}
+[5.834975] (-) TimerEvent: {}
+[5.892630] (my_robot_interfaces) StdoutLine: {'line': b'[ 28%] \x1b[32mBuilding CXX object CMakeFiles/my_robot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/my_robot_interfaces/msg/detail/dds_fastrtps/path_planner_points__type_support.cpp.o\x1b[0m\n'}
+[5.935093] (-) TimerEvent: {}
+[6.036233] (-) TimerEvent: {}
+[6.137155] (-) TimerEvent: {}
+[6.157108] (my_robot_interfaces) StdoutLine: {'line': b'[ 30%] \x1b[32mBuilding CXX object CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/my_robot_interfaces/msg/detail/path_planner_points__type_support.cpp.o\x1b[0m\n'}
+[6.215070] (my_robot_interfaces) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/my_robot_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/my_robot_interfaces/msg/detail/path_planner_points__type_support_c.cpp.o\x1b[0m\n'}
+[6.239187] (-) TimerEvent: {}
+[6.339706] (-) TimerEvent: {}
+[6.441331] (-) TimerEvent: {}
+[6.542784] (-) TimerEvent: {}
+[6.643537] (-) TimerEvent: {}
+[6.744159] (-) TimerEvent: {}
+[6.845180] (-) TimerEvent: {}
+[6.892354] (my_robot_interfaces) StdoutLine: {'line': b'[ 35%] \x1b[32mBuilding CXX object CMakeFiles/my_robot_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/my_robot_interfaces/srv/detail/stop_publish_path__type_support_c.cpp.o\x1b[0m\n'}
+[6.907342] (my_robot_interfaces) StdoutLine: {'line': b'[ 38%] \x1b[32mBuilding CXX object CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/srv/stop_publish_path__type_support.cpp.o\x1b[0m\n'}
+[6.945315] (-) TimerEvent: {}
+[7.045748] (-) TimerEvent: {}
+[7.146195] (-) TimerEvent: {}
+[7.246598] (-) TimerEvent: {}
+[7.346996] (-) TimerEvent: {}
+[7.447395] (-) TimerEvent: {}
+[7.469800] (my_robot_interfaces) StdoutLine: {'line': b'[ 41%] \x1b[32mBuilding CXX object CMakeFiles/my_robot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/my_robot_interfaces/srv/detail/dds_fastrtps/stop_publish_path__type_support.cpp.o\x1b[0m\n'}
+[7.547523] (-) TimerEvent: {}
+[7.648084] (-) TimerEvent: {}
+[7.748785] (-) TimerEvent: {}
+[7.849404] (-) TimerEvent: {}
+[7.949849] (-) TimerEvent: {}
+[8.050374] (-) TimerEvent: {}
+[8.150960] (-) TimerEvent: {}
+[8.251369] (-) TimerEvent: {}
+[8.351783] (-) TimerEvent: {}
+[8.439952] (my_robot_interfaces) StdoutLine: {'line': b'[ 43%] \x1b[32mBuilding CXX object CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/my_robot_interfaces/srv/detail/stop_publish_path__type_support.cpp.o\x1b[0m\n'}
+[8.451904] (-) TimerEvent: {}
+[8.552424] (-) TimerEvent: {}
+[8.560830] (my_robot_interfaces) StdoutLine: {'line': b'[ 46%] \x1b[32m\x1b[1mLinking CXX shared library libmy_robot_interfaces__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[8.652560] (-) TimerEvent: {}
+[8.753167] (-) TimerEvent: {}
+[8.845315] (my_robot_interfaces) StdoutLine: {'line': b'[ 46%] Built target my_robot_interfaces__rosidl_typesupport_cpp\n'}
+[8.853299] (-) TimerEvent: {}
+[8.898559] (my_robot_interfaces) StdoutLine: {'line': b'[ 48%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[8.961249] (-) TimerEvent: {}
+[8.995086] (my_robot_interfaces) StdoutLine: {'line': b'[ 51%] \x1b[32m\x1b[1mLinking CXX shared library libmy_robot_interfaces__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[9.061361] (-) TimerEvent: {}
+[9.162185] (-) TimerEvent: {}
+[9.262630] (-) TimerEvent: {}
+[9.364704] (-) TimerEvent: {}
+[9.412090] (my_robot_interfaces) StdoutLine: {'line': b'[ 51%] Built target my_robot_interfaces__rosidl_typesupport_fastrtps_c\n'}
+[9.464840] (-) TimerEvent: {}
+[9.501525] (my_robot_interfaces) StdoutLine: {'line': b'[ 56%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[9.501902] (my_robot_interfaces) StdoutLine: {'line': b'[ 56%] \x1b[32m\x1b[1mLinking CXX shared library libmy_robot_interfaces__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[9.564976] (-) TimerEvent: {}
+[9.665546] (-) TimerEvent: {}
+[9.765979] (-) TimerEvent: {}
+[9.866445] (-) TimerEvent: {}
+[9.966979] (-) TimerEvent: {}
+[9.979782] (my_robot_interfaces) StdoutLine: {'line': b'[ 58%] \x1b[32m\x1b[1mLinking CXX shared library libmy_robot_interfaces__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[10.067085] (-) TimerEvent: {}
+[10.158057] (my_robot_interfaces) StdoutLine: {'line': b'[ 58%] Built target my_robot_interfaces__rosidl_typesupport_fastrtps_cpp\n'}
+[10.167204] (-) TimerEvent: {}
+[10.267818] (-) TimerEvent: {}
+[10.368874] (-) TimerEvent: {}
+[10.469460] (-) TimerEvent: {}
+[10.570037] (-) TimerEvent: {}
+[10.577106] (my_robot_interfaces) StdoutLine: {'line': b'[ 61%] \x1b[32mBuilding C object CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/path_planner_points__type_support.c.o\x1b[0m\n'}
+[10.593582] (my_robot_interfaces) StdoutLine: {'line': b'[ 64%] \x1b[32mBuilding C object CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/srv/detail/stop_publish_path__type_support.c.o\x1b[0m\n'}
+[10.670158] (-) TimerEvent: {}
+[10.678279] (my_robot_interfaces) StdoutLine: {'line': b'[ 64%] Built target my_robot_interfaces__rosidl_typesupport_introspection_cpp\n'}
+[10.744179] (my_robot_interfaces) StdoutLine: {'line': b'[ 66%] \x1b[32m\x1b[1mLinking C shared library libmy_robot_interfaces__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[10.770280] (-) TimerEvent: {}
+[10.870877] (-) TimerEvent: {}
+[10.937811] (my_robot_interfaces) StdoutLine: {'line': b'[ 66%] Built target my_robot_interfaces__rosidl_typesupport_introspection_c\n'}
+[10.970992] (-) TimerEvent: {}
+[11.034941] (my_robot_interfaces) StdoutLine: {'line': b'[ 69%] \x1b[32mBuilding CXX object CMakeFiles/my_robot_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/my_robot_interfaces/msg/path_planner_points__type_support.cpp.o\x1b[0m\n'}
+[11.056876] (my_robot_interfaces) StdoutLine: {'line': b'[ 71%] \x1b[32mBuilding CXX object CMakeFiles/my_robot_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/my_robot_interfaces/srv/stop_publish_path__type_support.cpp.o\x1b[0m\n'}
+[11.071110] (-) TimerEvent: {}
+[11.171656] (-) TimerEvent: {}
+[11.239985] (my_robot_interfaces) StdoutLine: {'line': b'[ 74%] \x1b[32m\x1b[1mLinking CXX shared library libmy_robot_interfaces__rosidl_typesupport_c.so\x1b[0m\n'}
+[11.271768] (-) TimerEvent: {}
+[11.372278] (-) TimerEvent: {}
+[11.445948] (my_robot_interfaces) StdoutLine: {'line': b'[ 74%] Built target my_robot_interfaces__rosidl_typesupport_c\n'}
+[11.472399] (-) TimerEvent: {}
+[11.572806] (-) TimerEvent: {}
+[11.594008] (my_robot_interfaces) StdoutLine: {'line': b'[ 74%] Built target my_robot_interfaces\n'}
+[11.672944] (-) TimerEvent: {}
+[11.752211] (my_robot_interfaces) StdoutLine: {'line': b'[ 76%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[11.773064] (-) TimerEvent: {}
+[11.873648] (-) TimerEvent: {}
+[11.974027] (-) TimerEvent: {}
+[12.074445] (-) TimerEvent: {}
+[12.175046] (-) TimerEvent: {}
+[12.277459] (-) TimerEvent: {}
+[12.380830] (-) TimerEvent: {}
+[12.486351] (-) TimerEvent: {}
+[12.589538] (-) TimerEvent: {}
+[12.696165] (-) TimerEvent: {}
+[12.796593] (-) TimerEvent: {}
+[12.896978] (-) TimerEvent: {}
+[12.997378] (-) TimerEvent: {}
+[13.023871] (my_robot_interfaces) StdoutLine: {'line': b'[ 76%] Built target my_robot_interfaces__py\n'}
+[13.097507] (-) TimerEvent: {}
+[13.198189] (-) TimerEvent: {}
+[13.202434] (my_robot_interfaces) StdoutLine: {'line': b'[ 79%] \x1b[32mBuilding C object CMakeFiles/my_robot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/my_robot_interfaces/msg/_path_planner_points_s.c.o\x1b[0m\n'}
+[13.221912] (my_robot_interfaces) StdoutLine: {'line': b'[ 82%] \x1b[32mBuilding C object CMakeFiles/my_robot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/my_robot_interfaces/srv/_stop_publish_path_s.c.o\x1b[0m\n'}
+[13.298756] (-) TimerEvent: {}
+[13.400162] (-) TimerEvent: {}
+[13.500801] (-) TimerEvent: {}
+[13.601451] (-) TimerEvent: {}
+[13.687476] (my_robot_interfaces) StdoutLine: {'line': b'[ 84%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/my_robot_interfaces/libmy_robot_interfaces__rosidl_generator_py.so\x1b[0m\n'}
+[13.701586] (-) TimerEvent: {}
+[13.802046] (-) TimerEvent: {}
+[13.902569] (-) TimerEvent: {}
+[13.917797] (my_robot_interfaces) StdoutLine: {'line': b'[ 84%] Built target my_robot_interfaces__rosidl_generator_py\n'}
+[14.002720] (-) TimerEvent: {}
+[14.057585] (my_robot_interfaces) StdoutLine: {'line': b'[ 87%] \x1b[32mBuilding C object CMakeFiles/my_robot_interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[14.058862] (my_robot_interfaces) StdoutLine: {'line': b'[ 89%] \x1b[32mBuilding C object CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[14.093043] (my_robot_interfaces) StdoutLine: {'line': b'[ 92%] \x1b[32mBuilding C object CMakeFiles/my_robot_interfaces__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[14.102911] (-) TimerEvent: {}
+[14.203506] (-) TimerEvent: {}
+[14.304050] (-) TimerEvent: {}
+[14.404554] (-) TimerEvent: {}
+[14.460755] (my_robot_interfaces) StdoutLine: {'line': b'[ 94%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/my_robot_interfaces/my_robot_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[14.504691] (-) TimerEvent: {}
+[14.520972] (my_robot_interfaces) StdoutLine: {'line': b'[ 97%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/my_robot_interfaces/my_robot_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[14.604811] (-) TimerEvent: {}
+[14.648093] (my_robot_interfaces) StdoutLine: {'line': b'[ 97%] Built target my_robot_interfaces__rosidl_typesupport_introspection_c__pyext\n'}
+[14.661099] (my_robot_interfaces) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/my_robot_interfaces/my_robot_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[14.707674] (-) TimerEvent: {}
+[14.781426] (my_robot_interfaces) StdoutLine: {'line': b'[100%] Built target my_robot_interfaces__rosidl_typesupport_fastrtps_c__pyext\n'}
+[14.807802] (-) TimerEvent: {}
+[14.857952] (my_robot_interfaces) StdoutLine: {'line': b'[100%] Built target my_robot_interfaces__rosidl_typesupport_c__pyext\n'}
+[14.908759] (-) TimerEvent: {}
+[14.954861] (my_robot_interfaces) CommandEnded: {'returncode': 0}
+[15.008919] (-) TimerEvent: {}
+[15.109639] (-) TimerEvent: {}
+[15.210229] (-) TimerEvent: {}
+[15.311895] (-) TimerEvent: {}
+[15.382709] (my_cpp_py_pkg) StdoutLine: {'line': b'[ 66%] \x1b[32m\x1b[1mLinking CXX executable vicon_node\x1b[0m\n'}
+[15.412033] (-) TimerEvent: {}
+[15.512700] (-) TimerEvent: {}
+[15.610871] (my_robot_interfaces) JobProgress: {'identifier': 'my_robot_interfaces', 'progress': 'install'}
+[15.612845] (-) TimerEvent: {}
+[15.639868] (my_robot_interfaces) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/drone/Documents/GitHub/RosMigration_ws/build/my_robot_interfaces'], 'cwd': '/home/drone/Documents/GitHub/RosMigration_ws/build/my_robot_interfaces', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US:en'), ('USER', 'drone'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/drone'), ('OLDPWD', '/home/drone/Documents/GitHub/RosMigration_ws/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '974'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=895888d99097bd539489dfc3661ceb00'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/drone/Documents/GitHub/RosMigration_ws/install:/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'drone'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'drone'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/P4-ROB4:@/tmp/.ICE-unix/974,unix/P4-ROB4:/tmp/.ICE-unix/974'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/83cfcf4a_bb06_4daa_9e77_c228dc236606'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.PDOZL2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.733'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces:/home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg:/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('INSIDE_NAUTILUS_PYTHON', ''), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/drone/Documents/GitHub/RosMigration_ws/build/my_robot_interfaces'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=895888d99097bd539489dfc3661ceb00'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages:/home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages:/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces:/home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg:/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller:/opt/ros/humble')]), 'shell': False}
+[15.660023] (my_robot_interfaces) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[15.661508] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/ament_index/resource_index/rosidl_interfaces/my_robot_interfaces\n'}
+[15.664372] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces\n'}
+[15.664740] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv\n'}
+[15.664987] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/stop_publish_path.h\n'}
+[15.665209] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/detail\n'}
+[15.665353] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/detail/stop_publish_path__struct.h\n'}
+[15.665534] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/detail/stop_publish_path__functions.h\n'}
+[15.665766] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/detail/stop_publish_path__functions.c\n'}
+[15.666061] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/detail/stop_publish_path__type_support.h\n'}
+[15.666295] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg\n'}
+[15.666504] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail\n'}
+[15.666755] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/path_planner_points__type_support.h\n'}
+[15.667491] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/path_planner_points__functions.c\n'}
+[15.667770] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/path_planner_points__functions.h\n'}
+[15.668155] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/path_planner_points__struct.h\n'}
+[15.668601] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/rosidl_generator_c__visibility_control.h\n'}
+[15.669036] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/path_planner_points.h\n'}
+[15.670341] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/environment/library_path.sh\n'}
+[15.674469] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/environment/library_path.dsv\n'}
+[15.675233] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_generator_c.so\n'}
+[15.676409] (my_robot_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_generator_c.so" to ""\n'}
+[15.676676] (my_robot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces\n'}
+[15.676905] (my_robot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv\n'}
+[15.677725] (my_robot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/detail\n'}
+[15.678001] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/detail/stop_publish_path__rosidl_typesupport_fastrtps_c.h\n'}
+[15.678232] (my_robot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg\n'}
+[15.678420] (my_robot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail\n'}
+[15.678605] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/path_planner_points__rosidl_typesupport_fastrtps_c.h\n'}
+[15.679065] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[15.679635] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_fastrtps_c.so\n'}
+[15.684198] (my_robot_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[15.684860] (my_robot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces\n'}
+[15.685143] (my_robot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv\n'}
+[15.685351] (my_robot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/detail\n'}
+[15.685544] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/detail/stop_publish_path__type_support.c\n'}
+[15.686085] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/detail/stop_publish_path__rosidl_typesupport_introspection_c.h\n'}
+[15.686475] (my_robot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg\n'}
+[15.686745] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[15.687021] (my_robot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail\n'}
+[15.687208] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/path_planner_points__rosidl_typesupport_introspection_c.h\n'}
+[15.687680] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/path_planner_points__type_support.c\n'}
+[15.688279] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_introspection_c.so\n'}
+[15.693764] (my_robot_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_introspection_c.so" to ""\n'}
+[15.694460] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_c.so\n'}
+[15.700044] (my_robot_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_c.so" to ""\n'}
+[15.700539] (my_robot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces\n'}
+[15.700774] (my_robot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv\n'}
+[15.701002] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/stop_publish_path.hpp\n'}
+[15.701252] (my_robot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/detail\n'}
+[15.701419] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/detail/stop_publish_path__traits.hpp\n'}
+[15.701937] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/detail/stop_publish_path__builder.hpp\n'}
+[15.702450] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/detail/stop_publish_path__struct.hpp\n'}
+[15.705196] (my_robot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg\n'}
+[15.705476] (my_robot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail\n'}
+[15.705660] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/path_planner_points__struct.hpp\n'}
+[15.705888] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/path_planner_points__builder.hpp\n'}
+[15.706263] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/path_planner_points__traits.hpp\n'}
+[15.706620] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/path_planner_points.hpp\n'}
+[15.707133] (my_robot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces\n'}
+[15.707391] (my_robot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv\n'}
+[15.707608] (my_robot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/detail\n'}
+[15.707741] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/detail/stop_publish_path__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[15.707978] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/detail/dds_fastrtps\n'}
+[15.708259] (my_robot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg\n'}
+[15.708460] (my_robot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail\n'}
+[15.708638] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/path_planner_points__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[15.708964] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/dds_fastrtps\n'}
+[15.709251] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[15.709832] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_fastrtps_cpp.so\n'}
+[15.712208] (my_robot_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_fastrtps_cpp.so" to ""\n'}
+[15.712472] (my_robot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces\n'}
+[15.712626] (my_robot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv\n'}
+[15.712763] (my_robot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/detail\n'}
+[15.712922] (-) TimerEvent: {}
+[15.713272] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/detail/stop_publish_path__type_support.cpp\n'}
+[15.713726] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/detail/stop_publish_path__rosidl_typesupport_introspection_cpp.hpp\n'}
+[15.714354] (my_robot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg\n'}
+[15.714751] (my_robot_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail\n'}
+[15.715170] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/path_planner_points__rosidl_typesupport_introspection_cpp.hpp\n'}
+[15.718909] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/path_planner_points__type_support.cpp\n'}
+[15.721085] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_introspection_cpp.so\n'}
+[15.723004] (my_robot_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_introspection_cpp.so" to ""\n'}
+[15.725292] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_cpp.so\n'}
+[15.726627] (my_robot_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_cpp.so" to ""\n'}
+[15.727253] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/environment/pythonpath.sh\n'}
+[15.727957] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/environment/pythonpath.dsv\n'}
+[15.728656] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces-0.0.0-py3.10.egg-info\n'}
+[15.729403] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces-0.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[15.735191] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces-0.0.0-py3.10.egg-info/top_level.txt\n'}
+[15.736463] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces-0.0.0-py3.10.egg-info/PKG-INFO\n'}
+[15.737314] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces-0.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[15.738239] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces\n'}
+[15.741459] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/my_robot_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[15.742350] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/srv\n'}
+[15.743299] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/srv/__init__.py\n'}
+[15.744161] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/srv/_stop_publish_path_s.c\n'}
+[15.744944] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/srv/_stop_publish_path.py\n'}
+[15.745772] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[15.746597] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg\n'}
+[15.747289] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/__init__.py\n'}
+[15.748086] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_path_planner_points.py\n'}
+[15.748883] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_path_planner_points_s.c\n'}
+[15.749657] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/__init__.py\n'}
+[15.750379] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/libmy_robot_interfaces__rosidl_generator_py.so\n'}
+[15.751298] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/my_robot_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[15.752203] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/my_robot_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[15.753064] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_c.c\n'}
+[15.753928] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[15.773279] (my_cpp_py_pkg) StdoutLine: {'line': b'[ 66%] Built target vicon_node\n'}
+[15.813063] (-) TimerEvent: {}
+[15.845544] (my_robot_interfaces) StdoutLine: {'line': b"Listing '/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces'...\n"}
+[15.845822] (my_robot_interfaces) StdoutLine: {'line': b"Compiling '/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/__init__.py'...\n"}
+[15.845957] (my_robot_interfaces) StdoutLine: {'line': b"Listing '/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg'...\n"}
+[15.846083] (my_robot_interfaces) StdoutLine: {'line': b"Compiling '/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/__init__.py'...\n"}
+[15.846209] (my_robot_interfaces) StdoutLine: {'line': b"Compiling '/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_path_planner_points.py'...\n"}
+[15.846328] (my_robot_interfaces) StdoutLine: {'line': b"Listing '/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/srv'...\n"}
+[15.846451] (my_robot_interfaces) StdoutLine: {'line': b"Compiling '/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/srv/__init__.py'...\n"}
+[15.846574] (my_robot_interfaces) StdoutLine: {'line': b"Compiling '/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/srv/_stop_publish_path.py'...\n"}
+[15.858527] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/my_robot_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[15.859074] (my_robot_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/my_robot_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[15.859955] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/my_robot_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[15.860855] (my_robot_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/my_robot_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[15.861373] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/my_robot_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[15.862241] (my_robot_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/my_robot_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[15.862572] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_generator_py.so\n'}
+[15.863658] (my_robot_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_generator_py.so" to ""\n'}
+[15.864004] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/PathPlannerPoints.idl\n'}
+[15.864539] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/srv/StopPublishPath.idl\n'}
+[15.865104] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/PathPlannerPoints.msg\n'}
+[15.865431] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/srv/StopPublishPath.srv\n'}
+[15.865871] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/srv/StopPublishPath_Request.msg\n'}
+[15.866295] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/srv/StopPublishPath_Response.msg\n'}
+[15.866898] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/ament_index/resource_index/package_run_dependencies/my_robot_interfaces\n'}
+[15.867735] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/ament_index/resource_index/parent_prefix_path/my_robot_interfaces\n'}
+[15.868037] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/environment/ament_prefix_path.sh\n'}
+[15.868348] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/environment/ament_prefix_path.dsv\n'}
+[15.868789] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/environment/path.sh\n'}
+[15.869347] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/environment/path.dsv\n'}
+[15.869795] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/local_setup.bash\n'}
+[15.870254] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/local_setup.sh\n'}
+[15.870718] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/local_setup.zsh\n'}
+[15.871188] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/local_setup.dsv\n'}
+[15.871637] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/package.dsv\n'}
+[15.872226] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/ament_index/resource_index/packages/my_robot_interfaces\n'}
+[15.872774] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_generator_cExport.cmake\n'}
+[15.873205] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_generator_cExport-noconfig.cmake\n'}
+[15.873737] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[15.874048] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[15.874483] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfaces__rosidl_typesupport_introspection_cExport.cmake\n'}
+[15.875292] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[15.875664] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfaces__rosidl_typesupport_cExport.cmake\n'}
+[15.875981] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfaces__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[15.876466] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_generator_cppExport.cmake\n'}
+[15.877007] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[15.877479] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[15.877983] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfaces__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[15.878395] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[15.878978] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfaces__rosidl_typesupport_cppExport.cmake\n'}
+[15.879335] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfaces__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[15.879787] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_generator_pyExport.cmake\n'}
+[15.880206] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_generator_pyExport-noconfig.cmake\n'}
+[15.880629] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/rosidl_cmake-extras.cmake\n'}
+[15.881025] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[15.881413] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[15.881817] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[15.882223] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[15.882616] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[15.883080] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[15.883477] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfacesConfig.cmake\n'}
+[15.883820] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfacesConfig-version.cmake\n'}
+[15.884205] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/package.xml\n'}
+[15.889239] (my_robot_interfaces) CommandEnded: {'returncode': 0}
+[15.914441] (-) TimerEvent: {}
+[16.014928] (-) TimerEvent: {}
+[16.117703] (-) TimerEvent: {}
+[16.134758] (my_cpp_py_pkg) StdoutLine: {'line': b'[ 83%] \x1b[32m\x1b[1mLinking CXX executable cpp_executable\x1b[0m\n'}
+[16.220721] (-) TimerEvent: {}
+[16.321326] (-) TimerEvent: {}
+[16.421883] (-) TimerEvent: {}
+[16.424222] (my_cpp_py_pkg) StdoutLine: {'line': b'[ 83%] Built target cpp_executable\n'}
+[16.457275] (my_robot_interfaces) JobEnded: {'identifier': 'my_robot_interfaces', 'rc': 0}
+[16.522029] (-) TimerEvent: {}
+[16.622427] (-) TimerEvent: {}
+[16.722917] (-) TimerEvent: {}
+[16.816772] (my_cpp_py_pkg) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable cpp_talker_node\x1b[0m\n'}
+[16.823024] (-) TimerEvent: {}
+[16.923385] (-) TimerEvent: {}
+[17.023776] (-) TimerEvent: {}
+[17.105612] (my_cpp_py_pkg) StdoutLine: {'line': b'[100%] Built target cpp_talker_node\n'}
+[17.123679] (my_cpp_py_pkg) CommandEnded: {'returncode': 0}
+[17.124195] (-) TimerEvent: {}
+[17.174795] (my_cpp_py_pkg) JobProgress: {'identifier': 'my_cpp_py_pkg', 'progress': 'install'}
+[17.175473] (my_cpp_py_pkg) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/drone/Documents/GitHub/RosMigration_ws/build/my_cpp_py_pkg'], 'cwd': '/home/drone/Documents/GitHub/RosMigration_ws/build/my_cpp_py_pkg', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US:en'), ('USER', 'drone'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/drone'), ('OLDPWD', '/home/drone/Documents/GitHub/RosMigration_ws/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('DBUS_STARTER_BUS_TYPE', 'session'), ('SYSTEMD_EXEC_PID', '974'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus,guid=895888d99097bd539489dfc3661ceb00'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/drone/Documents/GitHub/RosMigration_ws/install:/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'drone'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'drone'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/P4-ROB4:@/tmp/.ICE-unix/974,unix/P4-ROB4:/tmp/.ICE-unix/974'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/83cfcf4a_bb06_4daa_9e77_c228dc236606'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.PDOZL2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.733'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces:/home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg:/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('INSIDE_NAUTILUS_PYTHON', ''), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/drone/Documents/GitHub/RosMigration_ws/build/my_cpp_py_pkg'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('DBUS_STARTER_ADDRESS', 'unix:path=/run/user/1000/bus,guid=895888d99097bd539489dfc3661ceb00'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages:/home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages:/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces:/home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg:/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller:/opt/ros/humble')]), 'shell': False}
+[17.190848] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[17.191229] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/lib/my_cpp_py_pkg/cpp_executable\n'}
+[17.192315] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Set runtime path of "/home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/lib/my_cpp_py_pkg/cpp_executable" to ""\n'}
+[17.192492] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/lib/my_cpp_py_pkg/cpp_talker_node\n'}
+[17.195707] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Set runtime path of "/home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/lib/my_cpp_py_pkg/cpp_talker_node" to ""\n'}
+[17.195931] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/lib/my_cpp_py_pkg/vicon_node\n'}
+[17.196745] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Set runtime path of "/home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/lib/my_cpp_py_pkg/vicon_node" to ""\n'}
+[17.197027] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/share/my_cpp_py_pkg/environment/pythonpath.sh\n'}
+[17.197287] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/share/my_cpp_py_pkg/environment/pythonpath.dsv\n'}
+[17.197523] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages/my_cpp_py_pkg-0.0.0-py3.10.egg-info\n'}
+[17.197860] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages/my_cpp_py_pkg-0.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[17.198250] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages/my_cpp_py_pkg-0.0.0-py3.10.egg-info/top_level.txt\n'}
+[17.198459] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages/my_cpp_py_pkg-0.0.0-py3.10.egg-info/PKG-INFO\n'}
+[17.198808] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages/my_cpp_py_pkg-0.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[17.199027] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages/my_cpp_py_pkg\n'}
+[17.199212] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages/my_cpp_py_pkg/__init__.py\n'}
+[17.199415] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages/my_cpp_py_pkg/pathplanner_test_module.py\n'}
+[17.199623] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages/my_cpp_py_pkg/vicon_test_module.py\n'}
+[17.199829] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages/my_cpp_py_pkg/regulator_module.py\n'}
+[17.200048] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages/my_cpp_py_pkg/moduel_to_import.py\n'}
+[17.224309] (-) TimerEvent: {}
+[17.247894] (my_cpp_py_pkg) StdoutLine: {'line': b"Listing '/home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages/my_cpp_py_pkg'...\n"}
+[17.248234] (my_cpp_py_pkg) StdoutLine: {'line': b"Compiling '/home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages/my_cpp_py_pkg/__init__.py'...\n"}
+[17.248424] (my_cpp_py_pkg) StdoutLine: {'line': b"Compiling '/home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages/my_cpp_py_pkg/moduel_to_import.py'...\n"}
+[17.248558] (my_cpp_py_pkg) StdoutLine: {'line': b"Compiling '/home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages/my_cpp_py_pkg/pathplanner_test_module.py'...\n"}
+[17.248690] (my_cpp_py_pkg) StdoutLine: {'line': b"Compiling '/home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages/my_cpp_py_pkg/regulator_module.py'...\n"}
+[17.248816] (my_cpp_py_pkg) StdoutLine: {'line': b"Compiling '/home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages/my_cpp_py_pkg/vicon_test_module.py'...\n"}
+[17.255290] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/lib/my_cpp_py_pkg/py_node.py\n'}
+[17.255622] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/lib/my_cpp_py_pkg/py_listener.py\n'}
+[17.255792] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/lib/my_cpp_py_pkg/vicon_talker.py\n'}
+[17.256030] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/lib/my_cpp_py_pkg/pathplanner_talker.py\n'}
+[17.256252] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/lib/my_cpp_py_pkg/regulator_listener.py\n'}
+[17.257063] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/share/ament_index/resource_index/package_run_dependencies/my_cpp_py_pkg\n'}
+[17.257818] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/share/ament_index/resource_index/parent_prefix_path/my_cpp_py_pkg\n'}
+[17.258069] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/share/my_cpp_py_pkg/environment/ament_prefix_path.sh\n'}
+[17.258335] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/share/my_cpp_py_pkg/environment/ament_prefix_path.dsv\n'}
+[17.258503] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/share/my_cpp_py_pkg/environment/path.sh\n'}
+[17.258751] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/share/my_cpp_py_pkg/environment/path.dsv\n'}
+[17.259004] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/share/my_cpp_py_pkg/local_setup.bash\n'}
+[17.259247] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/share/my_cpp_py_pkg/local_setup.sh\n'}
+[17.259843] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/share/my_cpp_py_pkg/local_setup.zsh\n'}
+[17.260045] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/share/my_cpp_py_pkg/local_setup.dsv\n'}
+[17.260257] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/share/my_cpp_py_pkg/package.dsv\n'}
+[17.261035] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/share/ament_index/resource_index/packages/my_cpp_py_pkg\n'}
+[17.261278] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/share/my_cpp_py_pkg/cmake/my_cpp_py_pkgConfig.cmake\n'}
+[17.261423] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/share/my_cpp_py_pkg/cmake/my_cpp_py_pkgConfig-version.cmake\n'}
+[17.261615] (my_cpp_py_pkg) StdoutLine: {'line': b'-- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/share/my_cpp_py_pkg/package.xml\n'}
+[17.265181] (my_cpp_py_pkg) CommandEnded: {'returncode': 0}
+[17.324430] (-) TimerEvent: {}
+[17.354094] (my_cpp_py_pkg) JobEnded: {'identifier': 'my_cpp_py_pkg', 'rc': 0}
+[17.357239] (-) EventReactorShutdown: {}

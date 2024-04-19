@@ -1,0 +1,179 @@
+[0.019s] Invoking command in '/home/drone/Documents/GitHub/RosMigration_ws/build/my_robot_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller:/opt/ros/humble /usr/bin/cmake --build /home/drone/Documents/GitHub/RosMigration_ws/build/my_robot_interfaces -- -j4 -l4
+[0.104s] [  2%] Built target my_robot_interfaces__cpp
+[0.144s] [ 12%] Built target my_robot_interfaces__rosidl_generator_c
+[0.167s] [ 23%] Built target my_robot_interfaces__rosidl_typesupport_fastrtps_cpp
+[0.198s] [ 23%] Built target ament_cmake_python_copy_my_robot_interfaces
+[0.232s] [ 33%] Built target my_robot_interfaces__rosidl_typesupport_cpp
+[0.246s] [ 43%] Built target my_robot_interfaces__rosidl_typesupport_fastrtps_c
+[0.280s] [ 53%] Built target my_robot_interfaces__rosidl_typesupport_introspection_cpp
+[0.337s] [ 64%] Built target my_robot_interfaces__rosidl_typesupport_c
+[0.342s] [ 74%] Built target my_robot_interfaces__rosidl_typesupport_introspection_c
+[0.388s] [ 74%] Built target my_robot_interfaces
+[0.451s] [ 76%] Built target my_robot_interfaces__py
+[0.523s] [ 84%] Built target my_robot_interfaces__rosidl_generator_py
+[0.610s] [ 89%] Built target my_robot_interfaces__rosidl_typesupport_fastrtps_c__pyext
+[0.621s] [ 94%] Built target my_robot_interfaces__rosidl_typesupport_c__pyext
+[0.630s] [100%] Built target my_robot_interfaces__rosidl_typesupport_introspection_c__pyext
+[0.862s] running egg_info
+[0.863s] writing my_robot_interfaces.egg-info/PKG-INFO
+[0.865s] writing dependency_links to my_robot_interfaces.egg-info/dependency_links.txt
+[0.866s] writing top-level names to my_robot_interfaces.egg-info/top_level.txt
+[0.868s] reading manifest file 'my_robot_interfaces.egg-info/SOURCES.txt'
+[0.871s] writing manifest file 'my_robot_interfaces.egg-info/SOURCES.txt'
+[0.924s] [100%] Built target ament_cmake_python_build_my_robot_interfaces_egg
+[0.948s] Invoked command in '/home/drone/Documents/GitHub/RosMigration_ws/build/my_robot_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller:/opt/ros/humble /usr/bin/cmake --build /home/drone/Documents/GitHub/RosMigration_ws/build/my_robot_interfaces -- -j4 -l4
+[1.117s] Invoking command in '/home/drone/Documents/GitHub/RosMigration_ws/build/my_robot_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller:/opt/ros/humble /usr/bin/cmake --install /home/drone/Documents/GitHub/RosMigration_ws/build/my_robot_interfaces
+[1.131s] -- Install configuration: ""
+[1.131s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/ament_index/resource_index/rosidl_interfaces/my_robot_interfaces
+[1.131s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces
+[1.132s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv
+[1.132s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/stop_publish_path.h
+[1.132s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/detail
+[1.132s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/detail/stop_publish_path__struct.h
+[1.132s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/detail/stop_publish_path__functions.h
+[1.133s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/detail/stop_publish_path__functions.c
+[1.133s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/detail/stop_publish_path__type_support.h
+[1.133s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg
+[1.133s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail
+[1.133s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/path_planner_points__type_support.h
+[1.133s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/path_planner_points__functions.c
+[1.133s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/path_planner_points__functions.h
+[1.134s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/path_planner_points__struct.h
+[1.134s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/rosidl_generator_c__visibility_control.h
+[1.134s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/path_planner_points.h
+[1.134s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/environment/library_path.sh
+[1.134s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/environment/library_path.dsv
+[1.134s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_generator_c.so
+[1.135s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces
+[1.135s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv
+[1.135s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/detail
+[1.135s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/detail/stop_publish_path__rosidl_typesupport_fastrtps_c.h
+[1.135s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg
+[1.135s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail
+[1.136s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/path_planner_points__rosidl_typesupport_fastrtps_c.h
+[1.136s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[1.136s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_fastrtps_c.so
+[1.136s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces
+[1.137s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv
+[1.137s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/detail
+[1.137s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/detail/stop_publish_path__type_support.c
+[1.138s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/detail/stop_publish_path__rosidl_typesupport_introspection_c.h
+[1.138s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg
+[1.138s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[1.138s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail
+[1.138s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/path_planner_points__rosidl_typesupport_introspection_c.h
+[1.138s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/path_planner_points__type_support.c
+[1.139s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_introspection_c.so
+[1.139s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_c.so
+[1.139s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces
+[1.139s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv
+[1.139s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/stop_publish_path.hpp
+[1.140s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/detail
+[1.140s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/detail/stop_publish_path__traits.hpp
+[1.140s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/detail/stop_publish_path__builder.hpp
+[1.140s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/detail/stop_publish_path__struct.hpp
+[1.140s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg
+[1.140s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail
+[1.141s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/path_planner_points__struct.hpp
+[1.141s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/path_planner_points__builder.hpp
+[1.141s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/path_planner_points__traits.hpp
+[1.141s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/path_planner_points.hpp
+[1.141s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces
+[1.141s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv
+[1.142s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/detail
+[1.142s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/detail/stop_publish_path__rosidl_typesupport_fastrtps_cpp.hpp
+[1.142s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/detail/dds_fastrtps
+[1.142s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg
+[1.142s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail
+[1.142s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/path_planner_points__rosidl_typesupport_fastrtps_cpp.hpp
+[1.143s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/dds_fastrtps
+[1.143s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[1.143s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_fastrtps_cpp.so
+[1.143s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces
+[1.144s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv
+[1.144s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/detail
+[1.144s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/detail/stop_publish_path__type_support.cpp
+[1.144s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/srv/detail/stop_publish_path__rosidl_typesupport_introspection_cpp.hpp
+[1.144s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg
+[1.144s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail
+[1.145s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/path_planner_points__rosidl_typesupport_introspection_cpp.hpp
+[1.145s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/path_planner_points__type_support.cpp
+[1.145s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_introspection_cpp.so
+[1.145s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_cpp.so
+[1.145s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/environment/pythonpath.sh
+[1.146s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/environment/pythonpath.dsv
+[1.146s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces-0.0.0-py3.10.egg-info
+[1.146s] -- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces-0.0.0-py3.10.egg-info/SOURCES.txt
+[1.146s] -- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces-0.0.0-py3.10.egg-info/top_level.txt
+[1.146s] -- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces-0.0.0-py3.10.egg-info/PKG-INFO
+[1.146s] -- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces-0.0.0-py3.10.egg-info/dependency_links.txt
+[1.146s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces
+[1.146s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/my_robot_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[1.147s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/srv
+[1.147s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/srv/__init__.py
+[1.147s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/srv/_stop_publish_path_s.c
+[1.147s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/srv/_stop_publish_path.py
+[1.147s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_introspection_c.c
+[1.147s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg
+[1.147s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/__init__.py
+[1.147s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_path_planner_points.py
+[1.148s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_path_planner_points_s.c
+[1.148s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/__init__.py
+[1.148s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/libmy_robot_interfaces__rosidl_generator_py.so
+[1.148s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/my_robot_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[1.148s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/my_robot_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[1.148s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_c.c
+[1.148s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+[1.205s] Listing '/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces'...
+[1.205s] Listing '/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg'...
+[1.205s] Listing '/home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/srv'...
+[1.215s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/my_robot_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[1.215s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/my_robot_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[1.216s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/my_robot_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[1.217s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_generator_py.so
+[1.218s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/PathPlannerPoints.idl
+[1.218s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/srv/StopPublishPath.idl
+[1.218s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/PathPlannerPoints.msg
+[1.218s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/srv/StopPublishPath.srv
+[1.218s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/srv/StopPublishPath_Request.msg
+[1.219s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/srv/StopPublishPath_Response.msg
+[1.219s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/ament_index/resource_index/package_run_dependencies/my_robot_interfaces
+[1.219s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/ament_index/resource_index/parent_prefix_path/my_robot_interfaces
+[1.219s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/environment/ament_prefix_path.sh
+[1.219s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/environment/ament_prefix_path.dsv
+[1.220s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/environment/path.sh
+[1.220s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/environment/path.dsv
+[1.220s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/local_setup.bash
+[1.220s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/local_setup.sh
+[1.220s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/local_setup.zsh
+[1.220s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/local_setup.dsv
+[1.221s] -- Installing: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/package.dsv
+[1.221s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/ament_index/resource_index/packages/my_robot_interfaces
+[1.221s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_generator_cExport.cmake
+[1.221s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_generator_cExport-noconfig.cmake
+[1.221s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_typesupport_fastrtps_cExport.cmake
+[1.221s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[1.222s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfaces__rosidl_typesupport_introspection_cExport.cmake
+[1.222s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[1.222s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfaces__rosidl_typesupport_cExport.cmake
+[1.222s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfaces__rosidl_typesupport_cExport-noconfig.cmake
+[1.222s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_generator_cppExport.cmake
+[1.222s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
+[1.223s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[1.223s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfaces__rosidl_typesupport_introspection_cppExport.cmake
+[1.223s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[1.229s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfaces__rosidl_typesupport_cppExport.cmake
+[1.229s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfaces__rosidl_typesupport_cppExport-noconfig.cmake
+[1.230s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_generator_pyExport.cmake
+[1.230s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_generator_pyExport-noconfig.cmake
+[1.231s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/rosidl_cmake-extras.cmake
+[1.231s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake
+[1.231s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/ament_cmake_export_libraries-extras.cmake
+[1.231s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/ament_cmake_export_targets-extras.cmake
+[1.231s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[1.231s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake
+[1.232s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[1.232s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfacesConfig.cmake
+[1.232s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfacesConfig-version.cmake
+[1.232s] -- Up-to-date: /home/drone/Documents/GitHub/RosMigration_ws/install/my_robot_interfaces/share/my_robot_interfaces/package.xml
+[1.235s] Invoked command in '/home/drone/Documents/GitHub/RosMigration_ws/build/my_robot_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller:/opt/ros/humble /usr/bin/cmake --install /home/drone/Documents/GitHub/RosMigration_ws/build/my_robot_interfaces

@@ -1,10 +1,10 @@
 {
   "package_name": "my_robot_interfaces",
-  "output_dir": "/home/ros2/Desktop/ros2_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces",
+  "output_dir": "/home/drone/Documents/GitHub/RosMigration_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces",
   "template_dir": "/opt/ros/humble/share/rosidl_generator_cpp/cmake/../resource",
   "idl_tuples": [
-    "/home/ros2/Desktop/ros2_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces:msg/PathPlannerPoints.idl",
-    "/home/ros2/Desktop/ros2_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces:srv/StopPublishPath.idl"
+    "/home/drone/Documents/GitHub/RosMigration_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces:msg/PathPlannerPoints.idl",
+    "/home/drone/Documents/GitHub/RosMigration_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces:srv/StopPublishPath.idl"
   ],
   "target_dependencies": [
     "/opt/ros/humble/share/rosidl_generator_cpp/cmake/../../../lib/rosidl_generator_cpp/rosidl_generator_cpp",
@@ -22,7 +22,7 @@
     "/opt/ros/humble/share/rosidl_generator_cpp/cmake/../resource/srv__builder.hpp.em",
     "/opt/ros/humble/share/rosidl_generator_cpp/cmake/../resource/srv__struct.hpp.em",
     "/opt/ros/humble/share/rosidl_generator_cpp/cmake/../resource/srv__traits.hpp.em",
-    "/home/ros2/Desktop/ros2_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/msg/PathPlannerPoints.idl",
-    "/home/ros2/Desktop/ros2_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/srv/StopPublishPath.idl"
+    "/home/drone/Documents/GitHub/RosMigration_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/msg/PathPlannerPoints.idl",
+    "/home/drone/Documents/GitHub/RosMigration_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/srv/StopPublishPath.idl"
   ]
 }
