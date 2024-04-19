@@ -1,0 +1,26 @@
+[0.761s] Invoking command in '/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/src/my_robot_controller': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/build/my_robot_controller/prefix_override:/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/my_robot_controller build --build-base /home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/build/my_robot_controller/build install --record /home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/build/my_robot_controller/install.log --single-version-externally-managed install_data
+[1.048s] running egg_info
+[1.049s] writing ../../build/my_robot_controller/my_robot_controller.egg-info/PKG-INFO
+[1.049s] writing dependency_links to ../../build/my_robot_controller/my_robot_controller.egg-info/dependency_links.txt
+[1.050s] writing entry points to ../../build/my_robot_controller/my_robot_controller.egg-info/entry_points.txt
+[1.050s] writing requirements to ../../build/my_robot_controller/my_robot_controller.egg-info/requires.txt
+[1.050s] writing top-level names to ../../build/my_robot_controller/my_robot_controller.egg-info/top_level.txt
+[1.053s] reading manifest file '../../build/my_robot_controller/my_robot_controller.egg-info/SOURCES.txt'
+[1.055s] writing manifest file '../../build/my_robot_controller/my_robot_controller.egg-info/SOURCES.txt'
+[1.055s] running build
+[1.055s] running build_py
+[1.056s] running install
+[1.056s] running install_lib
+[1.059s] running install_data
+[1.059s] running install_egg_info
+[1.061s] removing '/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller-0.0.0-py3.10.egg-info' (and everything under it)
+[1.061s] Copying ../../build/my_robot_controller/my_robot_controller.egg-info to /home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller-0.0.0-py3.10.egg-info
+[1.063s] running install_scripts
+[1.087s] Installing crazy_node script to /home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller/lib/my_robot_controller
+[1.087s] Installing crazy_node_take_off script to /home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller/lib/my_robot_controller
+[1.088s] Installing my_listener script to /home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller/lib/my_robot_controller
+[1.088s] Installing my_talker script to /home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller/lib/my_robot_controller
+[1.088s] Installing test_node script to /home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller/lib/my_robot_controller
+[1.088s] Installing test_node2 script to /home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller/lib/my_robot_controller
+[1.089s] writing list of installed files to '/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/build/my_robot_controller/install.log'
+[1.124s] Invoked command in '/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/src/my_robot_controller' returned '0': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/build/my_robot_controller/prefix_override:/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/my_robot_controller build --build-base /home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/build/my_robot_controller/build install --record /home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE/ros2_ws/build/my_robot_controller/install.log --single-version-externally-managed install_data
