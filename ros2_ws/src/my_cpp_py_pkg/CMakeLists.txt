@@ -31,9 +31,9 @@ ament_target_dependencies(cpp_talker_node rclcpp std_msgs)
 add_executable(vicon_node src/cpp_vicon.cpp)
 ament_target_dependencies(vicon_node rclcpp std_msgs)
 
-target_link_libraries(vicon_node /home/frederik/ros2pycpp_ws/src/my_cpp_py_pkg/include/Linux64/libViconDataStreamSDK_CPP.so)
-target_link_libraries(cpp_executable /home/frederik/ros2pycpp_ws/src/my_cpp_py_pkg/include/Linux64/libViconDataStreamSDK_CPP.so)
-target_link_libraries(cpp_talker_node /home/frederik/ros2pycpp_ws/src/my_cpp_py_pkg/include/Linux64/libViconDataStreamSDK_CPP.so)
+target_link_libraries(vicon_node /usr/lib/libViconDataStreamSDK_CPP.so)
+target_link_libraries(cpp_executable /usr/lib/Linux64/libViconDataStreamSDK_CPP.so)
+target_link_libraries(cpp_talker_node /usr/lib/libViconDataStreamSDK_CPP.so)
 
 
 

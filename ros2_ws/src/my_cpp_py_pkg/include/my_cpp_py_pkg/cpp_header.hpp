@@ -32,6 +32,7 @@ class ViconClient : public rclcpp::Node
             ViconDataStreamSDK::CPP::RetimingClient ViconRetimingClient;  ///Retimer.Connect("localhost:801");
             ViconDataStreamSDK::CPP::Output_GetVersion output = ViconRetimingClient.GetVersion();
             RCLCPP_INFO(this->get_logger(),"Version igem '%d'", output.Major);
+            /*
             ViconRetimingClient.Connect("localhost", 30);
 
             while (ViconRetimingClient.IsConnected())
@@ -42,7 +43,7 @@ class ViconClient : public rclcpp::Node
                     ViconDataStreamSDK::CPP::Output_UpdateFrame frame = ViconRetimingClient.UpdateFrame();
                 }
             }
-
+        */
 
         }
 };

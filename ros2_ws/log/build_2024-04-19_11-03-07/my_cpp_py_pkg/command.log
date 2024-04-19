@@ -1,0 +1,2 @@
+Invoking command in '/home/frederik/Documents/P4/P4Git/AAU_P4_MONITOR_DRONE/ros2_ws/build/my_cpp_py_pkg': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/frederik/Documents/P4/P4Git/AAU_P4_MONITOR_DRONE/ros2_ws/build/my_cpp_py_pkg -- -j12 -l12
+Invoked command in '/home/frederik/Documents/P4/P4Git/AAU_P4_MONITOR_DRONE/ros2_ws/build/my_cpp_py_pkg' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/frederik/Documents/P4/P4Git/AAU_P4_MONITOR_DRONE/ros2_ws/build/my_cpp_py_pkg -- -j12 -l12
