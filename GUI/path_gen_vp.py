@@ -3,7 +3,7 @@ from scipy.spatial import ConvexHull
 import matplotlib.pyplot as plt
 from shapely.geometry import Polygon, LineString
 import numpy as np
-import math
+import random
 
 def path_generator():
     # Initialize Pygame
@@ -24,6 +24,11 @@ def path_generator():
     # List to store points
     points = []
 
+    random_number = random.randint(1, 24)
+
+    # Load the image
+    background = pygame.image.load(f'GUI\Mark_billeder\Mark{random_number}.png')
+
     # Game loop
     running = True
     while running:
@@ -36,8 +41,8 @@ def path_generator():
                 points.append((x, y))
                 #print(f"Added point at position: {x, y}")
 
-        # Fill the screen with black
-        screen.fill((0, 0, 0))
+        # Draw the background
+        screen.blit(background, (0, 0))
 
         # Draw the points
         for point in points:

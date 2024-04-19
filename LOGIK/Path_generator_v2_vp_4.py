@@ -1,5 +1,6 @@
 # Description: This script generates a path for a robot to follow using cubic polynomials
 
+from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
 import numpy as np
 from sympy import symbols, lambdify
@@ -205,6 +206,39 @@ def plot_polynomial(all_polynomials):
         plt.plot(x_values, y_values)
 
     plt.gca().invert_yaxis()
+    plt.show()
+
+    # Create a new figure
+    fig = plt.figure()
+
+    # Add a 3D subplot
+    ax = fig.add_subplot(111, projection='3d')
+
+    # Loop over all polynomials
+    for poly_x, poly_y, poly_z, tf, t0, t1 in all_polynomials:
+        # Generate a sequence of t-values
+        t_values = np.linspace(t0, t1, num=500)
+        
+        # Convert the sympy polynomial to a lambda function for easy evaluation
+        func_x = lambdify(t, poly_x, "numpy")
+        func_y = lambdify(t, poly_y, "numpy")
+        
+        # Compute x, y, and z values
+        x_values = func_x(t_values)
+        y_values = func_y(t_values)
+        z_values = poly_z(t_values[1])
+
+        #print('x_values:', x_values)
+        #print('y_values:', y_values)
+        print('z_values:', z_values)
+        print('t_values:', t_values)
+
+        # Plot x, y, and z values
+        ax.plot(x_values, y_values, z_values)
+
+    ax.set_xlabel('X')
+    ax.set_ylabel('Y')
+    ax.set_zlabel('Z')
     plt.show()
 
     return x_values, y_values
