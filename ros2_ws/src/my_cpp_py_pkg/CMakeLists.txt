@@ -32,7 +32,7 @@ add_executable(vicon_node src/cpp_vicon.cpp)
 ament_target_dependencies(vicon_node rclcpp std_msgs)
 
 target_link_libraries(vicon_node /usr/lib/libViconDataStreamSDK_CPP.so)
-target_link_libraries(cpp_executable /usr/lib/Linux64/libViconDataStreamSDK_CPP.so)
+target_link_libraries(cpp_executable /usr/lib/libViconDataStreamSDK_CPP.so)
 target_link_libraries(cpp_talker_node /usr/lib/libViconDataStreamSDK_CPP.so)
 
 
