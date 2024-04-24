@@ -10,6 +10,7 @@
 /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages/my_cpp_py_pkg/__init__.py
 /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages/my_cpp_py_pkg/pathplanner_test_module.py
 /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages/my_cpp_py_pkg/vicon_test_module.py
+/home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages/my_cpp_py_pkg/motion_controller_module.py
 /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages/my_cpp_py_pkg/regulator_module.py
 /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/local/lib/python3.10/dist-packages/my_cpp_py_pkg/moduel_to_import.py
 /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/lib/my_cpp_py_pkg/py_node.py
@@ -17,6 +18,7 @@
 /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/lib/my_cpp_py_pkg/vicon_talker.py
 /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/lib/my_cpp_py_pkg/pathplanner_talker.py
 /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/lib/my_cpp_py_pkg/regulator_listener.py
+/home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/lib/my_cpp_py_pkg/motion_controller_node.py
 /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/share/ament_index/resource_index/package_run_dependencies/my_cpp_py_pkg
 /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/share/ament_index/resource_index/parent_prefix_path/my_cpp_py_pkg
 /home/drone/Documents/GitHub/RosMigration_ws/install/my_cpp_py_pkg/share/my_cpp_py_pkg/environment/ament_prefix_path.sh

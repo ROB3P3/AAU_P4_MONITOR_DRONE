@@ -27,9 +27,3 @@ class PathPlannerTalker(Node):
         if self.cmd_publisher_.get_subscription_count() >= 1:
             self.get_logger().info("PathPlanner points sent to Regulator node.")
             self.timer_.cancel()
-
-def main(args=None):
-    rclpy.init()
-    node = PathPlannerTalker()
-    rclpy.spin(node)
-    rclpy.shutdown()

@@ -56,6 +56,7 @@ install(PROGRAMS
   scripts/vicon_talker.py
   scripts/pathplanner_talker.py
   scripts/regulator_listener.py
+  scripts/motion_controller_node.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

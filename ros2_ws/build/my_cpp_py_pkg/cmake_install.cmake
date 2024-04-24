@@ -133,6 +133,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     "/home/drone/Documents/GitHub/RosMigration_ws/src/my_cpp_py_pkg/scripts/vicon_talker.py"
     "/home/drone/Documents/GitHub/RosMigration_ws/src/my_cpp_py_pkg/scripts/pathplanner_talker.py"
     "/home/drone/Documents/GitHub/RosMigration_ws/src/my_cpp_py_pkg/scripts/regulator_listener.py"
+    "/home/drone/Documents/GitHub/RosMigration_ws/src/my_cpp_py_pkg/scripts/motion_controller_node.py"
     )
 endif()
 

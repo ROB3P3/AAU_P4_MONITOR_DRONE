@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import rclpy
 import numpy as np
+import random
 from rclpy.node import Node
 
 import cflib.crtp
@@ -28,6 +29,8 @@ class RegulatorListener(Node):
         self.error = 0
         self.start_time = self.get_clock().now().nanoseconds
         self.current_time = self.get_clock().now().nanoseconds
+
+        self.create_timer(0.5, self.comparePoints)
     
     def onViconMsg(self, msg):
         self.viconPoint = msg.data
@@ -66,6 +69,7 @@ class RegulatorListener(Node):
         self.get_logger().info("Received points from PathPlanner: " + str(self.pathPlannerPoints))      
     
     def comparePoints(self):
-        self.get_logger().info("Velocity vector: " + str(self.velocityVector))
-
-# output velocities? for crazyflie MotionCommander function/class
+        msg = Float64MultiArray()
+        msg.data = [random.uniform(0, 5.0), random.uniform(0, 5.0), 0.0]
+        self.regulatorPublisher_.publish(msg)
+        self.get_logger().info("Message sent to motion commander!")

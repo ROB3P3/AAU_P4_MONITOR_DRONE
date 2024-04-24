@@ -21,12 +21,3 @@ class ViconTalker(Node):
         TEMP_INPUT = [random.uniform(0.0, 2.0), random.uniform(0.0, 2.0), random.uniform(98.0, 102.0), random.uniform(0.0, 90.0)]
         msg.data = [float(i) for i in TEMP_INPUT]
         self.cmd_publisher_.publish(msg)
-
-def main(args=None):
-    rclpy.init()
-
-    node = ViconTalker()
-
-    rclpy.spin(node)
-
-    rclpy.shutdown()
