@@ -226,7 +226,9 @@ def plot_polynomial(all_polynomials):
         # Compute x, y, and z values
         x_values = func_x(t_values)
         y_values = func_y(t_values)
-        z_values = poly_z(t_values[1])
+        
+        t_values = np.linspace(0, tf, num=500)
+        z_values = poly_z(t_values)
 
         #print('x_values:', x_values)
         #print('y_values:', y_values)
