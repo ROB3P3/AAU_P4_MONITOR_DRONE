@@ -241,6 +241,7 @@ def plot_polynomial(all_polynomials):
     ax.set_xlabel('X')
     ax.set_ylabel('Y')
     ax.set_zlabel('Z')
+    plt.gca().invert_yaxis()
     plt.show()
 
     return x_values, y_values

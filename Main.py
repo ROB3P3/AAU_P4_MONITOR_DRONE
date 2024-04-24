@@ -4,10 +4,10 @@ import numpy as np
 
 if __name__ == "__main__":
     positions = path_generator()
-    print('Positions:', positions)
+    #print('Positions:', positions)
     positions =  pg.length_of_trajectory(positions)
     positions = pg.velocity(positions)
     #print('Positions:', positions)
     All_polynomials = pg.Cubic_polynomial_trajectory_vp(positions)
-    #print('All_polynomials:', All_polynomials)
+    print('All_polynomials:', All_polynomials)
     pg.plot_polynomial(All_polynomials)
