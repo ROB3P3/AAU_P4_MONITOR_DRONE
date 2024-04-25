@@ -14,7 +14,7 @@ class ViconTalker(Node):
         self.cmd_publisher_ = self.create_publisher(Float64MultiArray, "/pid_regulator_vicon", 10)
         self.get_logger().info("My VICON talker has been initialized.")
 
-        self.create_timer(1, self.broadcast) 
+        self.create_timer(1/3, self.broadcast) 
 
     def broadcast(self):
         msg = Float64MultiArray()

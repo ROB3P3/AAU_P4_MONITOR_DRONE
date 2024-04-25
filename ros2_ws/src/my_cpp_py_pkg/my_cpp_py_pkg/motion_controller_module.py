@@ -1,9 +1,7 @@
 #!/usr/bin/env python3 
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import String
-from std_msgs.msg import Float64MultiArray
-from my_robot_interfaces.msg import PathPlannerPoints
+from std_msgs.msg import Float64
 from my_robot_interfaces.msg import RegulatedVelocity
 
 import logging
@@ -26,11 +24,13 @@ class MotionControllerNode(Node):
     def __init__(self):
         super().__init__("motion_controller")
         self.get_logger().info("Motion Controller node initialized.")
+        self.timePublisher_ = self.create_publisher(Float64, "/motioncontroller_time", 10)
 
         cflib.crtp.init_drivers()
 
-        self.receivedVelocity = []
+        self.receivedVelocity = [0, 0, 0]
         self.flightStatus = True
+        self.start_time = None
 
         self.velocityNode = VelocityRecipientNode()
         self.testFlight()
@@ -47,13 +47,16 @@ class MotionControllerNode(Node):
     def flightVelocity(self, cf):
         with MotionCommander(cf, default_height=DEFAULT_HEIGHT) as mc:
             while (self.flightStatus):
+                if self.start_time == None:
+                    self.start_time = self.get_clock().now().nanoseconds / 1e+9
+                    self.timePublisher_.publish(Float64(data=self.start_time))
+                    self.get_logger().info("Time published: " + str(self.start_time))
                 rclpy.spin_once(self.velocityNode)
                 self.receivedVelocity = self.velocityNode.receivedVelocity
                 self.flightStatus = self.velocityNode.flightStatus
                 mc.start_linear_motion(self.receivedVelocity[0], self.receivedVelocity[1], self.receivedVelocity[2])
                 print(self.receivedVelocity[0], self.receivedVelocity[1], self.receivedVelocity[2])
                 print("Changing direction to: " + str(self.receivedVelocity))
-                time.sleep(0.5)
   
     def testFlight(self):
         self.get_logger().info("Starting flight!")

@@ -57,6 +57,7 @@ install(PROGRAMS
   scripts/pathplanner_talker.py
   scripts/regulator_listener.py
   scripts/motion_controller_node.py
+  scripts/py_path_planner.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

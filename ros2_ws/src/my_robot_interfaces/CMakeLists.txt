@@ -12,9 +12,8 @@ find_package(ament_cmake REQUIRED)
 # find_package(<dependency> REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 rosidl_generate_interfaces(${PROJECT_NAME}
-  "msg/PathPlannerPoints.msg"
   "msg/RegulatedVelocity.msg"
-  "srv/StopPublishPath.srv"
+  "msg/PathPlannerMessage.msg"
  )
 ament_export_dependencies(rosidl_default_runtime)
 
