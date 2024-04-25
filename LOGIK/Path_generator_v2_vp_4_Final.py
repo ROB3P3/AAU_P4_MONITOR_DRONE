@@ -30,11 +30,11 @@ def velocity(positions):
     total_time = 0  # Initialize total_time
 
     for i in range(0, len(positions) - 1):
-        # Calculate the distances between the points
-        l1 = positions[i][3]
+        #the distances between the points
+        l = positions[i][3]
 
         # Calculate the time it takes to travel between the points
-        time = l1 / corner_velocity
+        time = l / corner_velocity
         total_time += time  # Add time to total_time
 
         # Calculate the velocities
@@ -80,13 +80,13 @@ def Cubic_polynomial_trajectory_vp(positions):
 
     for i in range(0, len(positions)-1):
         x_start, y_start, z_start, xvel_start, yvel_start, zvel_start, l, t_start = positions[i]
-        print('start position', x_start, y_start, z_start, xvel_start, yvel_start, zvel_start, l, t_start)
+        #print('start position', x_start, y_start, z_start, xvel_start, yvel_start, zvel_start, l, t_start)
 
         x_slut, y_slut, z_slut, xvel_slut, yvel_slut, zvel_slut, l, t_slut = positions[i+1]
-        print('slut position', x_slut, y_slut, z_slut, xvel_slut, yvel_slut, zvel_slut, l, t_slut)
+        #print('slut position', x_slut, y_slut, z_slut, xvel_slut, yvel_slut, zvel_slut, l, t_slut)
 
         t_int = t_slut - t_start
-        print('tids interval', t_int)
+        #print('tids interval', t_int)
 
         poly_x = via_point_calc(x_start, x_slut, xvel_start, xvel_slut, t_int, t_start)
         poly_y = via_point_calc(y_start, y_slut, yvel_start, yvel_slut, t_int, t_start)
@@ -99,7 +99,7 @@ def Cubic_polynomial_trajectory_vp(positions):
         poly_coeffs_z = np.array([a3z, a2z, a1z, a0z])
         poly_z = np.poly1d(poly_coeffs_z, variable='t')
         
-        print('poly_z', poly_z)
+        #print('poly_z', poly_z)
         
         all_polynomials.append((poly_x, poly_y, poly_z, t_int, t_start, t_slut))
     return all_polynomials
@@ -232,8 +232,8 @@ def plot_polynomial(all_polynomials):
 
         #print('x_values:', x_values)
         #print('y_values:', y_values)
-        print('z_values:', z_values)
-        print('t_values:', t_values)
+        #print('z_values:', z_values)
+        #print('t_values:', t_values)
 
         # Plot x, y, and z values
         ax.plot(x_values, y_values, z_values)

@@ -75,7 +75,7 @@ def path_generator():
 
     # Set the scan pattern properties
     scan_color = 'blue'
-    scan_spacing = 20  # Spacing between scan lines
+    scan_spacing = 20 #cm
 
 
     # Calculate the convex hull
