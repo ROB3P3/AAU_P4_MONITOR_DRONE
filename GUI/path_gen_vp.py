@@ -96,12 +96,12 @@ def path_generator():
     # Calculate the intersections of the scan lines with the hull
     intersections = [scan_line.intersection(hull_polygon) for scan_line in scan_lines]
 
-    # Plot the points
-    plt.scatter(*zip(*points), color=point_color)
+    ## Plot the points
+    #plt.scatter(*zip(*points), color=point_color)
 
-    # Plot the hull
-    for simplex in hull.simplices:
-        plt.plot([points[i][0] for i in simplex], [points[i][1] for i in simplex], hull_color)
+    ## Plot the hull
+    #for simplex in hull.simplices:
+    #    plt.plot([points[i][0] for i in simplex], [points[i][1] for i in simplex], hull_color)
 
     # Create a list to store intersection points
     intersection_points = []
@@ -117,15 +117,15 @@ def path_generator():
         elif intersection.geom_type == 'LineString':
             # Single line segment
             x, y = intersection.xy
-            plt.plot(x, y, scan_color)
+            #plt.plot(x, y, scan_color)
             intersection_points.extend(list(zip(x, y)))  # Append intersection points
         elif intersection.geom_type == 'MultiLineString':
             # Multiple line segments
             for line in intersection:
                 x, y = line.xy
-                plt.plot(x, y, scan_color)
+                #plt.plot(x, y, scan_color)
                 intersection_points.extend(list(zip(x, y)))  # Append intersection points
-    plt.gca().invert_yaxis()  # Invert the y-axis
+    #plt.gca().invert_yaxis()  # Invert the y-axis
 
     # Create a new list that follows the pattern: 1st, 2nd, 4th, 3rd, 5th, 6th, ...
     pattern_points = []
