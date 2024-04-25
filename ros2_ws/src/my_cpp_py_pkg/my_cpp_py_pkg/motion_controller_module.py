@@ -4,6 +4,7 @@ from rclpy.node import Node
 from std_msgs.msg import String
 from std_msgs.msg import Float64MultiArray
 from my_robot_interfaces.msg import PathPlannerPoints
+from my_robot_interfaces.msg import RegulatedVelocity
 
 import logging
 import time
@@ -17,7 +18,7 @@ from cflib.utils import uri_helper
 
 URI = uri_helper.uri_from_env(default='radio://0/80/2M/E7E7E7E7E7')
 
-DEFAULT_HEIGHT = 0.5
+DEFAULT_HEIGHT = 1.0
 deck_attached_event = Event()
 logging.basicConfig(level=logging.ERROR)
 
@@ -29,6 +30,7 @@ class MotionControllerNode(Node):
         cflib.crtp.init_drivers()
 
         self.receivedVelocity = []
+        self.flightStatus = True
 
         self.velocityNode = VelocityRecipientNode()
         self.testFlight()
@@ -44,14 +46,15 @@ class MotionControllerNode(Node):
     
     def flightVelocity(self, cf):
         with MotionCommander(cf, default_height=DEFAULT_HEIGHT) as mc:
-            while (1):
+            while (self.flightStatus):
                 rclpy.spin_once(self.velocityNode)
                 self.receivedVelocity = self.velocityNode.receivedVelocity
+                self.flightStatus = self.velocityNode.flightStatus
                 mc.start_linear_motion(self.receivedVelocity[0], self.receivedVelocity[1], self.receivedVelocity[2])
                 print(self.receivedVelocity[0], self.receivedVelocity[1], self.receivedVelocity[2])
                 print("Changing direction to: " + str(self.receivedVelocity))
                 time.sleep(0.5)
-    
+  
     def testFlight(self):
         self.get_logger().info("Starting flight!")
         with SyncCrazyflie(URI, cf = Crazyflie(rw_cache='./cache')) as scf:
@@ -70,11 +73,14 @@ class MotionControllerNode(Node):
 class VelocityRecipientNode(Node):
     def __init__(self):
         super().__init__("velocity_recipient_node")
-        self.regulatorSubscriber_ = self.create_subscription(Float64MultiArray, "/motioncontroller_regulator", self.onRegulatorMsg, 10)
+        self.regulatorSubscriber_ = self.create_subscription(RegulatedVelocity, "/motioncontroller_regulator", self.onRegulatorMsg, 10)
         self.receivedVelocity = []
+        self.flightStatus = True
     
     def onRegulatorMsg(self, msg):
         """Callback function for subscription to '/motioncontroller_regulator' topic"""
         self.get_logger().info("Velocity Recipient Node received message from regulator topic.")
         self.get_logger().info("Received message: " + str(msg.data))
+        self.get_logger().info("Received status: " + str(msg.status))
         self.receivedVelocity = msg.data
+        self.flightStatus = msg.status

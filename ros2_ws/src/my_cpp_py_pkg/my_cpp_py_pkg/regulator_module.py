@@ -4,21 +4,16 @@ import numpy as np
 import random
 from rclpy.node import Node
 
-import cflib.crtp
-from cflib.crazyflie import Crazyflie
-from cflib.crazyflie.syncCrazyflie import SyncCrazyflie
-from cflib.positioning.motion_commander import MotionCommander
-from cflib.utils import uri_helper
-
 from std_msgs.msg import Float64MultiArray
 from my_robot_interfaces.msg import PathPlannerPoints
+from my_robot_interfaces.msg import RegulatedVelocity
 
 class RegulatorListener(Node):
     def __init__(self):
         super().__init__("compare_listener")
         self.viconSubscriber_ = self.create_subscription(Float64MultiArray, "/pid_regulator_vicon", self.onViconMsg, 10)
         self.pathPlannerSubscriber_ = self.create_subscription(PathPlannerPoints, "/pid_regulator_pathplanner", self.onPathPlannerMsg, 10)
-        self.regulatorPublisher_ = self.create_publisher(Float64MultiArray, "/motioncontroller_regulator", 10)
+        self.regulatorPublisher_ = self.create_publisher(RegulatedVelocity, "/motioncontroller_regulator", 10)
 
         self.get_logger().info("Regulator node initialized.")
 
@@ -69,7 +64,8 @@ class RegulatorListener(Node):
         self.get_logger().info("Received points from PathPlanner: " + str(self.pathPlannerPoints))      
     
     def comparePoints(self):
-        msg = Float64MultiArray()
+        msg = RegulatedVelocity()
         msg.data = [random.uniform(0, 5.0), random.uniform(0, 5.0), 0.0]
+        msg.status = True if random.uniform(0, 1.0) < 0.5 else False
         self.regulatorPublisher_.publish(msg)
         self.get_logger().info("Message sent to motion commander!")
