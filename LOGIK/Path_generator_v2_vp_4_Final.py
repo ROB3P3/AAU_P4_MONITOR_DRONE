@@ -188,6 +188,7 @@ def plot_polynomial(all_polynomials):
     plt.title('Plot of y over x')
     plt.grid(True)
 
+    # Plot the x and y values
     # Loop over all polynomials
     for poly_x, poly_y, poly_z, tf, t0, t1 in all_polynomials:
 
@@ -207,7 +208,9 @@ def plot_polynomial(all_polynomials):
 
     plt.gca().invert_yaxis()
     plt.show()
-
+    
+    
+    # Plot the 3D trajectory
     # Create a new figure
     fig = plt.figure()
 
