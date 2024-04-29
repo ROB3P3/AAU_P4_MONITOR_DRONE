@@ -46,6 +46,8 @@ class MotionControllerNode(Node):
     
     def flightVelocity(self, cf):
         with MotionCommander(cf, default_height=DEFAULT_HEIGHT) as mc:
+            # has a time difference of start until sent time of 8.13 - 8.23 seconds with the default height
+            # has a time difference of start until sent time ~4.7 seconds without default height
             while (self.flightStatus):
                 if self.start_time == None:
                     self.start_time = self.get_clock().now().nanoseconds / 1e+9

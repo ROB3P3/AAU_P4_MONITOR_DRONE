@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import rclpy
 import numpy as np
+import math
 import random
 import json
 from sympy import symbols, parse_expr
@@ -26,8 +27,11 @@ class RegulatorListener(Node):
         self.pathPlannerPolynomials = [] 
         self.velocityVector = []
         self.nextPoint = []
-        self.nextPointIndex = 0
+        self.nextPointIndex = 1
         self.error = 0
+        self.yawDegrees = 0
+        self.angularVelocity = 0.0
+        self.flightStatus = True
         self.start_time = None
         self.current_time = self.get_clock().now().nanoseconds / 1e+9
 
@@ -39,36 +43,63 @@ class RegulatorListener(Node):
 
         # only start sending velocity commands to the crazyflie once the pathplanner has sent points
         if self.pathPlannerPoints != [] and self.start_time != None:
+            # sets the current time to be the time since the start time (duration)
+            self.current_time = (self.get_clock().now().nanoseconds / 1e+9) - self.start_time
+            # adds 10 to the current time to make the time fit with the pathplanner
+            jumpedTime = self.current_time + 10.0
+            #timeToReachPoint = self.pathPlannerPolynomials[self.nextPointIndex][5] - jumpedTime
             # establishes the first point for the drone to fly to
             if self.nextPoint == []:
+                # calculates the error between the vicon point and the first point
                 self.nextPoint = self.pathPlannerPoints[1]
                 self.nextPointIndex = 1
-                self.velocityVector = [abs(self.viconPoint[0] - self.nextPoint[0]) / self.nextPoint[3], abs(self.viconPoint[1] - self.nextPoint[1]) / self.nextPoint[3], abs(self.viconPoint[2] - self.nextPoint[2]) / self.nextPoint[3]]
-            else:
-                # change to read from where the pathplanner believes it should currently be
-                # use polynomials for X, Y, and Z to the current time to get the current position in the pathplanner
-                # compare this to the vicon position to create an error and velocity vector
-                self.nextPointIndex = np.where(np.all(self.pathPlannerPoints == self.nextPoint, axis=1))[0][0]
-                self.pathPlannerPos = [self.pathPlannerPolynomials[self.nextPointIndex][0].subs('t', self.current_time), self.pathPlannerPolynomials[self.nextPointIndex][1].subs('t', self.current_time), np.polyval(self.pathPlannerPolynomials[self.nextPointIndex][2], self.current_time)]
-                self.pathError = [abs(self.viconPoint[0] - self.pathPlannerPos[0]), abs(self.viconPoint[1] - self.pathPlannerPos[1]), abs(self.viconPoint[2] - self.pathPlannerPos[2])]
-                print("PathPlanner position:", self.pathPlannerPos, self.current_time)
                 self.error = [abs(self.viconPoint[0] - self.nextPoint[0]), abs(self.viconPoint[1] - self.nextPoint[1]), abs(self.viconPoint[2] - self.nextPoint[2])]
-                self.velocityVector = [abs(self.viconPoint[0] - self.nextPoint[0]) / self.nextPoint[3], abs(self.viconPoint[1] - self.nextPoint[1]) / self.nextPoint[3], abs(self.viconPoint[2] - self.nextPoint[2]) / self.nextPoint[3]]
+                # sets the velocity vector to be 0.1 m/s for x as the drone is just flying straight
+                self.velocityVector = [0.1, 0, 0]
+                # adjusts the yaw of the drone to be facing the point it is flyhing towards
+                self.yawDegrees = math.degrees(math.atan2(self.error[1], self.error[0]))
+                self.angularVelocity = (self.viconPoint[3] - self.yawDegrees) / 0.2
+            else:
+                # gets the next point to fly to and calculates the error between the vicon point and the next point
+                self.nextPointIndex = np.where(np.all(self.pathPlannerPoints == self.nextPoint, axis=1))[0][0]
+                # calculate where the drone should be according to the path planner
+                self.pathPlannerPos = [self.pathPlannerPolynomials[self.nextPointIndex][0].subs('t', jumpedTime), self.pathPlannerPolynomials[self.nextPointIndex][1].subs('t', jumpedTime), np.polyval(self.pathPlannerPolynomials[self.nextPointIndex][2], jumpedTime)]
+                # calculate the error between the path planner position and the vicon point (will be used for PID controller)
+                self.pathError = [abs(self.viconPoint[0] - self.pathPlannerPos[0]), abs(self.viconPoint[1] - self.pathPlannerPos[1]), abs(self.viconPoint[2] - self.pathPlannerPos[2])]
+                self.get_logger().info("PathPlanner position: " + str(self.pathPlannerPos) + " " + str(jumpedTime))
+                self.get_logger().info("Pos error from path: " + str(self.pathError))
+                # calculate the error between the vicon point and the next point (will be used to check whether the drone has reached the point)
+                self.error = [abs(self.viconPoint[0] - self.nextPoint[0]), abs(self.viconPoint[1] - self.nextPoint[1]), abs(self.viconPoint[2] - self.nextPoint[2])]
+                # ensures the drone is facing the point it is flying towards
+                self.yawDegrees = math.degrees(math.atan2(self.error[1], self.error[0]))
+                self.angularVelocity = (self.viconPoint[3] - self.yawDegrees) / 0.2
+                self.get_logger().info("Yaw: " + str(self.yawDegrees))
                 # if error is below a certain threshold, start moving to the next point
                 if self.error[0] < 0.5 and self.error[1] < 0.5 and self.error[2] < 0.5:
                     self.nextPointIndex += 1
                     self.nextPoint = self.pathPlannerPoints[self.nextPointIndex]
-                    # edit velocity vector to use correct time from the polynomials instead of the point time
-                    self.velocityVector = [abs(self.viconPoint[0] - self.nextPoint[0]) / self.nextPoint[3], abs(self.viconPoint[1] - self.nextPoint[1]) / self.nextPoint[3], abs(self.viconPoint[2] - self.nextPoint[2]) / self.nextPoint[3]]
                     self.get_logger().info("Moving to next point: " + str(self.nextPoint))
-
-            self.current_time = (self.get_clock().now().nanoseconds / 1e+9) - self.start_time
+                    # if the drone has r eached the last point set flight status to false
+                    # this will make the drone automatically land in the motion controller
+                    if self.nextPointIndex == len(self.pathPlannerPoints) - 1:
+                        self.flightStatus = False
+                #self.velocityVector = [abs(self.viconPoint[0] - self.nextPoint[0]) / timeToReachPoint, abs(self.viconPoint[1] - self.nextPoint[1]) / timeToReachPoint, abs(self.viconPoint[2] - self.nextPoint[2]) / timeToReachPoint]
+                # edit the velocity vector to be regulated based on the error 
+                self.velocityVector = [0.1, 0, 0]
+            
             self.get_logger().info("Current time: " + str(self.current_time))
+            self.get_logger().info("Current time (jumped); " + str(self.current_time + 10.0))
             self.get_logger().info("Error: " + str(self.error))
             self.get_logger().info("Next point: " + str(self.nextPoint))
             self.get_logger().info("Polynomials for next point: " + str(self.pathPlannerPolynomials[self.nextPointIndex]))
             self.get_logger().info("Velocity vector: " + str(self.velocityVector))
-            # send velocity information to crazyflie motion controller
+            self.get_logger().info("Angular velocity: " + str(self.angularVelocity))
+            # publish velocity vector, angular velcoity and flight status to motion controller
+            msg = RegulatedVelocity()
+            msg.data = [self.velocityVector[0], self.velocityVector[1], self.velocityVector[2], self.angularVelocity]
+            msg.status = self.flightStatus
+            self.regulatorPublisher_.publish(msg)
+            self.get_logger().info("Velocity message sent to motion controller!")
         elif self.pathPlannerPoints != [] and self.start_time == None:
             # publish one message to motion controller to initiate start timer 
             msg = RegulatedVelocity()
@@ -76,13 +107,13 @@ class RegulatorListener(Node):
             msg.status = True
             self.regulatorPublisher_.publish(msg)
             self.get_logger().info("Message sent to motion commander!")
-            pass
 
     def onPathPlannerMsg(self, msg):
-        self.pathPlannerPoints = np.delete(np.array(msg.points).reshape(msg.point_row, msg.point_col), 0, 0)
-        self.pathPlannerPolynomials = self.deserializeData(msg.polynomials)
-        self.get_logger().info("Received polynomials from PathPlanner: " + str(self.pathPlannerPolynomials))    
-        self.get_logger().info("Received points from PathPlanner: " + str(self.pathPlannerPoints))
+        if self.pathPlannerPoints == []:
+            self.pathPlannerPoints = np.delete(np.array(msg.points).reshape(msg.point_row, msg.point_col), 0, 0)
+            self.pathPlannerPolynomials = self.deserializeData(msg.polynomials)
+            self.get_logger().info("Received polynomials from PathPlanner: " + str(self.pathPlannerPolynomials))    
+            self.get_logger().info("Received points from PathPlanner: " + str(self.pathPlannerPoints))
     
     def onTimeMsg(self, msg):
         self.get_logger().info("Received time from MotionController: " + str(msg.data))

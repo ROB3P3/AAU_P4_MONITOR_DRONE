@@ -51,13 +51,10 @@ ament_python_install_package(${PROJECT_NAME})
 
 # Install Python executables
 install(PROGRAMS
-  scripts/py_node.py
-  scripts/py_listener.py
   scripts/vicon_talker.py
-  scripts/pathplanner_talker.py
-  scripts/regulator_listener.py
+  scripts/regulator_node.py
   scripts/motion_controller_node.py
-  scripts/py_path_planner.py
+  scripts/path_planner_node.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
