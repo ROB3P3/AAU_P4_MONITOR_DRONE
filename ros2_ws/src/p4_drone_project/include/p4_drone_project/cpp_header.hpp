@@ -26,7 +26,7 @@ class ViconClient : public rclcpp::Node
             ViconDataStreamSDK::CPP::Output_GetVersion output = ViconRetimingClient.GetVersion();
             RCLCPP_INFO(this->get_logger(),"Version igem '%d'", output.Major);
             
-            ViconRetimingClient.Connect("192.168.1.33:801", 90.0);
+            ViconRetimingClient.Connect("192.168.1.33:801", 10.0);
 
             ViconDataStreamSDK::CPP::Output_IsConnected clientIsConnected = ViconRetimingClient.IsConnected();
 
