@@ -27,7 +27,7 @@ def path_generator():
     random_number = random.randint(1, 24)
 
     # Load the image
-    background = pygame.image.load(f'./src/my_cpp_py_pkg/my_cpp_py_pkg/PathPlanner/GUI/Mark billeder/Mark{random_number}.png')
+    background = pygame.image.load(f'./src/p4_drone_project/p4_drone_project/PathPlanner/GUI/Mark billeder/Mark{random_number}.png')
 
     # Game loop
     running = True

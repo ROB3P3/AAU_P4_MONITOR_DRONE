@@ -5,8 +5,8 @@ from std_msgs.msg import String
 from my_robot_interfaces.msg import PathPlannerMessage
 import numpy as np
 import json
-from my_cpp_py_pkg.PathPlanner.GUI.path_gen_vp import path_generator
-import my_cpp_py_pkg.PathPlanner.LOGIK.Path_generator_v2_vp_4 as pg
+from p4_drone_project.PathPlanner.GUI.path_gen_vp import path_generator
+import p4_drone_project.PathPlanner.LOGIK.Path_generator_v2_vp_4 as pg
 
 class PyPathPlanner(Node):
     def __init__(self):

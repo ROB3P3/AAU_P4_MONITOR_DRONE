@@ -1,10 +1,10 @@
 #!/usr/bin/env python3 
 import rclpy
-from my_cpp_py_pkg.PathPlanner.py_pathplanner import PyPathPlanner
+from p4_drone_project.vicon_test_module import ViconTalker
 
 def main(args=None):
     rclpy.init(args=args)
-    node = PyPathPlanner()
+    node = ViconTalker()
     #køre noden indtil den bliver stoppet af ctrl+c eller andet, hvorefter rclpy.shutdown() kaldes
     rclpy.spin(node)
     rclpy.shutdown()
