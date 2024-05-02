@@ -4,6 +4,7 @@ from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
 import numpy as np
 from sympy import symbols, lambdify
+from scipy.io import savemat
 
 def length_of_trajectory(positions):
     # Calculate lengths of line segments in 3D
@@ -218,18 +219,27 @@ def plot_polynomial(all_polynomials):
     # Add a 3D subplot
     ax = fig.add_subplot(111, projection='3d')
 
+    all_x_values = []
+    all_tx_values = []
+
+    all_y_values = []
+    all_ty_values = []
+
+    all_z_values = []
+    all_tz_values = []
+
     # Loop over all polynomials
     for poly_x, poly_y, poly_z, tf, t0, t1 in all_polynomials:
         # Generate a sequence of t-values
-        t_values = np.linspace(t0, t1, num=res_of_plot)
+        t_values_1 = np.linspace(t0, t1, num=res_of_plot)
         
         # Convert the sympy polynomial to a lambda function for easy evaluation
         func_x = lambdify(t, poly_x, "numpy")
         func_y = lambdify(t, poly_y, "numpy")
         
         # Compute x, y, and z values
-        x_values = func_x(t_values)
-        y_values = func_y(t_values)
+        x_values = func_x(t_values_1)
+        y_values = func_y(t_values_1)
         
         t_values = np.linspace(0, tf, num=res_of_plot)
         z_values = poly_z(t_values)
@@ -238,9 +248,44 @@ def plot_polynomial(all_polynomials):
         #print('y_values:', y_values)
         #print('z_values:', z_values)
         #print('t_values:', t_values)
+        all_x_values.extend(x_values)
+        all_tx_values.extend(t_values_1)
+
+        all_y_values.extend(y_values)
+        all_ty_values.extend(t_values_1)
+
+        all_z_values.extend(z_values)
+        all_tz_values.extend(t_values_1)
 
         # Plot x, y, and z values
         ax.plot(x_values, y_values, z_values)
+    
+    # Combine all x_values and t_values into one vertical array
+    all_x_points = []
+    for i in range(len(all_x_values)):
+        all_x_points.append([all_tx_values[i], all_x_values[i]/100])
+
+    # Save the x_values to a .mat file
+    file_name = 'drone_path_x.mat'
+    savemat(file_name, {'drone_path_x': all_x_points})
+
+    # Combine all y_values and t_values into one vertical array
+    all_y_points = []
+    for i in range(len(all_y_values)):
+        all_y_points.append([all_ty_values[i], all_y_values[i]/100])
+
+    # Save the y_values to a .mat file
+    file_name = 'drone_path_y.mat'
+    savemat(file_name, {'drone_path_y': all_y_points})
+
+    # Combine all z_values and t_values into one vertical array
+    all_z_points = []
+    for i in range(len(all_z_values)):
+        all_z_points.append([all_tz_values[i], all_z_values[i]/100])
+
+    # Save the z_values to a .mat file
+    file_name = 'drone_path_z.mat'
+    savemat(file_name, {'drone_path_z': all_z_points})
 
     ax.set_xlabel('X')
     ax.set_ylabel('Y')
