@@ -106,6 +106,7 @@ def Cubic_polynomial_trajectory_vp(positions):
             
 def plot_polynomial(all_polynomials):
     t = symbols('t')
+    res_of_plot = 100
 
     # Create the figure for x_values
     fig, ax = plt.subplots()
@@ -118,7 +119,7 @@ def plot_polynomial(all_polynomials):
     for poly_x, poly_y, poly_z, tf, t0, t1 in all_polynomials:
         
         # Generate a sequence of t-values
-        t_values = np.linspace(t0, t1, num=100) 
+        t_values = np.linspace(t0, t1, num=res_of_plot) 
         
         #plot the x, y and z values
         for l in range(0,len(t_values)):
@@ -143,7 +144,7 @@ def plot_polynomial(all_polynomials):
     for poly_x, poly_y, poly_z, tf, t0, t1 in all_polynomials:
         
         # Generate a sequence of t-values
-        t_values = np.linspace(t0, t1, num=100)
+        t_values = np.linspace(t0, t1, num=res_of_plot)
         
         #plot the x, y and z values
         for l in range(0,len(t_values)):
@@ -169,11 +170,11 @@ def plot_polynomial(all_polynomials):
     # Loop over all polynomials
     for poly_x, poly_y, poly_z, tf, t0, t1 in all_polynomials:
         # Generate a sequence of t-values
-        t_values = np.linspace(0, tf, num=100)
+        t_values = np.linspace(0, tf, num=res_of_plot)
         # Compute the z_values
         z_values = poly_z(t_values)
         # Generate a sequence of t-values
-        t_values = np.linspace(t0, t1, num=100)
+        t_values = np.linspace(t0, t1, num=res_of_plot)
 
         # Plot z_values over t_values
         plt.plot(t_values, z_values)
@@ -193,7 +194,7 @@ def plot_polynomial(all_polynomials):
     for poly_x, poly_y, poly_z, tf, t0, t1 in all_polynomials:
 
         # Generate a sequence of t-values
-        t_values = np.linspace(t0, t1, num=100)
+        t_values = np.linspace(t0, t1, num=res_of_plot)
 
         # Convert the sympy polynomial to a lambda function for easy evaluation
         func_x = lambdify(t, poly_x, "numpy")
@@ -220,7 +221,7 @@ def plot_polynomial(all_polynomials):
     # Loop over all polynomials
     for poly_x, poly_y, poly_z, tf, t0, t1 in all_polynomials:
         # Generate a sequence of t-values
-        t_values = np.linspace(t0, t1, num=100)
+        t_values = np.linspace(t0, t1, num=res_of_plot)
         
         # Convert the sympy polynomial to a lambda function for easy evaluation
         func_x = lambdify(t, poly_x, "numpy")
@@ -230,7 +231,7 @@ def plot_polynomial(all_polynomials):
         x_values = func_x(t_values)
         y_values = func_y(t_values)
         
-        t_values = np.linspace(0, tf, num=100)
+        t_values = np.linspace(0, tf, num=res_of_plot)
         z_values = poly_z(t_values)
 
         #print('x_values:', x_values)

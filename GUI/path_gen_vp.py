@@ -164,6 +164,8 @@ def path_generator():
     plt.figure()
     plt.plot(*zip(*vp_pattern_points), 'b-')  # 'b-' means blue color and solid line
     plt.plot(*zip(*pattern_points), 'r-')  # Plot the original points in red
+    plt.xlabel('X')
+    plt.ylabel('Y')
     plt.gca().invert_yaxis()  # Invert the y-axis
     plt.show()
 
