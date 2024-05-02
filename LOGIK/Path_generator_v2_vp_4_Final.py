@@ -260,6 +260,7 @@ def plot_polynomial(all_polynomials):
         # Plot x, y, and z values
         ax.plot(x_values, y_values, z_values)
     
+
     # Combine all x_values and t_values into one vertical array
     all_x_points = []
     for i in range(len(all_x_values)):
@@ -269,6 +270,8 @@ def plot_polynomial(all_polynomials):
     file_name = 'drone_path_x.mat'
     savemat(file_name, {'drone_path_x': all_x_points})
 
+
+
     # Combine all y_values and t_values into one vertical array
     all_y_points = []
     for i in range(len(all_y_values)):
@@ -277,6 +280,8 @@ def plot_polynomial(all_polynomials):
     # Save the y_values to a .mat file
     file_name = 'drone_path_y.mat'
     savemat(file_name, {'drone_path_y': all_y_points})
+
+
 
     # Combine all z_values and t_values into one vertical array
     all_z_points = []
