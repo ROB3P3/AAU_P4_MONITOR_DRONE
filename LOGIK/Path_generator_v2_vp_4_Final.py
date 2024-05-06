@@ -248,6 +248,7 @@ def plot_polynomial(all_polynomials):
         #print('y_values:', y_values)
         #print('z_values:', z_values)
         #print('t_values:', t_values)
+        
         all_x_values.extend(x_values)
         all_tx_values.extend(t_values_1)
 
@@ -298,11 +299,4 @@ def plot_polynomial(all_polynomials):
     plt.gca().invert_yaxis()
     plt.show()
 
-    return x_values, y_values
-
-def polomial_to_points(x_values, y_values, z_values, tf, t0, t1):
-    t_space = 500
-    t_values = np.linspace(0, tf, num=t_space)
-    t_values = np.linspace(t0, t1, num=t_space)
-    zip_values = list(zip(x_values, y_values, z_values, t_values))
-    return zip_values
+    return all_x_points, all_y_points, all_z_points

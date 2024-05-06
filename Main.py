@@ -1,4 +1,4 @@
-from GUI.path_gen_vp import path_generator
+from GUI.path_gen_vp_2 import path_generator
 import LOGIK.Path_generator_v2_vp_4_Final as pg
 import numpy as np
 
