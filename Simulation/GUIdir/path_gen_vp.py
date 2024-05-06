@@ -27,7 +27,7 @@ def path_generator():
     random_number = random.randint(1, 24)
 
     # Load the image
-    background = pygame.image.load(f'Simulation\GUIdir\Mark_billeder\Mark{random_number}.png')
+    background = pygame.image.load(f'GUIdir\Mark_billeder\Mark{random_number}.png')
 
     # Game loop
     running = True

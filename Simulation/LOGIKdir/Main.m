@@ -1,4 +1,5 @@
 % Specify python interpreter
+terminate(pyenv)
 pyenv
 try
     pyversion("C:\Users\klump\anaconda3\envs\MonitorDrone\pythonw.exe")
@@ -7,7 +8,7 @@ catch
 end
 
 % Run path planner python script
-%pyrunfile("Path Planner.py")
+pyrunfile("Main.py")
 
 % get parameters
 Crazyflie_Param;

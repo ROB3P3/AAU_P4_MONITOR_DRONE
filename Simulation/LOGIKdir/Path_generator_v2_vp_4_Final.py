@@ -269,10 +269,10 @@ def plot_polynomial(all_polynomials):
 
 
     # export to DATAdir
-    os.chdir('Simulation/DATAdir')
+    #os.chdir('Simulation/DATAdir')
 
     # Save the x_values to a .mat file
-    file_name = 'drone_path_x.mat'
+    file_name = 'DATAdir/drone_path_x.mat'
     savemat(file_name, {'drone_path_x': all_x_points})
 
 
@@ -283,7 +283,7 @@ def plot_polynomial(all_polynomials):
         all_y_points.append([all_ty_values[i], all_y_values[i]/100])
 
     # Save the y_values to a .mat file
-    file_name = 'drone_path_y.mat'
+    file_name = 'DATAdir/drone_path_y.mat'
     savemat(file_name, {'drone_path_y': all_y_points})
 
 
@@ -294,7 +294,7 @@ def plot_polynomial(all_polynomials):
         all_z_points.append([all_tz_values[i], all_z_values[i]/100])
 
     # Save the z_values to a .mat file
-    file_name = 'drone_path_z.mat'
+    file_name = 'DATAdir/drone_path_z.mat'
     savemat(file_name, {'drone_path_z': all_z_points})
 
     ax.set_xlabel('X')
