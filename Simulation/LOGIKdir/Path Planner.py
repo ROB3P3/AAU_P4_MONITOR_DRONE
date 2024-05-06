@@ -8,7 +8,6 @@ import numpy as np
 from scipy.io import savemat
 import os
 
-
 def path_generator():
     # Initialize Pygame
     pygame.init()

@@ -7,7 +7,9 @@ Pygame (pip install via anaconda prompt, the rest can be installed via anaconda 
 shapely,
 scipy,
 matplotlib,
-numpy
+numpy,
+rclpy,
+sympy
 
 ### Simulink & Matlab:
 Matlab 2024a,
