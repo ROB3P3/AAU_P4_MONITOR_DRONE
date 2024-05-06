@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from sympy import symbols, lambdify
 from scipy.io import savemat
+import os
 
 def length_of_trajectory(positions):
     # Calculate lengths of line segments in 3D
@@ -265,6 +266,10 @@ def plot_polynomial(all_polynomials):
     all_x_points = []
     for i in range(len(all_x_values)):
         all_x_points.append([all_tx_values[i], all_x_values[i]/100])
+
+
+    # export to DATAdir
+    os.chdir('Simulation/DATAdir')
 
     # Save the x_values to a .mat file
     file_name = 'drone_path_x.mat'

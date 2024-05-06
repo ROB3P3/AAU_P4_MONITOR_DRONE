@@ -1,5 +1,5 @@
-from Simulation.GUIdir.path_gen_vp import path_generator
-import Simulation.LOGIKdir.Path_generator_v2_vp_4_Final as pg
+from GUIdir.path_gen_vp import path_generator
+import LOGIKdir.Path_generator_v2_vp_4_Final as pg
 import numpy as np
 
 if __name__ == "__main__":
