@@ -20,7 +20,7 @@ class PyPathPlanner(Node):
         self.pathPolynomials = pg.cubicPolynomialTrajectory(self.pathPositions)
         #print('Path polynomials:', pathPolynomials)
         print("Positions:", self.pathPositions)
-
+        print("Polynomials:", self.pathPolynomials)
         #pg.plot_polynomial(pathPolynomials)
         
         self.broadcastMsg = PathPlannerMessage()
@@ -41,6 +41,6 @@ class PyPathPlanner(Node):
     def broadcast(self):
         self.get_logger().info("Attempt to send PathPlanner polynomials to Regulator node.")
         self.pathPlannerPublisher_.publish(self.broadcastMsg)
-        """ if self.pathPlannerPublisher_.get_subscription_count() >= 1:
+        if self.pathPlannerPublisher_.get_subscription_count() >= 1:
             self.get_logger().info("PathPlanner polynomials sent to Regulator node.")
-            self.broadcastTimer_.cancel() """
+            self.broadcastTimer_.cancel()

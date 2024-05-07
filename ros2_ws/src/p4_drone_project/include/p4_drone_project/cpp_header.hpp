@@ -57,12 +57,14 @@ class ViconClient : public rclcpp::Node
                                     {
                                         RCLCPP_INFO(this->get_logger(), "Segment %d: %s", SegmentIndex, segmentName.SegmentName);
                                         ViconDataStreamSDK::CPP::Output_GetSegmentGlobalTranslation globalTranslation = ViconRetimingClient.GetSegmentGlobalTranslation(subjectName.SubjectName, segmentName.SegmentName);
-                                        if(globalTranslation.Result == ViconDataStreamSDK::CPP::Result::Success)
+                                        ViconDataStreamSDK::CPP::Output_GetSegmentLocalRotationEulerXYZ globalRotation = ViconRetimingClient.GetSegmentLocalRotationEulerXYZ(subjectName.SubjectName, segmentName.SegmentName);
+                                        if(globalTranslation.Result == ViconDataStreamSDK::CPP::Result::Success && globalRotation.Result == ViconDataStreamSDK::CPP::Result::Success)
                                         {
                                             RCLCPP_INFO(this->get_logger(), "Global Translation: %f %f %f", globalTranslation.Translation[0], globalTranslation.Translation[1], globalTranslation.Translation[2]);
+                                            RCLCPP_INFO(this->get_logger(), "Global Rotation: %f %f %f", globalRotation.Rotation[0], globalRotation.Rotation[1], globalRotation.Rotation[2]);
                                             auto message = std_msgs::msg::Float64MultiArray();
-                                            message.data = {globalTranslation.Translation[0], globalTranslation.Translation[1], globalTranslation.Translation[2]};
-                                            RCLCPP_INFO(this->get_logger(), "Publishing: '[%f, %f, %f]'", message.data[0], message.data[1], message.data[2]);
+                                            message.data = {globalTranslation.Translation[0], globalTranslation.Translation[1], globalTranslation.Translation[2], globalRotation.Rotation[2]};
+                                            RCLCPP_INFO(this->get_logger(), "Publishing: '[%f, %f, %f]'", message.data[0], message.data[1], message.data[2], message.data[3]);
                                             viconPubliser_->publish(message);
                                         }
                                     }

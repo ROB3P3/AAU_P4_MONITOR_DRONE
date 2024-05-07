@@ -18,7 +18,6 @@
   <depend>python3-pygame</depend>
   <depend>python3-scipy</depend>
   <depend>python-matplotlib</depend>
-
   
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
