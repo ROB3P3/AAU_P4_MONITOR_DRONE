@@ -1,6 +1,5 @@
 from GUI.path_gen_vp_2 import path_generator
 import LOGIK.Path_generator_v2_vp_4_Final as pg
-import numpy as np
 
 if __name__ == "__main__":
     scan_pattern = path_generator()

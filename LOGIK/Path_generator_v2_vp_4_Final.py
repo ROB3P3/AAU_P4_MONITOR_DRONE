@@ -1,6 +1,5 @@
 # Description: This script generates a path for a robot to follow using cubic polynomials
 
-from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
 import numpy as np
 from sympy import symbols, lambdify
