@@ -25,10 +25,10 @@ class PyPathPlanner(Node):
         
         self.broadcastMsg = PathPlannerMessage()
         self.broadcastMsg.polynomials = self.serializeData()
-        points1D = [float(item) for sublist in self.pathPositions for item in sublist]
+        """ points1D = [float(item) for sublist in self.pathPositions for item in sublist]
         self.broadcastMsg.points = points1D
         self.broadcastMsg.point_row = len(self.pathPositions)
-        self.broadcastMsg.point_col = 8
+        self.broadcastMsg.point_col = 8 """
         
         self.broadcastTimer_ = self.create_timer(1, self.broadcast)
 
