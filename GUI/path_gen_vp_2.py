@@ -1,5 +1,4 @@
 import pygame
-from scipy.spatial import ConvexHull
 import matplotlib.pyplot as plt
 from shapely.geometry import Polygon, LineString
 import numpy as np
