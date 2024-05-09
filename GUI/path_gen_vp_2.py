@@ -61,7 +61,7 @@ def path_generator():
     # Quit Pygame
     pygame.quit()
 
-# Set the point properties
+    # Set the point properties
     point_color = 'red'
 
     # Set the hull properties
@@ -83,9 +83,6 @@ def path_generator():
     for y in np.arange(min_y, max_y, scan_spacing):
         scan_line = LineString([(min_x, y), (max_x, y)])
         scan_lines.append(scan_line)
-
-    # Calculate the intersections of the scan lines with the hull
-    intersections = [scan_line.intersection(hull_polygon) for scan_line in scan_lines]
 
     ## Plot the points
     #plt.scatter(*zip(*points), color=point_color)
@@ -173,7 +170,5 @@ def path_generator():
 
     # Update positions with lengths
     vp_pattern_points = [(x, y, z) for (x, y), z in zip(vp_pattern_points, z)]
-
-
 
     return vp_pattern_points

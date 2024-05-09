@@ -1,5 +1,4 @@
 # Description: This script generates a path for a robot to follow using cubic polynomials
-
 import matplotlib.pyplot as plt
 import numpy as np
 from sympy import symbols, lambdify
@@ -64,6 +63,7 @@ def via_point_calc(pos_start, pos_slut, Vel_start, Vel_slut, tf, t0):
     # Define the symbolic variables
     t = symbols('t')
 
+    #Define 
     a0pos = pos_start
     a1pos = Vel_start
     a2pos = ((3/(tf*tf))*(pos_slut-pos_start))-((2/tf)*Vel_start)-((1/tf)*Vel_slut)

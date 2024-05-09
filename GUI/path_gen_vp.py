@@ -94,9 +94,6 @@ def path_generator():
         scan_line = LineString([(min_x, y), (max_x, y)])
         scan_lines.append(scan_line)
 
-    # Calculate the intersections of the scan lines with the hull
-    intersections = [scan_line.intersection(hull_polygon) for scan_line in scan_lines]
-
     ## Plot the points
     #plt.scatter(*zip(*points), color=point_color)
 
