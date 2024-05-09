@@ -22,5 +22,5 @@ simIn = Simulink.SimulationInput(model_name);
 %simIn = setModelParameter(simIn,"StartTime","0",...
 %    "StopTime",stop_time);
 open_system("Crazyflie_Simulation_Position")
-open_system("Crazyflie_Simulation_Position/Simple Position Controller/x,y,z error")
+open_system("Crazyflie_Simulation_Position/Position Controller/x,y,z error")
 out = sim(simIn);
