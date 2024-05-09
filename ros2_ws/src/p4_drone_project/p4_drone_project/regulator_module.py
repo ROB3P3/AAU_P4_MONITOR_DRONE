@@ -13,11 +13,11 @@ from my_robot_interfaces.msg import PathPlannerMessage
 from my_robot_interfaces.msg import RegulatedVelocity
 
 PATHPLANNER_DELTA_T = 0.5
-BASE_VELOCITY = 0.1
-REGULATOR_VALUE = 100.0
-VELOCITY_RANGE = 0.05
+DEFAULT_HEIGHT = 1.0
+BASE_VELOCITY = 0.085
+REGULATOR_VALUE = 2000.0
+VELOCITY_RANGE = 0.015
 ERROR_RANGE = 5.0
-POLY_DELTA_T = 0.5
 
 class RegulatorListener(Node):
     def __init__(self):
@@ -50,12 +50,12 @@ class RegulatorListener(Node):
 
         # only start sending velocity commands to the crazyflie once the pathplanner has sent points
         if self.pathPlannerPoints != []:
-            # sets the current time to be the time since the start time (duration)
+            """ # sets the current time to be the time since the start time (duration)
             self.current_time = (self.get_clock().now().nanoseconds / 1e+9) - self.start_time
             # adds 10 to the current time to make the time fit with the pathplanner
             jumpedTime = self.current_time + 10.0
             #timeToReachPoint = self.pathPlannerPolynomials[self.nextPointIndex][5] - jumpedTime
-            # establishes the first point for the drone to fly to
+            # establishes the first point for the drone to fly to """
 
             self.error = [self.pathPlannerPoints[self.nextPointIndex][0] - self.viconPoint[0], self.pathPlannerPoints[self.nextPointIndex][1] - self.viconPoint[1], self.pathPlannerPoints[self.nextPointIndex][2] - self.viconPoint[2]]
 
@@ -66,12 +66,7 @@ class RegulatorListener(Node):
             velocityX += max(min(0, self.error[0] / REGULATOR_VALUE), -VELOCITY_RANGE) if self.error[0] < 0 else min(VELOCITY_RANGE, self.error[0] / REGULATOR_VALUE)
             velocityY += max(min(0, self.error[1] / REGULATOR_VALUE), -VELOCITY_RANGE) if self.error[1] < 0 else min(VELOCITY_RANGE, self.error[1] / REGULATOR_VALUE)
 
-
-            if self.error[0] < ERROR_RANGE and self.error[0] > -ERROR_RANGE and (self.error[1] > ERROR_RANGE or self.error[1] < -ERROR_RANGE):
-                velocityX = 0.0
-            elif self.error[1] < ERROR_RANGE and self.error[1] > -ERROR_RANGE and (self.error[0] > ERROR_RANGE or self.error[0] < -ERROR_RANGE):
-                velocityY = 0.0
-            elif self.error[0] < ERROR_RANGE and self.error[0] > -ERROR_RANGE and self.error[1] < ERROR_RANGE and self.error[1] > -ERROR_RANGE:
+            if self.error[0] < ERROR_RANGE and self.error[0] > -ERROR_RANGE and self.error[1] < ERROR_RANGE and self.error[1] > -ERROR_RANGE:
                 self.nextPointIndex += 1
 
                 if self.nextPointIndex == len(self.pathPlannerPoints):
@@ -79,12 +74,15 @@ class RegulatorListener(Node):
                 else:
                     self.get_logger().info("---------------------------------------------------- flying to next point: " + str(self.pathPlannerPoints[self.nextPointIndex]) + " ---------------------------------------------------------------------------")
             
+
+            self.get_logger().info("Error: " + str(self.error))
+            self.get_logger().info("Velocity: " + str([float(velocityX), float(velocityY), 0.0, 0.0]))
+
             msg = RegulatedVelocity()
-            msg.data = [velocityX, velocityY, 0.0, 0.0]
+            msg.data = [float(velocityX), float(velocityY), 0.0, 0.0]
             msg.status = self.flightStatus
             self.regulatorPublisher_.publish(msg)
             self.get_logger().info("Velocity message sent to motion controller!")
-
 
             """ if self.nextPoint == []:
                 # calculates the error between the vicon point and the first point
@@ -138,13 +136,13 @@ class RegulatorListener(Node):
             msg.status = self.flightStatus
             self.regulatorPublisher_.publish(msg)
             self.get_logger().info("Velocity message sent to motion controller!") """
-        elif self.pathPlannerPoints != [] and self.start_time == None:
+        """ elif self.pathPlannerPoints != [] and self.start_time == None:
             # publish one message to motion controller to initiate start timer 
             msg = RegulatedVelocity()
             msg.data = [0.0, 0.0, 0.0, 0.0]
             msg.status = True
             self.regulatorPublisher_.publish(msg)
-            self.get_logger().info("Message sent to motion commander!")
+            self.get_logger().info("Message sent to motion commander!") """
 
     def onPathPlannerMsg(self, msg):
         #self.pathPlannerPoints = np.delete(np.array(msg.points).reshape(msg.point_row, msg.point_col), 0, 0)

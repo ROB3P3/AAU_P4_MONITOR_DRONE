@@ -124,6 +124,18 @@ class MotionControllerNode(Node):
                 self.prevViconPoint = viconPoint
                 viconPoint = self.velocityNode.viconPoint
                 error = [points[flyingTo][0] - viconPoint[0], points[flyingTo][1] - viconPoint[1], points[flyingTo][2] - viconPoint[2]]
+                slope = (viconPoint[1] - self.prevViconPoint[1]) / (viconPoint[0] - self.prevViconPoint[0])
+
+                # compare slope of the points and the slope of the polynomial
+                # if the slope of the points is greater than the slope of the polynomial
+                # then the drone is moving away from the polynomial
+                # if the slope of the points is less than the slope of the polynomial
+                # then the drone is moving towards the polynomial
+                # if the slope of the points is equal to the slope of the polynomial
+                # then the drone is moving on the polynomial
+                # if the drone is moving away from the polynomial then the velocity should be increased
+                # if the drone is moving towards the polynomial then the velocity should be decreased
+                # if the drone is moving on the polynomial then the velocity should be kept the same
 
                 # regulate on the forhold of speed impact of regulator and base speed
                 # change so the velocity close to points does not change so binaryily
@@ -181,8 +193,8 @@ class MotionControllerNode(Node):
 class VelocityRecipientNode(Node):
     def __init__(self):
         super().__init__("velocity_recipient_node")
-        #self.regulatorSubscriber_ = self.create_subscription(RegulatedVelocity, "/motioncontroller_regulator", self.onRegulatorMsg, 10)
-        self.viconSubscriber_ = self.create_subscription(Float64MultiArray, "/pid_regulator_vicon", self.onViconMsg, 10)
+        self.regulatorSubscriber_ = self.create_subscription(RegulatedVelocity, "/motioncontroller_regulator", self.onRegulatorMsg, 10)
+        #self.viconSubscriber_ = self.create_subscription(Float64MultiArray, "/pid_regulator_vicon", self.onViconMsg, 10)
         self.receivedVelocity = []
         self.flightStatus = True
         self.viconPoint = []
