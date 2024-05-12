@@ -14,9 +14,9 @@ from my_robot_interfaces.msg import RegulatedVelocity
 
 PATHPLANNER_DELTA_T = 0.5
 DEFAULT_HEIGHT = 1.0
-BASE_VELOCITY = 0.085
+BASE_VELOCITY = 0.05
 REGULATOR_VALUE = 2000.0
-VELOCITY_RANGE = 0.015
+VELOCITY_RANGE = 0.05
 ERROR_RANGE = 5.0
 
 class RegulatorListener(Node):
@@ -58,13 +58,20 @@ class RegulatorListener(Node):
             # establishes the first point for the drone to fly to """
 
             self.error = [self.pathPlannerPoints[self.nextPointIndex][0] - self.viconPoint[0], self.pathPlannerPoints[self.nextPointIndex][1] - self.viconPoint[1], self.pathPlannerPoints[self.nextPointIndex][2] - self.viconPoint[2]]
+            errorVector = np.array([self.error[0], self.error[1]])
+            errorLength = math.sqrt(self.error[0] ** 2 + self.error[1] ** 2)
+            normErrorVector = errorVector / errorLength
+            normErrorVectorLength = math.sqrt(normErrorVector[0] ** 2 + normErrorVector[1] ** 2)
+            normErrVelocityVector = normErrorVector * 0.1
+            velocityX = normErrVelocityVector[0]
+            velocityY = normErrVelocityVector[1]
 
 
-            velocityX = -BASE_VELOCITY if self.error[0] < 0 else BASE_VELOCITY
+            """ velocityX = -BASE_VELOCITY if self.error[0] < 0 else BASE_VELOCITY
             velocityY = -BASE_VELOCITY if self.error[1] < 0 else BASE_VELOCITY
 
             velocityX += max(min(0, self.error[0] / REGULATOR_VALUE), -VELOCITY_RANGE) if self.error[0] < 0 else min(VELOCITY_RANGE, self.error[0] / REGULATOR_VALUE)
-            velocityY += max(min(0, self.error[1] / REGULATOR_VALUE), -VELOCITY_RANGE) if self.error[1] < 0 else min(VELOCITY_RANGE, self.error[1] / REGULATOR_VALUE)
+            velocityY += max(min(0, self.error[1] / REGULATOR_VALUE), -VELOCITY_RANGE) if self.error[1] < 0 else min(VELOCITY_RANGE, self.error[1] / REGULATOR_VALUE) """
 
             if self.error[0] < ERROR_RANGE and self.error[0] > -ERROR_RANGE and self.error[1] < ERROR_RANGE and self.error[1] > -ERROR_RANGE:
                 self.nextPointIndex += 1
@@ -73,10 +80,14 @@ class RegulatorListener(Node):
                     self.flightStatus = False
                 else:
                     self.get_logger().info("---------------------------------------------------- flying to next point: " + str(self.pathPlannerPoints[self.nextPointIndex]) + " ---------------------------------------------------------------------------")
-            
 
             self.get_logger().info("Error: " + str(self.error))
             self.get_logger().info("Velocity: " + str([float(velocityX), float(velocityY), 0.0, 0.0]))
+            self.get_logger().info("Error length: " + str(errorLength))
+            self.get_logger().info("Normalized error vector: " + str(normErrorVector))
+            self.get_logger().info("Normalized error vector length: " + str(normErrorVectorLength))
+            self.get_logger().info("Normalized error velocity vector: " + str(normErrVelocityVector))
+            self.get_logger().info("Normalized error velocity vector (0.1): " + str(normErrorVector * 0.1))
 
             msg = RegulatedVelocity()
             msg.data = [float(velocityX), float(velocityY), 0.0, 0.0]
@@ -149,21 +160,23 @@ class RegulatorListener(Node):
         # ask rasmus if the last polynomial describes movement directly to [0, 0, 0] or movement to [0, 0, 100]
         # if it describes movement directly to [0, 0, 0] it needs to be removed
         # currently the last polynomial is fucked
-        self.pathPlannerPolynomials = self.deserializeData(msg.polynomials)
-        self.pathPlannerPolynomials.pop(0)
+        if self.pathPlannerPolynomials == []:
+            self.pathPlannerPolynomials = self.deserializeData(msg.polynomials)
+            self.pathPlannerPolynomials.pop(0)
+            self.pathPlannerPolynomials.pop()
 
-        for poly in self.pathPlannerPolynomials:
-            for i in range(0, math.ceil(poly[3] / PATHPLANNER_DELTA_T)):
-                self.pathPlannerPoints.append([poly[0].subs('t', poly[4] + i * PATHPLANNER_DELTA_T), poly[1].subs('t', poly[4] + i * PATHPLANNER_DELTA_T), np.polyval(poly[2], poly[4] + i * PATHPLANNER_DELTA_T), poly[4] + i * PATHPLANNER_DELTA_T])
+            for poly in self.pathPlannerPolynomials:
+                for i in range(0, math.ceil(poly[3] / PATHPLANNER_DELTA_T)):
+                    self.pathPlannerPoints.append([poly[0].subs('t', poly[4] + i * PATHPLANNER_DELTA_T), poly[1].subs('t', poly[4] + i * PATHPLANNER_DELTA_T), np.polyval(poly[2], poly[4] + i * PATHPLANNER_DELTA_T), poly[4] + i * PATHPLANNER_DELTA_T])
+            
+            self.pathPlannerPoints.append([self.pathPlannerPolynomials[-1][0].subs('t', self.pathPlannerPolynomials[-1][5]), self.pathPlannerPolynomials[-1][1].subs('t', self.pathPlannerPolynomials[-1][5]), np.polyval(self.pathPlannerPolynomials[-1][2], self.pathPlannerPolynomials[-1][5]), self.pathPlannerPolynomials[-1][5]])
+            # append [0, 0, 100] if it is not the last point
+            #self.pathPlannerPoints.append([0.0, 0.0, 100.0, LAST TIME])
+            self.nextPointIndex = 0
+
+            self.get_logger().info("Received polynomials from PathPlanner: " + str(self.pathPlannerPolynomials))
+            self.get_logger().info("Derived points from polynomials: " + str(self.pathPlannerPoints))
         
-        self.pathPlannerPoints.append([self.pathPlannerPolynomials[-1][0].subs('t', self.pathPlannerPolynomials[-1][5]), self.pathPlannerPolynomials[-1][1].subs('t', self.pathPlannerPolynomials[-1][5]), np.polyval(self.pathPlannerPolynomials[-1][2], self.pathPlannerPolynomials[-1][5]), self.pathPlannerPolynomials[-1][5]])
-        # append [0, 0, 100] if it is not the last point
-        #self.pathPlannerPoints.append([0.0, 0.0, 100.0, LAST TIME])
-        self.nextPointIndex = 0
-
-        self.get_logger().info("Received polynomials from PathPlanner: " + str(self.pathPlannerPolynomials))
-        self.get_logger().info("Derived points from polynomials: " + str(self.pathPlannerPoints))
-    
     def onTimeMsg(self, msg):
         self.get_logger().info("Received time from MotionController: " + str(msg.data))
         self.start_time = msg.data

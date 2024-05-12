@@ -79,8 +79,8 @@ class MotionControllerNode(Node):
     def startFlight(self):
         self.get_logger().info("Starting flight!")
         with SyncCrazyflie(URI, cf = Crazyflie(rw_cache='./cache')) as scf:
-            #self.flightVelocity(scf)
-            self.testFlight(scf)
+            self.flightVelocity(scf)
+            #self.testFlight(scf)
 
     def testFlight(self, cf):
         fly = True
@@ -210,8 +210,8 @@ class MotionControllerNode(Node):
 class VelocityRecipientNode(Node):
     def __init__(self):
         super().__init__("velocity_recipient_node")
-        #self.regulatorSubscriber_ = self.create_subscription(RegulatedVelocity, "/motioncontroller_regulator", self.onRegulatorMsg, 10)
-        self.viconSubscriber_ = self.create_subscription(Float64MultiArray, "/pid_regulator_vicon", self.onViconMsg, 10)
+        self.regulatorSubscriber_ = self.create_subscription(RegulatedVelocity, "/motioncontroller_regulator", self.onRegulatorMsg, 10)
+        #self.viconSubscriber_ = self.create_subscription(Float64MultiArray, "/pid_regulator_vicon", self.onViconMsg, 10)
         self.receivedVelocity = []
         self.flightStatus = True
         self.viconPoint = []
