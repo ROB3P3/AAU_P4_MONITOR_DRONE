@@ -146,6 +146,9 @@ class RegulatorListener(Node):
 
     def onPathPlannerMsg(self, msg):
         #self.pathPlannerPoints = np.delete(np.array(msg.points).reshape(msg.point_row, msg.point_col), 0, 0)
+        # ask rasmus if the last polynomial describes movement directly to [0, 0, 0] or movement to [0, 0, 100]
+        # if it describes movement directly to [0, 0, 0] it needs to be removed
+        # currently the last polynomial is fucked
         self.pathPlannerPolynomials = self.deserializeData(msg.polynomials)
         self.pathPlannerPolynomials.pop(0)
 
@@ -154,6 +157,8 @@ class RegulatorListener(Node):
                 self.pathPlannerPoints.append([poly[0].subs('t', poly[4] + i * PATHPLANNER_DELTA_T), poly[1].subs('t', poly[4] + i * PATHPLANNER_DELTA_T), np.polyval(poly[2], poly[4] + i * PATHPLANNER_DELTA_T), poly[4] + i * PATHPLANNER_DELTA_T])
         
         self.pathPlannerPoints.append([self.pathPlannerPolynomials[-1][0].subs('t', self.pathPlannerPolynomials[-1][5]), self.pathPlannerPolynomials[-1][1].subs('t', self.pathPlannerPolynomials[-1][5]), np.polyval(self.pathPlannerPolynomials[-1][2], self.pathPlannerPolynomials[-1][5]), self.pathPlannerPolynomials[-1][5]])
+        # append [0, 0, 100] if it is not the last point
+        #self.pathPlannerPoints.append([0.0, 0.0, 100.0, LAST TIME])
         self.nextPointIndex = 0
 
         self.get_logger().info("Received polynomials from PathPlanner: " + str(self.pathPlannerPolynomials))

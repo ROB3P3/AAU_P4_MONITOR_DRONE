@@ -27,9 +27,9 @@ from cflib.utils import uri_helper
 URI = uri_helper.uri_from_env(default='radio://0/80/2M/E7E7E7E7E7')
 
 DEFAULT_HEIGHT = 1.0
-BASE_VELOCITY = 0.085
-REGULATOR_VALUE = 2000.0
-VELOCITY_RANGE = 0.015
+BASE_VELOCITY = 0.05
+REGULATOR_VALUE = 1250.0
+VELOCITY_RANGE = 0.05
 ERROR_RANGE = 5.0
 POLY_DELTA_T = 0.5
 deck_attached_event = Event()
@@ -46,7 +46,6 @@ class MotionControllerNode(Node):
         self.receivedVelocity = [0.0, 0.0, 0.0, 0.0]
         self.flightStatus = True
         self.start_time = None
-        self.prevViconPoint = []
 
         self.velocityNode = VelocityRecipientNode()
         self.startFlight()
@@ -83,7 +82,6 @@ class MotionControllerNode(Node):
             #self.flightVelocity(scf)
             self.testFlight(scf)
 
-    
     def testFlight(self, cf):
         fly = True
         points = [[0, 0, 100.0, 0.0, 5.0], [-50.0, 50.0, 100.0, 5.0, 8.54], [-150.0, 50.0, 100.0, 8.54, 13.54], [-150.0, -150.0, 100.0, 13.54, 18.54], [-50.0, -150.0, 100.0, 18.54, 23.54], [0, 0, 100.0, 23.54, 28.54]]
@@ -95,20 +93,23 @@ class MotionControllerNode(Node):
 
         polyPoints = []
         polyXY = []
+        polyX = []
 
         for poly in polynomials:
             for i in range(0, math.ceil(poly[3] / POLY_DELTA_T)):
                 polyXY.append([poly[0].subs('t', poly[4] + i * POLY_DELTA_T), poly[1].subs('t', poly[4] + i * POLY_DELTA_T)])
                 polyPoints.append([poly[0].subs('t', poly[4] + i * POLY_DELTA_T), poly[1].subs('t', poly[4] + i * POLY_DELTA_T), np.polyval(poly[2], poly[4] + i * POLY_DELTA_T), [sympy.diff(poly[0], 't').subs('t', poly[4] + i * POLY_DELTA_T), sympy.diff(poly[1], 't').subs('t', poly[4] + i * POLY_DELTA_T)], poly[4] + i * POLY_DELTA_T])
+                polyX.append([poly[4] + i * POLY_DELTA_T, poly[0].subs('t', poly[4] + i * POLY_DELTA_T)])
 
         polyPoints.append([polynomials[-1][0].subs('t', polynomials[-1][5]), polynomials[-1][1].subs('t', polynomials[-1][5]), polynomials[-1][2](polynomials[-1][5]), [sympy.diff(polynomials[-1][0], 't').subs('t', polynomials[-1][4] + i * POLY_DELTA_T), sympy.diff(polynomials[-1][1], 't').subs('t', polynomials[-1][4] + i * POLY_DELTA_T)], polynomials[-1][5]])
 
+        print(polyX)
         print(polyXY)
         print(polyPoints)
 
-        time.sleep(300)
-
         points = polyPoints
+
+        viconPointArray = []
 
         flyingTo = 0
         velocity = [0.1, 0.1, 0.0, 0.0]
@@ -121,10 +122,12 @@ class MotionControllerNode(Node):
                 keyInput = self.getKey()
 
                 rclpy.spin_once(self.velocityNode)
-                self.prevViconPoint = viconPoint
                 viconPoint = self.velocityNode.viconPoint
                 error = [points[flyingTo][0] - viconPoint[0], points[flyingTo][1] - viconPoint[1], points[flyingTo][2] - viconPoint[2]]
-                slope = (viconPoint[1] - self.prevViconPoint[1]) / (viconPoint[0] - self.prevViconPoint[0])
+                errorVector = np.array([error[0], error[1]])
+                errorLength = math.sqrt(error[0] ** 2 + error[1] ** 2)
+                normErrorVector = errorVector / errorLength
+                normErrorVectorLength = math.sqrt(normErrorVector[0] ** 2 + normErrorVector[1] ** 2)
 
                 # compare slope of the points and the slope of the polynomial
                 # if the slope of the points is greater than the slope of the polynomial
@@ -143,24 +146,38 @@ class MotionControllerNode(Node):
                 #velocity = [max(min(0.2, error[0] / 50.0), -0.2), max(min(0.2, error[1] / 50.0), -0.2), 0.0, 0.0]
                 #velocity = [max(min(VELOCITY_MAX, error[0] / REGULATOR_VALUE), -VELOCITY_MAX), max(min(VELOCITY_MAX, error[1] / REGULATOR_VALUE), -VELOCITY_MAX), 0.0, 0.0]
 
-                velocityX = -BASE_VELOCITY if error[0] < 0 else BASE_VELOCITY
-                velocityY = -BASE_VELOCITY if error[1] < 0 else BASE_VELOCITY
+                #velocityX = -BASE_VELOCITY if error[0] < 0 else BASE_VELOCITY
+                #velocityY = -BASE_VELOCITY if error[1] < # else BASE_VELOCITY
 
-                velocityX += max(min(0, error[0] / REGULATOR_VALUE), -VELOCITY_RANGE) if error[0] < 0 else min(VELOCITY_RANGE, error[0] / REGULATOR_VALUE)
-                velocityY += max(min(0, error[1] / REGULATOR_VALUE), -VELOCITY_RANGE) if error[1] < 0 else min(VELOCITY_RANGE, error[1] / REGULATOR_VALUE)
+                #velocityX += max(min(0, error[0] / REGULATOR_VALUE), -VELOCITY_RANGE) if error[0] < 0 else min(VELOCITY_RANGE, error[0] / REGULATOR_VALUE)
+                #velocityY += max(min(0, error[1] / REGULATOR_VALUE), -VELOCITY_RANGE) if error[1] < 0 else min(VELOCITY_RANGE, error[1] / REGULATOR_VALUE)
+
+                normErrVelocityVector = normErrorVector * 0.1
+                #normErrVelocityVector = [max(min(normErrVelocityVector[0] + -BASE_VELOCITY, 0), -0.1) if normErrVelocityVector[0] < 0 else max(min(normErrVelocityVector[0] + BASE_VELOCITY, 0.1), 0), max(min(normErrVelocityVector[1] + -BASE_VELOCITY, 0), -0.1) if normErrVelocityVector[1] < 0 else max(min(normErrVelocityVector[1] + BASE_VELOCITY, 0.1), 0)]
 
                 if error[0] < ERROR_RANGE and error[0] > -ERROR_RANGE and error[1] < ERROR_RANGE and error[1] > -ERROR_RANGE:
                     flyingTo += 1
                     if flyingTo == len(points):
+                        velocityX = 0.0
+                        velocityY = 0.0
                         self.get_logger().info("flight ended")
+                        print(viconPointArray)
                         fly = False
                     else:
-                        self.get_logger().info("---------------------------------------------------- flying to next point: " + str(points[flyingTo]) + " ---------------------------------------------------------------------------")
+                        self.get_logger().info("------------------------- flying to next point: " + str(points[flyingTo]) + " -----------------------------")
 
-                velocity = [velocityX, velocityY, 0.0, 0.0]
+                #velocity = [velocityX, velocityY, 0.0, 0.0]
+                #self.get_logger().info("Old velocity: " + str(velocity))
+                velocity = [normErrVelocityVector[0], normErrVelocityVector[1], 0.0, 0.0]
 
                 self.get_logger().info("Error: " + str(error))
                 self.get_logger().info("Velocity: " + str(velocity))
+                self.get_logger().info("Error length: " + str(errorLength))
+                self.get_logger().info("Normalized error vector: " + str(normErrorVector))
+                self.get_logger().info("Normalized error vector length: " + str(normErrorVectorLength))
+                self.get_logger().info("Normalized error velocity vector: " + str(normErrVelocityVector))
+                self.get_logger().info("Normalized error velocity vector (0.1): " + str(normErrorVector * 0.1))
+                viconPointArray.append([viconPoint[0], viconPoint[1]])
                 mc.start_linear_motion(velocity[0], velocity[1], velocity[2], velocity[3])
                 
                 if keyInput == 'q':
@@ -193,8 +210,8 @@ class MotionControllerNode(Node):
 class VelocityRecipientNode(Node):
     def __init__(self):
         super().__init__("velocity_recipient_node")
-        self.regulatorSubscriber_ = self.create_subscription(RegulatedVelocity, "/motioncontroller_regulator", self.onRegulatorMsg, 10)
-        #self.viconSubscriber_ = self.create_subscription(Float64MultiArray, "/pid_regulator_vicon", self.onViconMsg, 10)
+        #self.regulatorSubscriber_ = self.create_subscription(RegulatedVelocity, "/motioncontroller_regulator", self.onRegulatorMsg, 10)
+        self.viconSubscriber_ = self.create_subscription(Float64MultiArray, "/pid_regulator_vicon", self.onViconMsg, 10)
         self.receivedVelocity = []
         self.flightStatus = True
         self.viconPoint = []
