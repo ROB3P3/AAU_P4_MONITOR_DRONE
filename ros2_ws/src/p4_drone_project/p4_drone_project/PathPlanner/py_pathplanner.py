@@ -13,24 +13,25 @@ class PyPathPlanner(Node):
         super().__init__("python_path_planner")
         self.get_logger().info("PathPlanner node initialized.")
         self.pathPlannerPublisher_ = self.create_publisher(PathPlannerMessage, "/pid_regulator_pathplanner", 10)
+        # Initialize path generator and get path positions (corner positions)
         self.pathPositions = path_generator()
         self.pathPositions =  pg.length_of_trajectory(self.pathPositions)
         self.pathPositions = pg.velocity(self.pathPositions)
-        #print('Positions:', positions)
+        # Get path polynomials using the corner positions
         self.pathPolynomials = pg.cubicPolynomialTrajectory(self.pathPositions)
-        #print('Path polynomials:', pathPolynomials)
         print("Positions:", self.pathPositions)
         print("Polynomials:", self.pathPolynomials)
-        pg.plot_polynomial(self.pathPolynomials)
         
+        # Prepare a message to broadcast path polynomials
         self.broadcastMsg = PathPlannerMessage()
+        # Serialize the data so it is written as a string[]
         self.broadcastMsg.polynomials = self.serializeData()
-        """ points1D = [float(item) for sublist in self.pathPositions for item in sublist]
-        self.broadcastMsg.points = points1D
-        self.broadcastMsg.point_row = len(self.pathPositions)
-        self.broadcastMsg.point_col = 8 """
         
+        # Timer to broadcast the polynomials once a second until the regulator node receives
         self.broadcastTimer_ = self.create_timer(1, self.broadcast)
+        
+        # Plot graphs of the polynomials
+        pg.plot_polynomial(self.pathPolynomials)
 
     def serializeData(self):
         jsonStringArr = []
@@ -41,6 +42,7 @@ class PyPathPlanner(Node):
     def broadcast(self):
         self.get_logger().info("Attempt to send PathPlanner polynomials to Regulator node.")
         self.pathPlannerPublisher_.publish(self.broadcastMsg)
-        """ if self.pathPlannerPublisher_.get_subscription_count() >= 1:
+        # Publish path polynomials until the regulator node has received them.
+        if self.pathPlannerPublisher_.get_subscription_count() >= 1:
             self.get_logger().info("PathPlanner polynomials sent to Regulator node.")
-            self.broadcastTimer_.cancel() """
+            self.broadcastTimer_.cancel()

@@ -4,6 +4,8 @@ from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
 import numpy as np
 from sympy import symbols, lambdify
+from datetime import datetime
+import csv
 
 def length_of_trajectory(positions):
     # Calculate lengths of line segments in 3D
@@ -107,29 +109,30 @@ def cubicPolynomialTrajectory(positions):
 def plot_polynomial(all_polynomials):
     t = symbols('t')
 
-    # Create the figure for x_values
+    t_values = []
+    x_values = []
+    y_values = []
+    z_values = []
+
+    for poly_x, poly_y, poly_z, tf, t0, t1 in all_polynomials:
+        # Generate a sequence of t-values
+        t_temp_values = np.linspace(t0, t1, num=500)
+        t_z_temp_values = np.linspace(0, tf, num=500)
+        t_values.extend(t_temp_values)
+        
+        funcX = lambdify(t, poly_x, "numpy")
+        funcY = lambdify(t, poly_y, "numpy")
+        x_values.extend(funcX(t_temp_values))
+        y_values.extend(funcY(t_temp_values))
+        z_values.extend(poly_z(t_z_temp_values))
+    
     fig, ax = plt.subplots()
     plt.xlabel('Time')
     plt.ylabel('x')
     plt.title('Plot of x over time')
     plt.grid(True)
 
-    # Loop over all polynomials
-    for poly_x, poly_y, poly_z, tf, t0, t1 in all_polynomials:
-        # Generate a sequence of t-values
-        t_values = np.linspace(t0, t1, num=500) 
-        
-        #plot the x, y and z values
-        for l in range(0,len(t_values)):
-            # Convert the sympy polynomial to a lambda function for easy evaluation
-            func = lambdify(t, poly_x, "numpy")
-            x_values = func(t_values)
-
-            ax.plot(t_values, x_values)
-
-        # Plot x_values over t_values
-        plt.plot(t_values, x_values)
-    
+    plt.plot(t_values, x_values)
 
     # Create the figure for y_values
     fig, ax = plt.subplots()
@@ -138,112 +141,51 @@ def plot_polynomial(all_polynomials):
     plt.title('Plot of y over time')
     plt.grid(True)
 
-    # Loop over all polynomials
-    for poly_x, poly_y, poly_z, tf, t0, t1 in all_polynomials:
-        
-        # Generate a sequence of t-values
-        t_values = np.linspace(t0, t1, num=500)
-        
-        #plot the x, y and z values
-        for l in range(0,len(t_values)):
-            # Convert the sympy polynomial to a lambda function for easy evaluation
-            func = lambdify(t, poly_y, "numpy")
-            y_values = func(t_values)
-
-            ax.plot(t_values, y_values)
-
-        # Plot y_values over t_values
-        plt.plot(t_values, y_values)
+    plt.plot(t_values, y_values)
 
     # Create the figure for z_values
-    plt.figure()
+    fig, ax = plt.subplots()
     plt.xlabel('Time')
     plt.ylabel('z')
     plt.title('Plot of z over time')
     plt.grid(True)
 
-    all_z_values = []
-    all_tz_values = []
-
-    # Loop over all polynomials
-    for poly_x, poly_y, poly_z, tf, t0, t1 in all_polynomials:
-        # Generate a sequence of t-values
-        t_values = np.linspace(0, tf, num=500)
-        # Compute the z_values
-        z_values = poly_z(t_values)
-        # Generate a sequence of t-values
-        t_values = np.linspace(t0, t1, num=500)
-
-        # Plot z_values over t_values
-        plt.plot(t_values, z_values)
-
-        all_z_values.extend(z_values)
-        all_tz_values.extend(t_values)
-        
-    plt.show()
-
+    plt.plot(t_values, z_values)
+    
+    # Create plot for y over x 
+    fig, ax = plt.subplots()
     plt.xlabel('x')
     plt.ylabel('y')
     plt.title('Plot of y over x')
     plt.grid(True)
 
-    # Loop over all polynomials
-    for poly_x, poly_y, poly_z, tf, t0, t1 in all_polynomials:
+    plt.plot(x_values, y_values)
 
-        # Generate a sequence of t-values
-        t_values = np.linspace(t0, t1, num=500)
-
-        # Convert the sympy polynomial to a lambda function for easy evaluation
-        func_x = lambdify(t, poly_x, "numpy")
-        func_y = lambdify(t, poly_y, "numpy")
-
-        # Compute x and y values
-        x_values = func_x(t_values)
-        y_values = func_y(t_values)
-
-        # Plot x_values and y_values
-        plt.plot(x_values, y_values)
-
-    plt.gca().invert_yaxis()
-    plt.show()
-
-    # Create a new figure
+    # Create a new figure for 3D plot
     fig = plt.figure()
 
     # Add a 3D subplot
     ax = fig.add_subplot(111, projection='3d')
 
-    # Loop over all polynomials
-    for poly_x, poly_y, poly_z, tf, t0, t1 in all_polynomials:
-        # Generate a sequence of t-values
-        t_values = np.linspace(t0, t1, num=500)
-        
-        # Convert the sympy polynomial to a lambda function for easy evaluation
-        func_x = lambdify(t, poly_x, "numpy")
-        func_y = lambdify(t, poly_y, "numpy")
-        
-        # Compute x, y, and z values
-        x_values = func_x(t_values)
-        y_values = func_y(t_values)
-
-        t_values = np.linspace(0, tf, num=500)
-        z_values = poly_z(t_values)
-
-        #print('x_values:', x_values)
-        #print('y_values:', y_values)
-        print('z_values:', z_values)
-        print('t_values:', t_values)
-
-        # Plot x, y, and z values
-        ax.plot(x_values, y_values, z_values)
+    ax.plot(x_values, y_values, z_values)
 
     ax.set_xlabel('X')
     ax.set_ylabel('Y')
     ax.set_zlabel('Z')
-    plt.gca().invert_yaxis()
+    ax.set_title('3D plot over path')
     plt.show()
 
-    return x_values, y_values
+    csvDataHeader = ['TX', 'TY', 'TZ']
+    currentDatetime = datetime.now()
+    dateTimeString = str(currentDatetime.year) + "-" + str(currentDatetime.month) + "-" + str(currentDatetime.day) + "-" + str(currentDatetime.hour) + ":" + str(currentDatetime.minute)
+    fileNameString = "./src/p4_drone_project/p4_drone_project/PathPlanner/DATA/PathData " + dateTimeString + ".csv"
+    dictArray =  convert_to_dict(x_values, y_values, z_values)
+    with open(fileNameString, 'a') as file:
+        csvDictWriter = csv.DictWriter(file, csvDataHeader)
+        file.seek(0, 2)
+        if file.tell() == 0:
+            csvDictWriter.writeheader()
+        csvDictWriter.writerows(dictArray)
 
 def polomial_to_points(x_values, y_values, z_values, tf, t0, t1):
     t_space = 500
@@ -251,3 +193,9 @@ def polomial_to_points(x_values, y_values, z_values, tf, t0, t1):
     t_values = np.linspace(t0, t1, num=t_space)
     zip_values = list(zip(x_values, y_values, z_values, t_values))
     return zip_values
+
+def convert_to_dict(x_values, y_values, z_values):
+    dictArray = []
+    for i in range(len(x_values)):
+        dictArray.append({"TX": x_values[i], "TY": y_values[i], "TZ": z_values[i]})
+    return dictArray  

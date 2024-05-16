@@ -39,13 +39,11 @@ class MotionControllerNode(Node):
     def __init__(self):
         super().__init__("motion_controller")
         self.get_logger().info("Motion Controller node initialized.")
-        self.timePublisher_ = self.create_publisher(Float64, "/motioncontroller_time", 10)
 
         cflib.crtp.init_drivers()
 
         self.receivedVelocity = [0.0, 0.0, 0.0, 0.0]
         self.flightStatus = True
-        self.start_time = None
 
         self.velocityNode = VelocityRecipientNode()
         self.startFlight()
@@ -64,15 +62,13 @@ class MotionControllerNode(Node):
             # has a time difference of start until sent time of 8.13 - 8.23 seconds with the default height
             # has a time difference of start until sent time ~4.7 seconds without default heigh
             while (self.flightStatus):
-                """ if self.start_time == None:
-                    self.start_time = self.get_clock().now().nanoseconds / 1e+9
-                    self.timePublisher_.publish(Float64(data=self.start_time))
-                    self.get_logger().info("Time published: " + str(self.start_time)) """
-
+                # Run velocity receiver node
                 rclpy.spin_once(self.velocityNode)
+                # Set received velocity and flight status
                 self.receivedVelocity = self.velocityNode.receivedVelocity
                 self.flightStatus = self.velocityNode.flightStatus
 
+                # Change drone's velocity to the received velocity
                 mc.start_linear_motion(self.receivedVelocity[0], self.receivedVelocity[1], self.receivedVelocity[2], self.receivedVelocity[3])
                 print("Changing direction to: " + str(self.receivedVelocity))
   
@@ -109,8 +105,6 @@ class MotionControllerNode(Node):
 
         points = polyPoints
 
-        viconPointArray = []
-
         flyingTo = 0
         velocity = [0.1, 0.1, 0.0, 0.0]
         with MotionCommander(cf, default_height=DEFAULT_HEIGHT) as mc:
@@ -128,17 +122,6 @@ class MotionControllerNode(Node):
                 errorLength = math.sqrt(error[0] ** 2 + error[1] ** 2)
                 normErrorVector = errorVector / errorLength
                 normErrorVectorLength = math.sqrt(normErrorVector[0] ** 2 + normErrorVector[1] ** 2)
-
-                # compare slope of the points and the slope of the polynomial
-                # if the slope of the points is greater than the slope of the polynomial
-                # then the drone is moving away from the polynomial
-                # if the slope of the points is less than the slope of the polynomial
-                # then the drone is moving towards the polynomial
-                # if the slope of the points is equal to the slope of the polynomial
-                # then the drone is moving on the polynomial
-                # if the drone is moving away from the polynomial then the velocity should be increased
-                # if the drone is moving towards the polynomial then the velocity should be decreased
-                # if the drone is moving on the polynomial then the velocity should be kept the same
 
                 # regulate on the forhold of speed impact of regulator and base speed
                 # change so the velocity close to points does not change so binaryily
@@ -161,7 +144,6 @@ class MotionControllerNode(Node):
                         velocityX = 0.0
                         velocityY = 0.0
                         self.get_logger().info("flight ended")
-                        print(viconPointArray)
                         fly = False
                     else:
                         self.get_logger().info("------------------------- flying to next point: " + str(points[flyingTo]) + " -----------------------------")
@@ -177,12 +159,20 @@ class MotionControllerNode(Node):
                 self.get_logger().info("Normalized error vector length: " + str(normErrorVectorLength))
                 self.get_logger().info("Normalized error velocity vector: " + str(normErrVelocityVector))
                 self.get_logger().info("Normalized error velocity vector (0.1): " + str(normErrorVector * 0.1))
-                viconPointArray.append([viconPoint[0], viconPoint[1]])
                 mc.start_linear_motion(velocity[0], velocity[1], velocity[2], velocity[3])
                 
                 if keyInput == 'q':
                     fly = False
             self.get_logger().info("Flight ended!")
+    
+    def hoverTest(self, cf):
+        hoverHeight = 0.5
+        with MotionCommander(cf, default_height=hoverHeight) as mc:
+            # Stabilize time
+            time.sleep(10)
+            mc.start_linear_motion(0, 0, 0, 0)
+            # Hover time
+            time.sleep(10)
 
 
     def getKey(self):
@@ -196,16 +186,6 @@ class MotionControllerNode(Node):
             key = ''
         termios.tcsetattr(sys.stdin, termios.TCSADRAIN, settings)
         return key
-
-# motion commander node step-by-step :
-# first initiate connection to crazyflie + crazyradio
-# then initiate subscriber connection to regulator
-# when receiving information from regulator start flying
-# use the command start_linear_motion to start flying
-# run the flying command in a while loop? where the condition is that it has not yet reached the last point?
-# if the start_linear_motion command runs in a while loop a separate node is needed to subscribe to the regulator
-# having a separate node and spinning this node can take some time so the publisher timer of the regulator needs to be significantly lower
-# when out of the while loop finish the 'with' context and land
 
 class VelocityRecipientNode(Node):
     def __init__(self):

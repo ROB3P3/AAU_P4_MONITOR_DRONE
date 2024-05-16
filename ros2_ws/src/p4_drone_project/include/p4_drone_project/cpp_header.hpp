@@ -68,17 +68,7 @@ class ViconClient : public rclcpp::Node
                     }
                 }
             }
-
-            //timer_ = this->create_wall_timer(333ms, std::bind(&ViconClient::timer_callback, this));
         }
     private:
-        void timer_callback()
-        {
-            auto message = std_msgs::msg::Float64MultiArray();
-            message.data = {0.0, 1.0, 2.0, 3.0};
-            RCLCPP_INFO(this->get_logger(), "Publishing: '[%f, %f, %f, %f]'", message.data[0], message.data[1], message.data[2], message.data[3]);
-            viconPubliser_->publish(message);
-        }
-        rclcpp::TimerBase::SharedPtr timer_;
         rclcpp::Publisher<std_msgs::msg::Float64MultiArray>::SharedPtr viconPubliser_;
 };
