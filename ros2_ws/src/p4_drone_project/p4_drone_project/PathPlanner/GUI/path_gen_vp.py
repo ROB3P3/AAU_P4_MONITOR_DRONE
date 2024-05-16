@@ -1,6 +1,5 @@
 #!/usr/bin/env python3 
 import pygame
-from scipy.spatial import ConvexHull
 import matplotlib.pyplot as plt
 from shapely.geometry import Polygon, LineString
 import numpy as np
@@ -18,8 +17,8 @@ def path_generator():
     point_color = (255, 0, 0)  # Red
     point_radius = 5
 
-    # Set the hull properties
-    hull_color = (0, 255, 0)  # Green
+    # Set the line properties
+    line_color = (0, 255, 0)  # Green
 
     # List to store points
     points = []
@@ -39,7 +38,6 @@ def path_generator():
                 # Get the mouse position and add it to the points list
                 x, y = pygame.mouse.get_pos()
                 points.append((x, y))
-                #print(f"Added point at position: {x, y}")
 
         # Draw the background
         screen.blit(background, (0, 0))
@@ -48,13 +46,11 @@ def path_generator():
         for point in points:
             pygame.draw.circle(screen, point_color, point, point_radius)
 
-        # Draw the convex hull
-        if len(points) > 2:
-            hull = ConvexHull(points)
-            for i in range(len(hull.vertices)):
-                start_point = points[hull.vertices[i - 1]]
-                end_point = points[hull.vertices[i]]
-                pygame.draw.line(screen, hull_color, start_point, end_point, 1)
+        # Draw the lines
+        if len(points) > 1:
+            for i in range(len(points) - 1):
+                pygame.draw.line(screen, line_color, points[i], points[i + 1], 1)
+            pygame.draw.line(screen, line_color, points[0], points[-1], 1)
 
         # Display the mouse position in the window title
         x, y = pygame.mouse.get_pos()
@@ -74,13 +70,11 @@ def path_generator():
 
     # Set the scan pattern properties
     scan_color = 'blue'
-    scan_spacing = 20  # Spacing between scan lines
-
-    # Calculate the convex hull
-    hull = ConvexHull(points)
+    scan_spacing = 20 #cm
 
     # Create a Polygon object from the hull points
-    hull_polygon = Polygon([points[vertex] for vertex in hull.vertices])
+    hull_polygon = Polygon(points)
+    print(hull_polygon)
 
     # Get the bounding box of the hull
     min_x, min_y, max_x, max_y = hull_polygon.bounds
@@ -91,15 +85,12 @@ def path_generator():
         scan_line = LineString([(min_x, y), (max_x, y)])
         scan_lines.append(scan_line)
 
-    # Calculate the intersections of the scan lines with the hull
-    intersections = [scan_line.intersection(hull_polygon) for scan_line in scan_lines]
+    ## Plot the points
+    #plt.scatter(*zip(*points), color=point_color)
 
-    # Plot the points
-    plt.scatter(*zip(*points), color=point_color)
-
-    # Plot the hull
-    for simplex in hull.simplices:
-        plt.plot([points[i][0] for i in simplex], [points[i][1] for i in simplex], hull_color)
+    ## Plot the hull
+    #for simplex in hull.simplices:
+    #    plt.plot([points[i][0] for i in simplex], [points[i][1] for i in simplex], hull_color)
 
     # Create a list to store intersection points
     intersection_points = []
@@ -115,15 +106,16 @@ def path_generator():
         elif intersection.geom_type == 'LineString':
             # Single line segment
             x, y = intersection.xy
-            plt.plot(x, y, scan_color)
+            #plt.plot(x, y, scan_color)
             intersection_points.extend(list(zip(x, y)))  # Append intersection points
         elif intersection.geom_type == 'MultiLineString':
             # Multiple line segments
-            for line in intersection:
+            for i in range(len(intersection.geoms)):
+                line = intersection.geoms[i]
                 x, y = line.xy
-                plt.plot(x, y, scan_color)
+                #plt.plot(x, y, scan_color)
                 intersection_points.extend(list(zip(x, y)))  # Append intersection points
-    plt.gca().invert_yaxis()  # Invert the y-axis
+        #plt.gca().invert_yaxis()  # Invert the y-axis
 
     # Create a new list that follows the pattern: 1st, 2nd, 4th, 3rd, 5th, 6th, ...
     pattern_points = []
@@ -156,11 +148,14 @@ def path_generator():
     # Add the first point at the end to close the loop
     vp_pattern_points.append(vp_pattern_points[1])
     vp_pattern_points.append(vp_pattern_points[1])
-    
+
+
     # Plot the points following the pattern
     plt.figure()
     plt.plot(*zip(*vp_pattern_points), 'b-')  # 'b-' means blue color and solid line
     plt.plot(*zip(*pattern_points), 'r-')  # Plot the original points in red
+    plt.xlabel('X')
+    plt.ylabel('Y')
     plt.gca().invert_yaxis()  # Invert the y-axis
     plt.show()
 

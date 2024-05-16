@@ -1,6 +1,5 @@
 #!/usr/bin/env python3 
 # Description: This script generates a path for a robot to follow using cubic polynomials
-from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
 import numpy as np
 from sympy import symbols, lambdify
@@ -33,10 +32,10 @@ def velocity(positions):
 
     for i in range(0, len(positions) - 1):
         # Calculate the distances between the points
-        l1 = positions[i][3]
+        l = positions[i][3]
 
         # Calculate the time it takes to travel between the points
-        time = l1 / corner_velocity
+        time = l / corner_velocity
         total_time += time  # Add time to total_time
 
         # Calculate the velocities
@@ -108,6 +107,7 @@ def cubicPolynomialTrajectory(positions):
             
 def plot_polynomial(all_polynomials):
     t = symbols('t')
+    res_of_plot = 500
 
     t_values = []
     x_values = []
@@ -116,8 +116,8 @@ def plot_polynomial(all_polynomials):
 
     for poly_x, poly_y, poly_z, tf, t0, t1 in all_polynomials:
         # Generate a sequence of t-values
-        t_temp_values = np.linspace(t0, t1, num=500)
-        t_z_temp_values = np.linspace(0, tf, num=500)
+        t_temp_values = np.linspace(t0, t1, num=res_of_plot)
+        t_z_temp_values = np.linspace(0, tf, num=res_of_plot)
         t_values.extend(t_temp_values)
         
         funcX = lambdify(t, poly_x, "numpy")
@@ -186,13 +186,6 @@ def plot_polynomial(all_polynomials):
         if file.tell() == 0:
             csvDictWriter.writeheader()
         csvDictWriter.writerows(dictArray)
-
-def polomial_to_points(x_values, y_values, z_values, tf, t0, t1):
-    t_space = 500
-    t_values = np.linspace(0, tf, num=t_space)
-    t_values = np.linspace(t0, t1, num=t_space)
-    zip_values = list(zip(x_values, y_values, z_values, t_values))
-    return zip_values
 
 def convert_to_dict(x_values, y_values, z_values):
     dictArray = []
