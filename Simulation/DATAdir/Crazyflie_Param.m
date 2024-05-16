@@ -25,9 +25,12 @@ Iz_drone = 2.173*10^-5;  % kg*m^2
 b_drone = 1*10^-9; % kg*m^2 drone's x,y,z translational drag coefficient
 
 % Path coordinates
-load("drone_path_x.mat")
-load("drone_path_y.mat")
+%load("drone_path_x.mat")
+%load("drone_path_y.mat")
 load("drone_path_z.mat")
+load("drone_path.mat")
+drone_path_x = drone_path(:, 1:2);
+drone_path_y = drone_path(:, 1:2:3);
 
 % Get the last time
 stop_time = string(drone_path_z(end,1));
