@@ -5,6 +5,8 @@ import numpy as np
 from sympy import symbols, lambdify
 from datetime import datetime
 import csv
+import math
+import os
 
 def length_of_trajectory(positions):
     # Calculate lengths of line segments in 3D
@@ -114,6 +116,11 @@ def plot_polynomial(all_polynomials):
     y_values = []
     z_values = []
 
+    currentDatetime = datetime.now()
+    dateTimeString = str(currentDatetime.year) + "-" + str(currentDatetime.month) + "-" + str(currentDatetime.day) + "-" + str(currentDatetime.hour) + ":" + str(currentDatetime.minute)
+    os.makedirs("./src/p4_drone_project/p4_drone_project/PathPlanner/DATA/" + dateTimeString + "/")
+    os.chdir("./src/p4_drone_project/p4_drone_project/PathPlanner/DATA/" + dateTimeString + "/")
+
     for poly_x, poly_y, poly_z, tf, t0, t1 in all_polynomials:
         # Generate a sequence of t-values
         t_temp_values = np.linspace(t0, t1, num=res_of_plot)
@@ -134,6 +141,8 @@ def plot_polynomial(all_polynomials):
 
     plt.plot(t_values, x_values)
 
+    fig.savefig('X over time.png')
+
     # Create the figure for y_values
     fig, ax = plt.subplots()
     plt.xlabel('Time')
@@ -143,6 +152,8 @@ def plot_polynomial(all_polynomials):
 
     plt.plot(t_values, y_values)
 
+    fig.savefig('Y over time.png')
+
     # Create the figure for z_values
     fig, ax = plt.subplots()
     plt.xlabel('Time')
@@ -151,6 +162,8 @@ def plot_polynomial(all_polynomials):
     plt.grid(True)
 
     plt.plot(t_values, z_values)
+
+    fig.savefig('Z over time.png')
     
     # Create plot for y over x 
     fig, ax = plt.subplots()
@@ -160,6 +173,8 @@ def plot_polynomial(all_polynomials):
     plt.grid(True)
 
     plt.plot(x_values, y_values)
+
+    fig.savefig('Y over X.png')
 
     # Create a new figure for 3D plot
     fig = plt.figure()
@@ -173,22 +188,58 @@ def plot_polynomial(all_polynomials):
     ax.set_ylabel('Y')
     ax.set_zlabel('Z')
     ax.set_title('3D plot over path')
+    fig.savefig('3D plot.png')
+
     plt.show()
 
-    csvDataHeader = ['TX', 'TY', 'TZ']
-    currentDatetime = datetime.now()
-    dateTimeString = str(currentDatetime.year) + "-" + str(currentDatetime.month) + "-" + str(currentDatetime.day) + "-" + str(currentDatetime.hour) + ":" + str(currentDatetime.minute)
-    fileNameString = "./src/p4_drone_project/p4_drone_project/PathPlanner/DATA/PathData " + dateTimeString + ".csv"
-    dictArray =  convert_to_dict(x_values, y_values, z_values)
-    with open(fileNameString, 'a') as file:
+    PATHPLANNER_DELTA_T = 0.5
+    time_values = []
+    x_points = []
+    y_points = []
+    z_points = []
+
+    for poly in all_polynomials:
+        for i in range(0, math.ceil(poly[3] / PATHPLANNER_DELTA_T)):
+            time_values.append(poly[4] + i * PATHPLANNER_DELTA_T)
+            x_points.append(poly[0].subs('t', poly[4] + i * PATHPLANNER_DELTA_T))
+            y_points.append(poly[1].subs('t', poly[4] + i * PATHPLANNER_DELTA_T))
+            z_points.append(np.polyval(poly[2], i * PATHPLANNER_DELTA_T))
+
+    time_values.append(all_polynomials[-1][5])
+    x_points.append(all_polynomials[-1][0].subs('t', all_polynomials[-1][5]))
+    y_points.append(all_polynomials[-1][1].subs('t', all_polynomials[-1][5]))
+    z_points.append(np.polyval(all_polynomials[-1][2], all_polynomials[-1][3]))
+
+    csvDataHeader = ['Time', 'TX', 'TY', 'TZ']
+    pathFileNameString = "PathData.csv"
+    #pointDictArray =  convert_to_dict_points(x_values, y_values, z_values)
+    pointDictArray = convert_to_dict_points(x_points, y_points, z_points, time_values)
+    with open(pathFileNameString, 'a') as file:
         csvDictWriter = csv.DictWriter(file, csvDataHeader)
         file.seek(0, 2)
         if file.tell() == 0:
             csvDictWriter.writeheader()
-        csvDictWriter.writerows(dictArray)
+        csvDictWriter.writerows(pointDictArray)
+    
+    polyFileNameString = "PolyData.csv"
+    polyDictArray = convert_to_dict_poly(all_polynomials)
+    with open(polyFileNameString, 'a') as file:
+        csvDataHeader = ['PolyX', 'PolyY', 'PolyZ', 'Tf', 'T0', 'T1']
+        csvDictWriter = csv.DictWriter(file, csvDataHeader)
+        file.seek(0, 2)
+        if file.tell() == 0:
+            csvDictWriter.writeheader()
+        csvDictWriter.writerows(polyDictArray)
 
-def convert_to_dict(x_values, y_values, z_values):
+
+def convert_to_dict_points(x_values, y_values, z_values, t_values):
     dictArray = []
     for i in range(len(x_values)):
-        dictArray.append({"TX": x_values[i], "TY": y_values[i], "TZ": z_values[i]})
-    return dictArray  
+        dictArray.append({"Time": t_values[i], "TX": x_values[i], "TY": y_values[i], "TZ": z_values[i]})
+    return dictArray
+
+def convert_to_dict_poly(polys):
+    dictArray = []
+    for i in range(len(polys)):
+        dictArray.append({"PolyX": polys[i][0], "PolyY": polys[i][1], "PolyZ": polys[i][2], "Tf": polys[i][3], "T0": polys[i][4], "T1": polys[i][5]})
+    return dictArray

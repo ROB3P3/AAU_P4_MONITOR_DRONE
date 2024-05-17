@@ -43,6 +43,6 @@ class PyPathPlanner(Node):
         self.get_logger().info("Attempt to send PathPlanner polynomials to Regulator node.")
         self.pathPlannerPublisher_.publish(self.broadcastMsg)
         # Publish path polynomials until the regulator node has received them.
-        if self.pathPlannerPublisher_.get_subscription_count() >= 1:
+        """ if self.pathPlannerPublisher_.get_subscription_count() >= 1:
             self.get_logger().info("PathPlanner polynomials sent to Regulator node.")
-            self.broadcastTimer_.cancel()
+            self.broadcastTimer_.cancel() """

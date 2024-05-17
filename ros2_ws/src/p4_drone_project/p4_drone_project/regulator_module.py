@@ -46,7 +46,7 @@ class RegulatorListener(Node):
             self.error = [self.pathPlannerPoints[self.nextPointIndex][0] - self.viconPoint[0], self.pathPlannerPoints[self.nextPointIndex][1] - self.viconPoint[1], self.pathPlannerPoints[self.nextPointIndex][2] - self.viconPoint[2]]
 
             # If the error is within ERROR_RANGE on the x- and y-axis go to the next point
-            if self.error[0] < ERROR_RANGE and self.error[0] > -ERROR_RANGE and self.error[1] < ERROR_RANGE and self.error[1] > -ERROR_RANGE:
+            if self.error[0] < ERROR_RANGE and self.error[0] > -ERROR_RANGE and self.error[1] < ERROR_RANGE and self.error[1] > -ERROR_RANGE and self.error[2] < 10.0 and self.error[2] > -10.0:
                 self.nextPointIndex += 1
 
                 # If it is the last point in the list tell the motion controller to stop flying else move to next point in list
@@ -98,7 +98,7 @@ class RegulatorListener(Node):
             # Create list of points based on polynomials with an interval of PATHPLANNER_DELTA_T
             for poly in self.pathPlannerPolynomials:
                 for i in range(0, math.ceil(poly[3] / PATHPLANNER_DELTA_T)):
-                    self.pathPlannerPoints.append([poly[0].subs('t', poly[4] + i * PATHPLANNER_DELTA_T), poly[1].subs('t', poly[4] + i * PATHPLANNER_DELTA_T), np.polyval(poly[2], poly[4] + i * PATHPLANNER_DELTA_T), poly[4] + i * PATHPLANNER_DELTA_T])
+                    self.pathPlannerPoints.append([poly[0].subs('t', poly[4] + i * PATHPLANNER_DELTA_T), poly[1].subs('t', poly[4] + i * PATHPLANNER_DELTA_T), np.polyval(poly[2], i * PATHPLANNER_DELTA_T), poly[4] + i * PATHPLANNER_DELTA_T])
             
             # Append last point (0, 0, 100)
             self.pathPlannerPoints.append([self.pathPlannerPolynomials[-1][0].subs('t', self.pathPlannerPolynomials[-1][5]), self.pathPlannerPolynomials[-1][1].subs('t', self.pathPlannerPolynomials[-1][5]), np.polyval(self.pathPlannerPolynomials[-1][2], self.pathPlannerPolynomials[-1][5]), self.pathPlannerPolynomials[-1][5]])
@@ -114,4 +114,4 @@ class RegulatorListener(Node):
             poly = [parse_expr(i['poly_x']), parse_expr(i['poly_y']), np.poly1d(i['poly_z']), i['t_inter'], i['t_start'], i['t_end']]
             polyArray.append(poly)
 
-        return polyArray#
+        return polyArray

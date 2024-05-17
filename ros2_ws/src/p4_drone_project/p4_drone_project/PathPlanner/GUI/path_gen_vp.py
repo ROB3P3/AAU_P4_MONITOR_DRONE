@@ -10,7 +10,7 @@ def path_generator():
     pygame.init()
 
     # Set the size of the window
-    window_size = (400, 400)
+    window_size = (200, 200)
     screen = pygame.display.set_mode(window_size)
 
     # Set the point properties

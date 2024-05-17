@@ -4,8 +4,8 @@ import pandas
 import numpy as np
 
 
-pathToViconCSV = "/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE-1/Real/DATA/462_Crazyflie_Test 20.csv"
-pathToPathPlannerCSV = "/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE-1/Real/DATA/PathData 2024-5-16-10:39.csv"
+pathToViconCSV = "/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE-1/Real/DATA/Crazyflie_462_Test 13.csv"
+pathToPathPlannerCSV = "/home/drone/Documents/GitHub/AAU_P4_MONITOR_DRONE-1/Real/DATA/PathData.csv"
 
 csvFileVicon = pandas.read_csv(pathToViconCSV, skiprows=[0, 1, 2, 4], usecols=['Frame', 'TX', 'TY', 'TZ'])
 csvFilePathPlanner = pandas.read_csv(pathToPathPlannerCSV)
