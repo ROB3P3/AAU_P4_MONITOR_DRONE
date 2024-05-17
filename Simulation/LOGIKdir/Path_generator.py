@@ -22,7 +22,7 @@ def length_of_trajectory(positions):
 
 def velocity(positions):
     # Set the corner velocity
-    corner_velocity = 50  # cm/s    
+    corner_velocity = 10  # cm/s    
     
     # Initialize the velocities
     all_xvel = [0,]
