@@ -63,7 +63,7 @@ def via_point_calc(pos_start, pos_slut, Vel_start, Vel_slut, tf, t0):
     # Define the symbolic variables
     t = symbols('t')
 
-    #Define 
+    #Define the differnt coefficients for the polynomial
     a0pos = pos_start
     a1pos = Vel_start
     a2pos = ((3/(tf*tf))*(pos_slut-pos_start))-((2/tf)*Vel_start)-((1/tf)*Vel_slut)
@@ -79,6 +79,7 @@ def Cubic_polynomial_trajectory_vp(positions):
     all_polynomials = []
 
     for i in range(0, len(positions)-1):
+        
         x_start, y_start, z_start, xvel_start, yvel_start, zvel_start, l, t_start = positions[i]
         #print('start position', x_start, y_start, z_start, xvel_start, yvel_start, zvel_start, l, t_start)
 

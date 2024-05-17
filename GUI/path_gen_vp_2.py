@@ -64,11 +64,6 @@ def path_generator():
     # Set the point properties
     point_color = 'red'
 
-    # Set the hull properties
-    hull_color = 'green'
-
-    # Set the scan pattern properties
-    scan_color = 'blue'
     scan_spacing = 20 #cm
 
     # Create a Polygon object from the hull points
@@ -83,13 +78,6 @@ def path_generator():
     for y in np.arange(min_y, max_y, scan_spacing):
         scan_line = LineString([(min_x, y), (max_x, y)])
         scan_lines.append(scan_line)
-
-    ## Plot the points
-    #plt.scatter(*zip(*points), color=point_color)
-
-    ## Plot the hull
-    #for simplex in hull.simplices:
-    #    plt.plot([points[i][0] for i in simplex], [points[i][1] for i in simplex], hull_color)
 
     # Create a list to store intersection points
     intersection_points = []
