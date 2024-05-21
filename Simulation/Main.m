@@ -53,9 +53,9 @@ for k = 1:7
     end
     maxXY = max(XYLengthList)*100;
 
-    % Z mean and max error
-    meanZ = (sum(abs(out.zPathError.Data))*100)/length(out.zPathError.Data);
-    maxZ = max((abs(out.zPathError.Data)))*100;
+    %% Z mean and max error
+    meanZ = (sum(abs(out.zPathError.Data))*100)/length(out.zPathError.Data)
+    maxZ = max((abs(out.zPathError.Data)))*100
     meanXYZ = sqrt(meanX^2+meanY^2+meanZ^2);
     
     %% Calculate Overshoot

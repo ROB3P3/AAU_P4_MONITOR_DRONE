@@ -35,11 +35,24 @@ drone_path_x = PathData{:,["Time", "TX"]};
 drone_path_x(:,2) = drone_path_x(:,2) .* 0.01;
 drone_path_y = PathData{:,["Time", "TY"]};
 drone_path_y(:,2) = drone_path_y(:,2) .* 0.01;
-drone_path_z = PathData{:,["Time", "TZ"]};
-drone_path_z(:,2) = drone_path_z(:,2) .* 0.01;
 
-% Get the last time
-stop_time = string(drone_path_z(end,1));
-
-
+zMode = 1;
+if zMode == 1 % 10cm/s normal
+    drone_path_z = PathData{:,["Time", "TZ"]};
+    drone_path_z(:,2) = drone_path_z(:,2) .* 0.01;
+    % Get the last time
+    stop_time = string(drone_path_z(end,1));
+elseif zMode == 2 % twice as fast 20cm/s
+    drone_path_z = PathData{:,["Time", "TZ"]};
+    drone_path_z(:,2) = drone_path_z(:,2) .* 0.01;
+    drone_path_z(:,1) = drone_path_z(:,1) .* 0.5;
+    % Get the last time
+    stop_time = string(drone_path_z(end,1));
+elseif zMode == 3 % five as fast 50cm/s
+    drone_path_z = PathData{:,["Time", "TZ"]};
+    drone_path_z(:,2) = drone_path_z(:,2) .* 0.01;
+    drone_path_z(:,1) = drone_path_z(:,1) .* 0.2;
+    % Get the last time
+    stop_time = string(drone_path_z(end,1));
+end
 
