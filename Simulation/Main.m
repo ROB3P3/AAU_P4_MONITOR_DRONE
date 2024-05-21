@@ -8,7 +8,7 @@ catch
 end
 
 % Run path planner python script
-pyrunfile("Main.py")
+%pyrunfile("Main.py")
 
 % get parameters
 Crazyflie_Param;
