@@ -7,16 +7,16 @@ from fastdtw import fastdtw
 from scipy.spatial.distance import euclidean
 from scipy.interpolate import interp1d
 
-testNumber = 7
+testNumber = 8
 
-pathToViconCSV = "./Real/DATA/Gode tests/Vicon Test " + str(testNumber) + ".csv"
-pathToPathPlannerCSV = "./Real/DATA/Gode tests/PathData test " + str(testNumber) + ".csv"
+pathToViconCSV = "./Real/Data Processing/Gode tests/Vicon Test " + str(testNumber) + ".csv"
+pathToPathPlannerCSV = "./Real/Data Processing/Gode tests/PathData test " + str(testNumber) + ".csv"
 
 csvFileVicon = pandas.read_csv(pathToViconCSV, skiprows=[0, 1, 2, 4], usecols=['Frame', 'TX', 'TY', 'TZ'], skip_blank_lines=True)
 csvFilePathPlanner = pandas.read_csv(pathToPathPlannerCSV)
 
-os.makedirs(".Real/DATA/Gode tests/Test figures/Test " + str(testNumber), exist_ok=True)
-os.chdir("./Real/DATA/Gode tests/Test figures/Test " + str(testNumber))
+os.makedirs("./Real/Data Processing/Gode tests/Test figures/Test " + str(testNumber), exist_ok=True)
+os.chdir("./Real/Data Processing/Gode tests/Test figures/Test " + str(testNumber))
 
 print("Visualizing data for test " + str(testNumber))
 
@@ -66,10 +66,10 @@ for i in range(len(csvFileVicon['Frame'])):
     xCoord = csvFileVicon['TX'][i] / 10
     yCoord = csvFileVicon['TY'][i] / 10
     zCoord = csvFileVicon['TZ'][i] / 10
-    if pathStartPoint == 0 and xCoord > -5 and xCoord < 5 and yCoord > -5 and yCoord < 5 and zCoord > 95 and zCoord < 115:
+    if pathStartPoint == 0 and xCoord > -10 and xCoord < 10 and yCoord > -10 and yCoord < 10 and zCoord > 95 and zCoord < 115:
         print("Drone path start (pos ~= [0, 0, 100]):", i, xCoord, yCoord, zCoord)
         pathStartPoint = i
-    if pathStartPoint != 0 and pathEndPoint == 0 and xCoord > -5 and xCoord < 5 and yCoord > -5 and yCoord < 5 and zCoord < 105:
+    if pathStartPoint != 0 and pathEndPoint == 0 and xCoord > -5 and xCoord < 5 and yCoord > -5 and yCoord < 5 and zCoord < 100:
         print("Drone path end (pos ~= [0, 0, 100]):", i, xCoord, yCoord, zCoord)
         pathEndPoint = i + 1
         break
@@ -184,7 +184,7 @@ plt.grid(True)
 #plt.plot(csvFileVicon['TX'].to_numpy()/10, csvFileVicon['TY'].to_numpy()/10, color='Black')
 #plt.plot(csvFilePathPlanner['TX'].to_numpy(), csvFilePathPlanner['TY'].to_numpy(), color='Red')
 plt.plot(interpolatedViconXY[:, 0] / 10, interpolatedViconXY[:, 1] / 10, color='Blue')
-plt.plot(interpolatedPathPlannerXY[:, 0], interpolatedPathPlannerXY[:, 1], color='Green')
+plt.plot(interpolatedPathPlannerXY[:, 0], interpolatedPathPlannerXY[:, 1], color='Red')
 #plt.plot([csvFileVicon['TX'].to_numpy()[0]/10], [csvFileVicon['TY'].to_numpy()[0]/10], marker='*', ls='none', ms=10, color='Green')
 #plt.plot([csvFileVicon['TX'].to_numpy()[-1]/10], [csvFileVicon['TY'].to_numpy()[-1]/10], marker='*', ls='none', ms=10, color='Blue')
 plt.plot([csvFileViconXYPath['TX'].to_numpy()[0]/10], [csvFileViconXYPath['TY'].to_numpy()[0]/10], marker='*', ls='none', ms=10, color='Purple')

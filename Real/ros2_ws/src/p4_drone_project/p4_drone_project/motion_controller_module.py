@@ -164,16 +164,6 @@ class MotionControllerNode(Node):
                 if keyInput == 'q':
                     fly = False
             self.get_logger().info("Flight ended!")
-    
-    def hoverTest(self, cf):
-        hoverHeight = 0.5
-        with MotionCommander(cf, default_height=hoverHeight) as mc:
-            # Stabilize time
-            time.sleep(10)
-            mc.start_linear_motion(0, 0, 0, 0)
-            # Hover time
-            time.sleep(10)
-
 
     def getKey(self):
         settings = termios.tcgetattr(sys.stdin)
