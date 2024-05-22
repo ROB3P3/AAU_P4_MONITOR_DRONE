@@ -179,7 +179,7 @@ class MotionControllerNode(Node):
 
 class VelocityRecipientNode(Node):
     def __init__(self):
-        super().__init__("velocity_recipient_node")
+        super().__init__("motion_controller_velocity_node")
         self.regulatorSubscriber_ = self.create_subscription(RegulatedVelocity, "/command_topic", self.onRegulatorMsg, 10)
         #self.viconSubscriber_ = self.create_subscription(Float64MultiArray, "/pid_regulator_vicon", self.onViconMsg, 10)
         self.receivedVelocity = []

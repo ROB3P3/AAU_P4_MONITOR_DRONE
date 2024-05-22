@@ -7,7 +7,7 @@ from fastdtw import fastdtw
 from scipy.spatial.distance import euclidean
 from scipy.interpolate import interp1d
 
-testNumber = 13
+testNumber = 4
 
 pathToViconCSV = "./Real/Data Processing/Gode tests/Vicon Test " + str(testNumber) + ".csv"
 pathToPathPlannerCSV = "./Real/Data Processing/Gode tests/PathData test " + str(testNumber) + ".csv"
@@ -71,7 +71,7 @@ for i in range(len(csvFileVicon['Frame'])):
     if pathStartPoint == 0 and xCoord > -10 and xCoord < 10 and yCoord > -10 and yCoord < 10 and zCoord > 95 and zCoord < 115:
         print("Drone path start (pos ~= [0, 0, 100]):", i, xCoord, yCoord, zCoord)
         pathStartPoint = i
-    if pathStartPoint != 0 and pathEndPoint == 0 and i > pathStartPoint + 10000 and xCoord > -10 and xCoord < 10 and yCoord > -10 and yCoord < 10 and zCoord < 105:
+    if pathStartPoint != 0 and pathEndPoint == 0 and i > pathStartPoint + 5000 and xCoord > -10 and xCoord < 10 and yCoord > -10 and yCoord < 10 and zCoord < 105:
         print("Drone path end (pos ~= [0, 0, 100]):", i, xCoord, yCoord, zCoord)
         pathEndPoint = i + 1
         break
@@ -169,8 +169,8 @@ plt.ylabel('z (cm)')
 plt.title('Plot of Z over time')
 plt.grid(True)
 
-plt.plot(csvFileVicon['Frame'].to_numpy(), csvFileVicon['TZ'].to_numpy()/10, color='Black')
-plt.plot(csvFileVicon['Frame'].to_numpy(), [105 for i in range(len(csvFileVicon['Frame']))], color='Green')
+plt.plot(csvFileVicon['Frame'].to_numpy(), csvFileVicon['TZ'].to_numpy()/10, color='Blue')
+plt.plot(csvFileVicon['Frame'].to_numpy(), [105 for i in range(len(csvFileVicon['Frame']))], color='Red')
 plt.plot([csvFileVicon['Frame'].to_numpy()[pathStartPoint]], [csvFileVicon['TZ'].to_numpy()[pathStartPoint]/10], marker='*', ls='none', ms=10, color='Purple')
 plt.plot([csvFileVicon['Frame'].to_numpy()[pathEndPoint]], [csvFileVicon['TZ'].to_numpy()[pathEndPoint]/10], marker='*', ls='none', ms=10, color='Orange')
 
