@@ -7,7 +7,7 @@ from fastdtw import fastdtw
 from scipy.spatial.distance import euclidean
 from scipy.interpolate import interp1d
 
-testNumber = 8
+testNumber = 13
 
 pathToViconCSV = "./Real/Data Processing/Gode tests/Vicon Test " + str(testNumber) + ".csv"
 pathToPathPlannerCSV = "./Real/Data Processing/Gode tests/PathData test " + str(testNumber) + ".csv"
@@ -20,8 +20,10 @@ os.chdir("./Real/Data Processing/Gode tests/Test figures/Test " + str(testNumber
 
 print("Visualizing data for test " + str(testNumber))
 
-# vicon 1 frame = 10 ms
-# vicon 100 frames = 1 second
+# vicon 1 frame = 5 ms (test 1-7)
+# vicon 100 frames = 0.5 second (test 1-7)
+# vicon 1 frame = 10 ms (test 8-13)
+# vicon 100 frames = 1 second (test 8-13)
 
 # source to interpolation: https://en.wikipedia.org/wiki/Interpolation
 # another: https://www.youtube.com/watch?v=RpxoN9-i7Jc
@@ -69,7 +71,7 @@ for i in range(len(csvFileVicon['Frame'])):
     if pathStartPoint == 0 and xCoord > -10 and xCoord < 10 and yCoord > -10 and yCoord < 10 and zCoord > 95 and zCoord < 115:
         print("Drone path start (pos ~= [0, 0, 100]):", i, xCoord, yCoord, zCoord)
         pathStartPoint = i
-    if pathStartPoint != 0 and pathEndPoint == 0 and xCoord > -5 and xCoord < 5 and yCoord > -5 and yCoord < 5 and zCoord < 100:
+    if pathStartPoint != 0 and pathEndPoint == 0 and i > pathStartPoint + 10000 and xCoord > -10 and xCoord < 10 and yCoord > -10 and yCoord < 10 and zCoord < 105:
         print("Drone path end (pos ~= [0, 0, 100]):", i, xCoord, yCoord, zCoord)
         pathEndPoint = i + 1
         break
