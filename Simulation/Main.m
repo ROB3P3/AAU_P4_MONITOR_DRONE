@@ -10,7 +10,7 @@
 % Run path planner python script
 %pyrunfile("Main.py")
 
-for k = 1:7
+for k = 7:8
     % get parameters
     %k = 7;
     test = string(k);
@@ -54,8 +54,8 @@ for k = 1:7
     maxXY = max(XYLengthList)*100;
 
     %% Z mean and max error
-    meanZ = (sum(abs(out.zPathError.Data))*100)/length(out.zPathError.Data)
-    maxZ = max((abs(out.zPathError.Data)))*100
+    meanZ = (sum(abs(out.zPathError.Data))*100)/length(out.zPathError.Data);
+    maxZ = max((abs(out.zPathError.Data)))*100;
     meanXYZ = sqrt(meanX^2+meanY^2+meanZ^2);
     
     %% Calculate Overshoot
@@ -132,20 +132,21 @@ for k = 1:7
     range = insertAfter(insertAfter('A:G', 'A', test),'G',test);
     writecell(resultsAll,'DATAdir\Test Results\Test Results.csv')
     %% export Figures
-    % X Y and Z figure
-    xyzGraphs = get_param("Crazyflie_Simulation_Position/Position Controller/x,y,z error",'Name');
-    hs = findall(0,'Name',xyzGraphs);
-    % Create a new target figure
-    hf = figure('Position',get(hs,'Position'));
-    % Get the handle to the panel containing the plots
-    hp = findobj(hs.UserData.Parent,'Tag','VisualizationPanel');
-    % Copy the panel to the new figure
-    copyobj(hp,hf)
-    %Name = insertAfter("DATAdir\Test \xyzGraphsTest","DATAdir\Test \xyzGraphsTest", test);
-    %Name = insertAfter(Name, "DATAdir\Test ", test);
-    %saveas(hf, append(Name, '.fig'));
-    %saveas(hf, append(Name, '.png'));
-    %saveas(hf, append(Name, '.svg'));
-
-
+    if false
+        % X Y and Z figure
+        xyzGraphs = get_param("Crazyflie_Simulation_Position/Position Controller/x,y,z error",'Name');
+        hs = findall(0,'Name',xyzGraphs);
+        % Create a new target figure
+        hf = figure('Position',get(hs,'Position'));
+        % Get the handle to the panel containing the plots
+        hp = findobj(hs.UserData.Parent,'Tag','VisualizationPanel');
+        % Copy the panel to the new figure
+        copyobj(hp,hf)
+        %Name = insertAfter("DATAdir\Test \xyzGraphsTest","DATAdir\Test \xyzGraphsTest", test);
+        %Name = insertAfter(Name, "DATAdir\Test ", test);
+        %saveas(hf, append(Name, '.fig'));
+        %saveas(hf, append(Name, '.png'));
+        %saveas(hf, append(Name, '.svg'));
+    end
+    %break
 end
