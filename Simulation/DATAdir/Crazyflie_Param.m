@@ -29,14 +29,14 @@ b_drone = 1*10^-9; % kg*m^2 drone's x,y,z translational drag coefficient
 %load("drone_path_y.mat")
 %load("drone_path_z.mat")
 %load("drone_path.mat")
-%PathData = readtable(insertAfter("DATAdir\Test \PathData.csv","DATAdir\Test ", test));
+PathData = readtable(insertAfter("DATAdir\Test \PathData.csv","DATAdir\Test ", test));
 PolyData = readtable(insertAfter("DATAdir\Test \PolyData.csv","DATAdir\Test ", test));
 drone_path_x = PathData{:,["Time", "TX"]};
 drone_path_x(:,2) = drone_path_x(:,2) .* 0.01;
 drone_path_y = PathData{:,["Time", "TY"]};
 drone_path_y(:,2) = drone_path_y(:,2) .* 0.01;
 
-zMode = 5;
+zMode = 1;
 if zMode == 1 % 10cm/s normal
     drone_path_z = PathData{:,["Time", "TZ"]};
     drone_path_z(:,2) = drone_path_z(:,2) .* 0.01;
