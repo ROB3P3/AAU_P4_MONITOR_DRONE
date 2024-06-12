@@ -25,6 +25,9 @@ rclpy,
 sympy
 
 ### Simulink & Matlab:
+The simulation is adapted from "Crazyflie Quadcopter Simulation Using Simmechanics" by Wooshik Kim:
+https://se.mathworks.com/matlabcentral/fileexchange/65469-crazyflie-quadcopter-simulation-using-simmechanics
+
 Matlab 2024a,
 Aerospace Blockset,
 Aerospace Toolbox,
