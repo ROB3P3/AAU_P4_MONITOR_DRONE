@@ -7,21 +7,23 @@ from fastdtw import fastdtw
 from scipy.spatial.distance import euclidean
 from scipy.interpolate import interp1d
 
-testNumber = 7
+testNumber = 4
 
-pathToViconCSV = "./Real/DATA/Gode tests/Vicon Test " + str(testNumber) + ".csv"
-pathToPathPlannerCSV = "./Real/DATA/Gode tests/PathData test " + str(testNumber) + ".csv"
+pathToViconCSV = "./Real/Data Processing/Gode tests/Vicon Test " + str(testNumber) + ".csv"
+pathToPathPlannerCSV = "./Real/Data Processing/Gode tests/PathData test " + str(testNumber) + ".csv"
 
 csvFileVicon = pandas.read_csv(pathToViconCSV, skiprows=[0, 1, 2, 4], usecols=['Frame', 'TX', 'TY', 'TZ'], skip_blank_lines=True)
 csvFilePathPlanner = pandas.read_csv(pathToPathPlannerCSV)
 
-os.makedirs(".Real/DATA/Gode tests/Test figures/Test " + str(testNumber), exist_ok=True)
-os.chdir("./Real/DATA/Gode tests/Test figures/Test " + str(testNumber))
+os.makedirs("./Real/Data Processing/Gode tests/Test figures/Test " + str(testNumber), exist_ok=True)
+os.chdir("./Real/Data Processing/Gode tests/Test figures/Test " + str(testNumber))
 
 print("Visualizing data for test " + str(testNumber))
 
-# vicon 1 frame = 10 ms
-# vicon 100 frames = 1 second
+# vicon 1 frame = 5 ms (test 1-7)
+# vicon 100 frames = 0.5 second (test 1-7)
+# vicon 1 frame = 10 ms (test 8-13)
+# vicon 100 frames = 1 second (test 8-13)
 
 # source to interpolation: https://en.wikipedia.org/wiki/Interpolation
 # another: https://www.youtube.com/watch?v=RpxoN9-i7Jc
@@ -66,10 +68,10 @@ for i in range(len(csvFileVicon['Frame'])):
     xCoord = csvFileVicon['TX'][i] / 10
     yCoord = csvFileVicon['TY'][i] / 10
     zCoord = csvFileVicon['TZ'][i] / 10
-    if pathStartPoint == 0 and xCoord > -5 and xCoord < 5 and yCoord > -5 and yCoord < 5 and zCoord > 95 and zCoord < 115:
+    if pathStartPoint == 0 and xCoord > -10 and xCoord < 10 and yCoord > -10 and yCoord < 10 and zCoord > 95 and zCoord < 115:
         print("Drone path start (pos ~= [0, 0, 100]):", i, xCoord, yCoord, zCoord)
         pathStartPoint = i
-    if pathStartPoint != 0 and pathEndPoint == 0 and xCoord > -5 and xCoord < 5 and yCoord > -5 and yCoord < 5 and zCoord < 105:
+    if pathStartPoint != 0 and pathEndPoint == 0 and i > pathStartPoint + 5000 and xCoord > -10 and xCoord < 10 and yCoord > -10 and yCoord < 10 and zCoord < 105:
         print("Drone path end (pos ~= [0, 0, 100]):", i, xCoord, yCoord, zCoord)
         pathEndPoint = i + 1
         break
@@ -167,8 +169,8 @@ plt.ylabel('z (cm)')
 plt.title('Plot of Z over time')
 plt.grid(True)
 
-plt.plot(csvFileVicon['Frame'].to_numpy(), csvFileVicon['TZ'].to_numpy()/10, color='Black')
-plt.plot(csvFileVicon['Frame'].to_numpy(), [105 for i in range(len(csvFileVicon['Frame']))], color='Green')
+plt.plot(csvFileVicon['Frame'].to_numpy(), csvFileVicon['TZ'].to_numpy()/10, color='Blue')
+plt.plot(csvFileVicon['Frame'].to_numpy(), [105 for i in range(len(csvFileVicon['Frame']))], color='Red')
 plt.plot([csvFileVicon['Frame'].to_numpy()[pathStartPoint]], [csvFileVicon['TZ'].to_numpy()[pathStartPoint]/10], marker='*', ls='none', ms=10, color='Purple')
 plt.plot([csvFileVicon['Frame'].to_numpy()[pathEndPoint]], [csvFileVicon['TZ'].to_numpy()[pathEndPoint]/10], marker='*', ls='none', ms=10, color='Orange')
 
@@ -184,7 +186,7 @@ plt.grid(True)
 #plt.plot(csvFileVicon['TX'].to_numpy()/10, csvFileVicon['TY'].to_numpy()/10, color='Black')
 #plt.plot(csvFilePathPlanner['TX'].to_numpy(), csvFilePathPlanner['TY'].to_numpy(), color='Red')
 plt.plot(interpolatedViconXY[:, 0] / 10, interpolatedViconXY[:, 1] / 10, color='Blue')
-plt.plot(interpolatedPathPlannerXY[:, 0], interpolatedPathPlannerXY[:, 1], color='Green')
+plt.plot(interpolatedPathPlannerXY[:, 0], interpolatedPathPlannerXY[:, 1], color='Red')
 #plt.plot([csvFileVicon['TX'].to_numpy()[0]/10], [csvFileVicon['TY'].to_numpy()[0]/10], marker='*', ls='none', ms=10, color='Green')
 #plt.plot([csvFileVicon['TX'].to_numpy()[-1]/10], [csvFileVicon['TY'].to_numpy()[-1]/10], marker='*', ls='none', ms=10, color='Blue')
 plt.plot([csvFileViconXYPath['TX'].to_numpy()[0]/10], [csvFileViconXYPath['TY'].to_numpy()[0]/10], marker='*', ls='none', ms=10, color='Purple')
