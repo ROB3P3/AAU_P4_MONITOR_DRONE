@@ -25,54 +25,20 @@ Iz_drone = 2.173*10^-5;  % kg*m^2
 b_drone = 1*10^-9; % kg*m^2 drone's x,y,z translational drag coefficient
 
 % Path coordinates
-%load("drone_path_x.mat")
-%load("drone_path_y.mat")
-%load("drone_path_z.mat")
+load("drone_path_x.mat")
+load("drone_path_y.mat")
+load("drone_path_z.mat")
+
 %load("drone_path.mat")
-PathData = readtable(insertAfter("DATAdir\Test \PathData.csv","DATAdir\Test ", test));
-PolyData = readtable(insertAfter("DATAdir\Test \PolyData.csv","DATAdir\Test ", test));
-drone_path_x = PathData{:,["Time", "TX"]};
-drone_path_x(:,2) = drone_path_x(:,2) .* 0.01;
-drone_path_y = PathData{:,["Time", "TY"]};
-drone_path_y(:,2) = drone_path_y(:,2) .* 0.01;
+%drone_path_x = drone_path(1:2);
+%drone_path_y = drone_path(1:2:3);
+%drone_path_z = drone_path(1:2:4);
 
-zMode = 1;
-if zMode == 1 % 10cm/s normal
-    drone_path_z = PathData{:,["Time", "TZ"]};
-    drone_path_z(:,2) = drone_path_z(:,2) .* 0.01;
-    % Get the last time
-    stop_time = string(drone_path_z(end,1));
-elseif zMode == 2 % twice as fast 20cm/s
-    drone_path_z = PathData{:,["Time", "TZ"]};
-    drone_path_z(:,2) = drone_path_z(:,2) .* 0.01;
-    drone_path_z(:,1) = drone_path_z(:,1) .* 0.5;
-    % Get the last time
-    stop_time = string(drone_path_z(end,1));
-elseif zMode == 3 % five as fast 50cm/s
-    drone_path_z = PathData{:,["Time", "TZ"]};
-    drone_path_z(:,2) = drone_path_z(:,2) .* 0.01;
-    drone_path_z(:,1) = drone_path_z(:,1) .* 0.2;
-    % Get the last time
-    stop_time = string(drone_path_z(end,1));
-elseif zMode == 4 % swerve z path
-    drone_path_z = PathData{:,["Time", "TZ"]};
-    drone_path_z(:,2) = drone_path_z(:,2) .* 0.01;
-    
-    % Get the last time
-    stop_time = string(drone_path_z(end,1));
+% convert  meter to cm
+%drone_path_x(:,2) = drone_path_x(:,2) .* 0.01;
+%drone_path_y(:,2) = drone_path_y(:,2) .* 0.01;
+%drone_path_z(:,2) = drone_path_z(:,2) .* 0.01;
 
-    stop_time_z = length(drone_path_z(:,1)) - 20;
-    
-    % merge with y path to make swerve
-    drone_path_z(22:stop_time_z,2) = drone_path_z(22:stop_time_z,2) + drone_path_y(22:stop_time_z,2);
-elseif zMode == 5
-    
-
-    drone_path_z = PathData{:,["Time", "TZ"]};
-    drone_path_z(:,2) = drone_path_z(:,2) .* 0.01;
-    drone_path_z(:,2) = drone_path_z(:,2) .* zAlt;
-    % Get the last time
-    stop_time = string(drone_path_z(end,1));
-    zAlt = zAlt + 0.1;
-end
+% Get the last time
+stop_time = string(drone_path_z(end,1));
 
