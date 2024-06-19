@@ -1,3 +1,4 @@
+%% ENSURE THAT CURRENT FOLDER IS THE ONE CONTAINING THIS FILE AND THE PROJECT FILE
 % Specify python interpreter
 terminate(pyenv)
 pyenv
