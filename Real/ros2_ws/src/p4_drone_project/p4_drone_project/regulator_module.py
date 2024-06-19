@@ -6,16 +6,11 @@ import json
 from sympy import parse_expr
 from rclpy.node import Node
 
-from std_msgs.msg import Float64
 from std_msgs.msg import Float64MultiArray
 from my_robot_interfaces.msg import PathPlannerMessage
 from my_robot_interfaces.msg import RegulatedVelocity
 
 PATHPLANNER_DELTA_T = 0.5
-DEFAULT_HEIGHT = 1.0
-BASE_VELOCITY = 0.05
-REGULATOR_VALUE = 2000.0
-VELOCITY_RANGE = 0.05
 ERROR_RANGE = 5.0
 
 class RegulatorListener(Node):
@@ -83,10 +78,6 @@ class RegulatorListener(Node):
             self.get_logger().info("Velocity message sent to motion controller!")
 
     def onPathPlannerMsg(self, msg):
-        #self.pathPlannerPoints = np.delete(np.array(msg.points).reshape(msg.point_row, msg.point_col), 0, 0)
-        # ask rasmus if the last polynomial describes movement directly to [0, 0, 0] or movement to [0, 0, 100]
-        # if it describes movement directly to [0, 0, 0] it needs to be removed
-        # currently the last polynomial is fucked
         if self.pathPlannerPolynomials == []:
             # Deserialize polynomials to get back into symp expr
             self.pathPlannerPolynomials = self.deserializeData(msg.polynomials)
