@@ -36,6 +36,8 @@ codegen/
 # Octave session info
 octave-workspace
 
+Real/ros2_ws/src/p4_drone_project/p4_drone_project/PathPlanner/DATA/
+
 # ros2 non-src folders
 Real/ros2_ws/build/
 Real/ros2_ws/cache/
