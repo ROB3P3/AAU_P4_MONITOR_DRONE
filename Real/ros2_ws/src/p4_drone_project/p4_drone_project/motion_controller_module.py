@@ -26,7 +26,7 @@ URI = uri_helper.uri_from_env(default='radio://0/80/2M/E7E7E7E7E7')
 DEFAULT_HEIGHT = 1.0
 deck_attached_event = Event()
 logging.basicConfig(level=logging.ERROR)
-
+ 
 class MotionControllerNode(Node):
     def __init__(self):
         super().__init__("motion_controller_node")

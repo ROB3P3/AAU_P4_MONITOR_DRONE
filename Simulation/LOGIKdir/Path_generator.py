@@ -3,9 +3,10 @@
 from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
 import numpy as np
-from sympy import symbols, lambdify
+from sympy import *
 from scipy.io import savemat
 import os
+import math
 
 def length_of_trajectory(positions):
     # Calculate lengths of line segments in 3D
@@ -21,7 +22,7 @@ def length_of_trajectory(positions):
 
 def velocity(positions):
     # Set the corner velocity
-    corner_velocity = 50  # cm/s    
+    corner_velocity = 10  # cm/s    
     
     # Initialize the velocities
     all_xvel = [0,]
@@ -110,7 +111,7 @@ def plot_polynomial(all_polynomials):
     t = symbols('t')
     res_of_plot = 100
 
-    # Create the figure for x_values
+    """# Create the figure for x_values
     fig, ax = plt.subplots()
     plt.xlabel('Time')
     plt.ylabel('x')
@@ -215,10 +216,10 @@ def plot_polynomial(all_polynomials):
     
     # Plot the 3D trajectory
     # Create a new figure
-    fig = plt.figure()
+    #fig = plt.figure()
 
     # Add a 3D subplot
-    ax = fig.add_subplot(111, projection='3d')
+    ax = fig.add_subplot(111, projection='3d')"""
 
     all_x_values = []
     all_tx_values = []
@@ -229,18 +230,36 @@ def plot_polynomial(all_polynomials):
     all_z_values = []
     all_tz_values = []
 
+    
+
+    PATHPLANNER_DELTA_T = 0.5
+    # Create list of points based on polynomials with an interval of PATHPLANNER_DELTA_T
+    pathPlannerPoints = []
+    polys = [all_polynomials[0], all_polynomials[1], all_polynomials[2]]
+    print('polys:', polys)
+    for poly in all_polynomials:
+        for i in range(0, math.ceil(poly[3] / PATHPLANNER_DELTA_T)):
+            pathPlannerPoints.append([float(round(i * PATHPLANNER_DELTA_T + poly[4], 5)), float(round(poly[0].subs(t, i * PATHPLANNER_DELTA_T + poly[4])/100, 5)), float(round(poly[1].subs(t, i * PATHPLANNER_DELTA_T + poly[4])/100, 5))] )
+
+
+    print('pathPlannerPoints:', pathPlannerPoints)
+
+    
     # Loop over all polynomials
     for poly_x, poly_y, poly_z, tf, t0, t1 in all_polynomials:
+
         # Generate a sequence of t-values
         t_values_1 = np.linspace(t0, t1, num=res_of_plot)
         
         # Convert the sympy polynomial to a lambda function for easy evaluation
         func_x = lambdify(t, poly_x, "numpy")
         func_y = lambdify(t, poly_y, "numpy")
+        #func_z = lambdify(t, poly_z, "numpy")
         
         # Compute x, y, and z values
         x_values = func_x(t_values_1)
         y_values = func_y(t_values_1)
+        #z_values = func_z(t_values_1)
         
         t_values = np.linspace(0, tf, num=res_of_plot)
         z_values = poly_z(t_values)
@@ -259,22 +278,27 @@ def plot_polynomial(all_polynomials):
         all_tz_values.extend(t_values_1)
 
         # Plot x, y, and z values
-        ax.plot(x_values, y_values, z_values)
+        #ax.plot(x_values, y_values, z_values)
     
 
     # Combine all x_values and t_values into one vertical array
     all_x_points = []
     for i in range(len(all_x_values)):
         all_x_points.append([all_tx_values[i], all_x_values[i]/100])
+    
+    file_name = 'DATAdir/drone_path_x.mat'
+    print('all_x_points:', all_x_points)
+    savemat(file_name, {'drone_path_x': all_x_points})
+
 
 
     # export to DATAdir
     #os.chdir('Simulation/DATAdir')
 
-    # Save the x_values to a .mat file
-    file_name = 'DATAdir/drone_path_x.mat'
-    savemat(file_name, {'drone_path_x': all_x_points})
-
+    
+    # Save the values to a .mat file
+    file_name = 'DATAdir/drone_path.mat'
+    savemat(file_name, {'drone_path': pathPlannerPoints})
 
 
     # Combine all y_values and t_values into one vertical array
@@ -297,11 +321,11 @@ def plot_polynomial(all_polynomials):
     file_name = 'DATAdir/drone_path_z.mat'
     savemat(file_name, {'drone_path_z': all_z_points})
 
-    ax.set_xlabel('X')
+    """ax.set_xlabel('X')
     ax.set_ylabel('Y')
     ax.set_zlabel('Z')
     plt.gca().invert_yaxis()
-    plt.show()
+    plt.show()"""
 
     return x_values, y_values
 

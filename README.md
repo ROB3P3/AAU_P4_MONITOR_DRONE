@@ -22,6 +22,7 @@ scipy,
 matplotlib,
 numpy,
 rclpy,
+cflib,
 sympy
 
 ### Simulink & Matlab:
