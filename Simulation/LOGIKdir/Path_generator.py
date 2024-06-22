@@ -211,15 +211,15 @@ def plot_polynomial(all_polynomials):
         plt.plot(x_values, y_values)
 
     plt.gca().invert_yaxis()
-    plt.show()
+    plt.show()"""
     
     
     # Plot the 3D trajectory
     # Create a new figure
-    #fig = plt.figure()
+    fig = plt.figure()
 
     # Add a 3D subplot
-    ax = fig.add_subplot(111, projection='3d')"""
+    ax = fig.add_subplot(111, projection='3d')
 
     all_x_values = []
     all_tx_values = []
@@ -278,7 +278,7 @@ def plot_polynomial(all_polynomials):
         all_tz_values.extend(t_values_1)
 
         # Plot x, y, and z values
-        #ax.plot(x_values, y_values, z_values)
+        ax.plot(x_values, y_values, z_values)
     
 
     # Combine all x_values and t_values into one vertical array
@@ -321,11 +321,11 @@ def plot_polynomial(all_polynomials):
     file_name = 'DATAdir/drone_path_z.mat'
     savemat(file_name, {'drone_path_z': all_z_points})
 
-    """ax.set_xlabel('X')
+    ax.set_xlabel('X')
     ax.set_ylabel('Y')
     ax.set_zlabel('Z')
-    plt.gca().invert_yaxis()
-    plt.show()"""
+    #plt.gca().invert_yaxis()
+    plt.show()
 
     return x_values, y_values
 

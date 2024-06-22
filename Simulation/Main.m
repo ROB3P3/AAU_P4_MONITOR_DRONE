@@ -1,15 +1,15 @@
 %% ENSURE THAT CURRENT FOLDER IS THE ONE CONTAINING THIS FILE AND THE PROJECT FILE
 % Specify python interpreter
 terminate(pyenv)
-pyenv
+pyenv(ExecutionMode="OutOfProcess")
 try
     pyversion("C:\Users\klump\anaconda3\envs\MonitorDrone\pythonw.exe") % insert path to python env
 catch
-    warning("Python interpereter already assigned");
+    warning("Python interpereter already assigned")
 end
 
 % Run path planner python script
-pyrunfile("Main.py")
+%pyrunfile("Main.py")
 % get parameters
 Crazyflie_Param;
 
